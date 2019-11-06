@@ -1,0 +1,12 @@
+{
+  "name": "workout-tracker-fe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Lambda-School-Labs/workout-tracker-fe.git",
+  "author": "Rod <rod.bromberg@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4"
+  }
+}
