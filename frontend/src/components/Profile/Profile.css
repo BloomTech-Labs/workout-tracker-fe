@@ -1,0 +1,21 @@
+.user-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin: 50px 100px 50px 100px;
+    border: solid black
+}
+
+.user-info-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 100px 50px 100px;
+    border: solid black;
+}
+
+.user-info-wrapper h3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+}

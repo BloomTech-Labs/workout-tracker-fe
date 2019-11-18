@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserInfo from './UserInfo.js'
+import ProgressGraph from './ProgressGraph.js'
 
 export default class Profile extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class Profile extends Component {
             <div className='profile-container'>
                 <div>
                     <UserInfo />
+                    {/* <ProgressGraph /> */}
                 </div>
             </div>
         )
