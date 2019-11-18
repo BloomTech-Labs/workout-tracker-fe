@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Link } from 'react-router-dom';
 import './Profile.css';
 
 export default class UserInfo extends Component {
@@ -17,14 +18,19 @@ export default class UserInfo extends Component {
     render() {
         return(
             <div className='user-info-container'>
-                <div>
+                <div className='user-info'>
                     <h3>Name: {this.props.name}</h3>
                     <div className='user-info-wrapper'>
                         <h3>Weight: {this.props.weight}</h3>
                         <h3>Workout Streak: {this.props.workout_streak}</h3>
                         <h3>Bench Max: {this.props.bench_max}</h3>
-                        <h3>Bench Max: {this.props.squat_max}</h3>
-                    </div>                  
+                        <h3>Squat Max: {this.props.squat_max}</h3>
+                    </div>
+                    <div className='see-more'>
+                    <Link to ='/profile-info' >
+                        <button className='see-more-button'>See More</button> 
+                    </Link>       
+                    </div>            
                 </div>
             </div>
         )

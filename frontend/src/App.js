@@ -8,8 +8,11 @@ import Profile from './components/Profile/Profile.js';
 class App extends React.Component {
   render() {
     return (
-      <Router>
+      
+      
       <div className="App">
+        <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet"></link>
+        <Router>
         {/* Header */}
         <div className='header'>
 
@@ -22,8 +25,9 @@ class App extends React.Component {
         <div className='footer'>
 
         </div>
+        </Router>
       </div>
-      </Router>
+      
     );
   }
 }

@@ -1,21 +1,71 @@
+/* Whole profile container*/
+.profile-container {
+    width: auto;
+    margin: 50px 100px 50px 100px;
+    background-color: rgb(238, 238, 238);
+    background-image: radial-gradient(circle, rgb(238, 238, 238), white );
+}
+
+/* User Information Section */
+/*------------------------------------------------------*/
 .user-info-container {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+    width: auto;
+    
+}
+
+.user-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin: 50px 100px 50px 100px;
-    border: solid black
+    border: solid rgb(77, 143, 230);
+    border-radius: 20px;
+    flex-direction: column;
+    width: auto;
+    background-image: linear-gradient(to top, rgb(77, 143, 230), rgb(13, 90, 190));
+    
+}
+
+.see-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0 20px 80%;
+    width: 15%;
+    height: 30px;
+}
+
+.see-more button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
 }
 
 .user-info-wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     margin: 50px 100px 50px 100px;
-    border: solid black;
+    border: solid rgb(110, 164, 235);
+    border-radius: 25px;
+    width: auto;
 }
 
-.user-info-wrapper h3 {
+.user-info h3 {
     display: flex;
     flex-wrap: wrap;
     margin: 50px;
+    color: white;
 }
+
