@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Link } from 'react-router-dom';
+
+
 import './Profile.css';
 
-export default class UserInfo extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            name: 'sir',
-            weight: 157,
-            workout_streak: 2,
-            bench_max: 200,
-            squat_max: 275
-        };
-    }
-
+class UserInfo extends Component {
+    
     render() {
         return(
             <div className='user-info-container'>
                 <div className='user-info'>
-                    <h3>Name: {this.props.name}</h3>
+                    <h3>Name: </h3>
                     <div className='user-info-wrapper'>
-                        <h3>Weight: {this.props.weight}</h3>
-                        <h3>Workout Streak: {this.props.workout_streak}</h3>
-                        <h3>Bench Max: {this.props.bench_max}</h3>
-                        <h3>Squat Max: {this.props.squat_max}</h3>
+                        <h3>Weight: </h3>
+                        <h3>Workout Streak: </h3>
+                        <h3>Bench Max: </h3>
+                        <h3>Squat Max: </h3>
                     </div>
                     <div className='see-more'>
                     <Link to ='/profile-info' >
@@ -36,3 +27,10 @@ export default class UserInfo extends Component {
         )
     }
 }
+
+
+export default (UserInfo);
+
+
+
+

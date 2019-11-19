@@ -1,9 +1,14 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  align-items: center;
   font-family: 'Alatsi', sans-serif;
   font-size: 30px;
   -webkit-text-stroke: 1px black;
   text-shadow: 3px 3px black;
+  width: 100%
 }
 
 .App-logo {

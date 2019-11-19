@@ -1,6 +1,12 @@
 /* Whole profile container*/
+/*------------------------------------------------------*/
 .profile-container {
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
     margin: 50px 100px 50px 100px;
     background-color: rgb(238, 238, 238);
     background-image: radial-gradient(circle, rgb(238, 238, 238), white );
@@ -13,8 +19,7 @@
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-    width: auto;
-    
+    width: 100%;
 }
 
 .user-info{
@@ -26,7 +31,7 @@
     border: solid rgb(77, 143, 230);
     border-radius: 20px;
     flex-direction: column;
-    width: auto;
+    width: 100%;
     background-image: linear-gradient(to top, rgb(77, 143, 230), rgb(13, 90, 190));
     
 }
@@ -69,3 +74,11 @@
     color: white;
 }
 
+/* Progress Graph*/
+/*------------------------------------------------------*/
+.progress-graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
