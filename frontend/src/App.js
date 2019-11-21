@@ -1,35 +1,33 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import Profile from './components/Profile/Profile.js';
+import React from "react";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import "./App.css";
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          {/* Header */}
+          <div className='header'>
 
-class App extends React.Component {
-  render() {
-    return (
-      
-      
-      <div className="App">
-        <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet"></link>
-        <Router>
-        {/* Header */}
-        <div className='header'>
+          </div>
 
-        </div>
-
-        {/*Profile*/}
-        <Route path='/profile' exact render={(props) => <Profile {...props} />}/>
+          {/*Profile*/}
+          <Route path='/profile' exact render={(props) => <Profile {...props} />}/>
         
-        {/* Footer */}
-        <div className='footer'>
+          {/* Footer */}
+          <div className='footer'>
 
-        </div>
-        </Router>
-      </div>
-      
-    );
-  }
+          </div>
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
