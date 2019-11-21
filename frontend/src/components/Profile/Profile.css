@@ -81,4 +81,14 @@
     justify-content: center;
     align-items: center;
     width: 80%;
+    margin-bottom: 100px;
+}
+
+/* Calories Graph*/
+/*------------------------------------------------------*/
+.calories-graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
