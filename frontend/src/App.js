@@ -1,3 +1,4 @@
+
 import React from "react";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
@@ -9,6 +10,18 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          {/* Header */}
+          <div className='header'>
+
+          </div>
+
+          {/*Profile*/}
+          <Route path='/profile' exact render={(props) => <Profile {...props} />}/>
+        
+          {/* Footer */}
+          <div className='footer'>
+
+          </div>
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
         </Switch>
