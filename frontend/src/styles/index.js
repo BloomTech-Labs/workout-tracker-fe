@@ -26,7 +26,7 @@ const SignupStyle = styled.div`
   form {
     display: flex;
     max-width: 60%;
-    width: 300px;
+    width: 500px;
     margin: 0 auto;
 
     background: rgb(46, 49, 65);
@@ -37,6 +37,9 @@ const SignupStyle = styled.div`
     justify-content: center;
     padding: 30px;
     border-radius: 5px;
+  }
+  h2 {
+    margin-left: 200px;
   }
   body {
   }
