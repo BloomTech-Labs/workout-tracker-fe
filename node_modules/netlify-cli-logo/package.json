@@ -1,0 +1,20 @@
+{
+  "name": "netlify-cli-logo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/netlify-labs/netlify-cli-logo.git",
+  "keywords": [],
+  "author": "sw-yx <swyx@dontemail.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netlify-labs/netlify-cli-logo/issues"
+  },
+  "homepage": "https://github.com/netlify-labs/netlify-cli-logo#readme",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
+}
