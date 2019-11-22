@@ -3,6 +3,7 @@ import { signUp } from "../actions/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import SignupStyle from "../styles/index";
+import Navbar from "./Navbar";
 // import validateAuth from "../validateAuth";
 // import { useSelector } from "react-redux";
 // import { useDispatch } from "react-redux";
@@ -42,50 +43,54 @@ const Signup = props => {
   //   <form onSubmit={() => dispatch(signUp(first_name, last_name, Email))}>
 
   return (
-    <SignupStyle>
-      <div className="form-container">
-        <div>
-          <h2>Register</h2>
+    <>
+      <Navbar />
+      <SignupStyle>
+        <div className="form-container">
+          <div>
+            <h2>Register</h2>
+          </div>
+          <div>
+            <form onSubmit={registerHandler}>
+              <div>
+                <input
+                  value={first_name}
+                  required
+                  onChange={handleChange("first_name")}
+                  placeholder="first-name"
+                />
+                <input
+                  value={last_name}
+                  required
+                  onChange={handleChange("last_name")}
+                  placeholder="last-name"
+                />
+                <input
+                  value={email}
+                  required
+                  onChange={handleChange("email")}
+                  placeholder="Email"
+                />
+                <input
+                  value={username}
+                  required
+                  onChange={handleChange("username")}
+                  placeholder="username"
+                />
+                <input
+                  value={password}
+                  required
+                  onChange={handleChange("password")}
+                  placeholder="password"
+                  type="password"
+                />
+              </div>
+              <button>Signup</button>
+            </form>
+          </div>
         </div>
-        <div>
-          <form onSubmit={registerHandler}>
-            <div>
-              <input
-                value={first_name}
-                required
-                onChange={handleChange("first_name")}
-                placeholder="first-name"
-              />
-              <input
-                value={last_name}
-                required
-                onChange={handleChange("last_name")}
-                placeholder="last-name"
-              />
-              <input
-                value={email}
-                required
-                onChange={handleChange("email")}
-                placeholder="Email"
-              />
-              <input
-                value={username}
-                required
-                onChange={handleChange("username")}
-                placeholder="username"
-              />
-              <input
-                value={password}
-                required
-                onChange={handleChange("password")}
-                placeholder="password"
-              />
-            </div>
-            <button>Signup</button>
-          </form>
-        </div>
-      </div>
-    </SignupStyle>
+      </SignupStyle>
+    </>
   );
 };
 
