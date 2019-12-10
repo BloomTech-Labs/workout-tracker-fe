@@ -10,7 +10,7 @@ class UserInfo extends Component {
         super(props)
 
         this.setState = {
-            newUser: this.props.users[0]
+            newUser: this.props.users
         }
     }
 
@@ -24,10 +24,9 @@ class UserInfo extends Component {
                         <div className='user-info'>
                             <h3>Name: {this.props.users.first_name}</h3>
                             <div className='user-info-wrapper'>
-                                <h3>Weight: </h3>
-                                <h3>Workout Streak: </h3>
-                                <h3>Bench Max: </h3>
-                                <h3>Squat Max: </h3>
+                                <h3>Weight: {this.props.users.weight} </h3>
+                                <h3>Bench Max: {this.props.users.bench_max}</h3>
+                                <h3>Squat Max: {this.props.users.squat_max}</h3>
                             </div>
                             <div className='see-more'>
                             <Link to ='/profile-info' >
