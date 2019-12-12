@@ -1,6 +1,8 @@
 import React from "react";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import Features from "./components/Features";
+import AboutUs from "./components/AboutUs";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Modal from "./components/Modal";
 import "./App.css";
@@ -23,6 +25,8 @@ function App() {
 
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/features" component={Features} />
+            <Route exact path="/aboutus" component={AboutUs} />
           </Switch>
         </Router>
       </Router>

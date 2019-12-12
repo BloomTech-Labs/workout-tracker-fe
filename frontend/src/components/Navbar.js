@@ -34,29 +34,33 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <Router>
-          <MDBNavbar color="#1b1c24" dark expand="md" fixed="top">
-            <MDBNavbarBrand href="/">
-              <strong>Navbar</strong>
-            </MDBNavbarBrand>
-            {!this.state.isWideEnough && (
-              <MDBNavbarToggler onClick={this.onClick} />
-            )}
-            <MDBCollapse isOpen={this.state.collapse} navbar>
-              <MDBNavbarNav left>
-                <MDBNavItem active>
-                  <MDBNavLink to="/">Home</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/login">Login</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/Signup">Signup</MDBNavLink>
-                </MDBNavItem>
-              </MDBNavbarNav>
-            </MDBCollapse>
-          </MDBNavbar>
-        </Router>
+        <MDBNavbar color="elegant" dark expand="md" fixed="top">
+          {!this.state.isWideEnough && (
+            <MDBNavbarToggler onClick={this.onClick} />
+          )}
+          <MDBCollapse isOpen={this.state.collapse} navbar>
+            <MDBNavbarNav left>
+              <MDBNavItem active>
+                <MDBNavLink to="/">Home</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink to="">Features</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink to="">About us</MDBNavLink>
+              </MDBNavItem>
+            </MDBNavbarNav>
+
+            <MDBNavbarNav right>
+              <MDBNavItem active>             
+              <MDBNavLink to="/login">Login</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/Signup">Signup</MDBNavLink>
+              </MDBNavItem>
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBNavbar>
       </div>
     );
   }
