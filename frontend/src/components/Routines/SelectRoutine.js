@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Routines';
+import './Routines.css';
 import { getRoutines } from '../../Action/Action.js'
 import { connect } from 'react-redux';
 
@@ -24,12 +24,15 @@ class SelectRoutine extends Component {
                     <div className='routines'>
                         {this.props.routines.map((routine) => {
                             return (
-                                <div>
+                                <a>
+                                    <div className='routine'>
                                     <h4>{routine.routine_name}</h4>
                                     <div>
                                         <h4>{routine.routine_description}</h4>
                                     </div>
                                 </div>
+                                </a>
+                                
                             )
                         })}
                     </div>

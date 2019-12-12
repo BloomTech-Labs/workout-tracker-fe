@@ -16,11 +16,9 @@ class App extends React.Component {
         <Router>
         {/* Nav Bar */}
           <nav className='top-nav'>
-            
-              <a href='/'>
-                <div classname='logo'></div>
-              </a>
-
+            <a href='/'>
+              <div classname='logo'></div>
+            </a>
             <a href='/'>Home</a>
             <a href='/routines'>Routines</a>
             <a href='/profile'>Profile</a>
