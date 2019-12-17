@@ -2,16 +2,20 @@ import styled from "styled-components";
 
 const AboutUsStyleSection = styled.div`
 
+
 .container {
     display: flex;
-    flex-direction:column
   }
   .container .member-section {
-    border-bottom: 1px solid black;
+    width: 50%;
+    height: 600px;
     display: flex;
+    padding-top: 100px;
+    padding-right: 15px;
   }
   .container .member-section .member-image img {
     border-radius: 50%;
+    width: 80%;
     height: auto;
     overflow: hidden;
   }

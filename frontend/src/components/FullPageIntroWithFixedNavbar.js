@@ -51,7 +51,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                     <MDBNavLink to="/features">Features</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink to="/aboutus">About us</MDBNavLink>
+                    <MDBNavLink to="/aboutus">About Us</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
 

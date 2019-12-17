@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const AboutUsStyle = styled.div`
+const NavBarStyle = styled.div`
   height: 13%;
   background-color: rgb(76, 92, 150);
   background-color: rgb(46, 49, 65);
@@ -71,4 +71,4 @@ const AboutUsStyle = styled.div`
   }
 `;
 
-export default AboutUsStyle;
+export default NavBarStyle;
