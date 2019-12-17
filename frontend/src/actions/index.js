@@ -8,21 +8,37 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAIL = "SIGNUP_FAIL";
 export const SIGNUP_START = "SIGNUP_START";
 
-export const FETCHING = "FETCHING";
-export const FETCHING_SUCCESS = "FETCHING_SUCCESS";
-export const FETCHING_FAILED = "FETCHING_FAILED";
+export const FETCHING = 'FETCHING'
+export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
+export const FETCHING_FAILED = 'FETCHING_FAILED'
+
+export const FETCHING_ROUTINES = 'FETCHING_ROUTINES'
+export const FETCHING_ROUTINES_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
+export const FETCHING_ROUTINES_FAILED = 'FETCHING_ROUTINES_FAILED'
 
 export const getUser = () => dispatch => {
-  dispatch({ type: FETCHING });
+    dispatch({ type: FETCHING })
+    axios
+      .get('https://firstrep.herokuapp.com/api/members')
+      .then(response => {
+        dispatch({ type: FETCHING_SUCCESS, payload: response.data})
+      })
+      .catch(err => {
+        dispatch({ type: FETCHING_FAILED, payload: err.response })
+      })
+}
+
+export const getRoutines = () => dispatch => {
+  dispatch({ type: FETCHING_ROUTINES })
   axios
-    .get("https://firstrep.herokuapp.com/api/members")
+    .get('https://firstrep.herokuapp.com/api/routines')
     .then(response => {
-      dispatch({ type: FETCHING_SUCCESS, payload: response.data });
+      dispatch({ type: FETCHING_ROUTINES_SUCCESS, payload: response.data})
     })
     .catch(err => {
-      dispatch({ type: FETCHING_FAILED, payload: err.response });
-    });
-};
+      dispatch({ type: FETCHING_ROUTINES_FAILED, payload: err.response })
+    })
+}
 
 export const signUp = input => dispatch => {
   dispatch({ type: SIGNUP_START });
