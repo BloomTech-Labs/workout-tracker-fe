@@ -2,9 +2,29 @@
     border: 2px solid black;
     margin: 10px;
     padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(65, 90, 139);
+    
 }
 
-.routines a {
+.routine:hover {
+    background-color: rgb(56, 78, 121);
+}
+
+.routines h4 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+.routines {
+    text-decoration: none;
+    -webkit-text-stroke: 1px black;
+}
+
+.select-routine-container a{
     width: 100%;
     height: 100%;
 }

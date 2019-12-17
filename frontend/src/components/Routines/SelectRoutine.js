@@ -19,23 +19,22 @@ class SelectRoutine extends Component {
 
     render() {
         return(
+            //Routines Route
             <div className='select-routine-container'>
                 <h2>Routines</h2>
-                    <div className='routines'>
+                    <a className='routines' href='/routines/exercises'>
+                        {/* Displays Each Routine*/}
                         {this.props.routines.map((routine) => {
                             return (
-                                <a>
                                     <div className='routine'>
                                     <h4>{routine.routine_name}</h4>
                                     <div>
                                         <h4>{routine.routine_description}</h4>
                                     </div>
                                 </div>
-                                </a>
-                                
                             )
                         })}
-                    </div>
+                    </a>
             </div>
         )
     }

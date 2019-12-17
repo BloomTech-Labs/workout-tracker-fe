@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import './Routines';
-import { getRoutines, getExercises } from '../../Action/Action.js'
-import { connect } from 'react-redux';
+import './Routines.css';
 
-class ChosenRoutine extends Component {
+export default class ChosenRoutine extends Component {
 
     constructor(props) {
         super(props)
@@ -13,39 +11,33 @@ class ChosenRoutine extends Component {
         }
     }
 
-    componentDidMount() {
-        this.props.getRoutines();
-        this.props.getExercises()
-    }
-
     render() {
         return(
             <div className='chosen-routine-container'>
-                <h2>{this.props.routines.routine_name}</h2>
+                <h2>Exercises</h2>
                 <div className='exercises'>
-                    {this.props.exercises.map((routine) => {
-                         return (
-                            <h4>Test Exercise</h4>
-                        )
-                    })}
+                    <div className='exercise'>
+                        <h3>UpperBody</h3>
+                        <div className ='exercise-list'>
+                            <h4>Bench Press</h4>
+                            <h4>Incline Bench Press</h4>
+                            <h4>Push Ups</h4>
+                            <h4>Bar Raises</h4>
+                            <h4>Butterfly Raises</h4>
+                        </div>
+                    </div>
+                    <div className='exercise'>
+                        <h3>Core</h3>
+                        <div>
+                            <h4>Sit Ups</h4>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-
-    return {
-        routines: state.routines,
-        exercises: state.exercises
-    }
-}
-
-const mapDispatchToProps = {
-    getRoutines,
-    getExercises
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChosenRoutine);

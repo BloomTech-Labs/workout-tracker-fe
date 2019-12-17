@@ -12,10 +12,8 @@ export default class Routines extends Component {
                 <Router>
                     <Route path='/routines' exact render={(props) => <SelectRoutine {...props} />}/>
                     
-                    <Route path='/routines/:id' exact render={(props) => <ChosenRoutine {...props} />}/>
+                    <Route path='/routines/exercises' exact render={(props) => <ChosenRoutine {...props} />}/>
                 </Router>
-                
-                    <ChosenRoutine />
             </div>
         )
     }

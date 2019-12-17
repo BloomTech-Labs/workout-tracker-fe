@@ -29,9 +29,7 @@ class UserInfo extends Component {
                                 <h3>Squat Max: {this.props.users.squat_max}</h3>
                             </div>
                             <div className='see-more'>
-                            <Link to ='/profile-info' >
-                                <button className='see-more-button'>See More</button> 
-                            </Link>       
+                                <a className='see-more-button' href='profile-info'>See More</a>     
                             </div>        
                         </div>
             </div>
