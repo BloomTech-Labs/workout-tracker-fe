@@ -28,8 +28,21 @@ export default class ChosenRoutine extends Component {
                     </div>
                     <div className='exercise'>
                         <h3>Core</h3>
-                        <div>
+                        <div className ='exercise-list'>
                             <h4>Sit Ups</h4>
+                            <h4>Torture Twists</h4>
+                            <h4>Planks</h4>
+                            <h4>Flutter Kicks</h4>
+                        </div>
+                    </div>
+                    <div className='exercise'>
+                        <h3>Lower Body</h3>
+                        <div className ='exercise-list'>
+                            <h4>Squats</h4>
+                            <h4>Leg Curls</h4>
+                            <h4>Leg Extensions</h4>
+                            <h4>Wall Sits</h4>
+                            <h4>Leg Press</h4>
                         </div>
                     </div>
                     

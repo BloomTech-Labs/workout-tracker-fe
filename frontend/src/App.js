@@ -30,8 +30,9 @@ class App extends React.Component {
         <Route path='/profile' exact render={(props) => <Profile />}/>
 
         {/*Routines*/}
-        <Route path='/routines' exact render={(props) => <Routines {...props} />}/>
-        
+        {/* <Route path='/routines' exact render={(props) => <Routines {...props} />}/> */}
+        <Routines />
+
         {/* Footer */}
         <div className='footer'>
 

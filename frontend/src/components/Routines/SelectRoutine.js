@@ -22,7 +22,7 @@ class SelectRoutine extends Component {
             //Routines Route
             <div className='select-routine-container'>
                 <h2>Routines</h2>
-                    <a className='routines' href='/routines/exercises'>
+                    <a className='routines' href='/exercises'>
                         {/* Displays Each Routine*/}
                         {this.props.routines.map((routine) => {
                             return (

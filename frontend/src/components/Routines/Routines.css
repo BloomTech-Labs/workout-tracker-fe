@@ -1,3 +1,4 @@
+/* Routines ---------------------------------------*/
 .routine {
     border: 2px solid black;
     margin: 10px;
@@ -27,4 +28,27 @@ h2 {
 .select-routine-container a{
     width: 100%;
     height: 100%;
+}
+
+/* Exercises ---------------------------------------*/
+
+.exercise {
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(65, 90, 139);
+    border: 2px solid black
+}
+
+.exercises h3 {
+    color: white;
+}
+
+.exercises h4 {
+    color: white
+}
+
+.exercise-list {
+    width: 100%;
+    border-top: 2px solid black;
 }
