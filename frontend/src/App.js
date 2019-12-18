@@ -15,15 +15,9 @@ function App() {
               <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet" />
       <Router>
         <Router>
-          <Switch>
-            <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
-            <Route
-              path="/profile"
-              exact
-              render={props => <Profile {...props} />}
-            />
-            {/* Nav Bar */}
-            <nav className='top-nav'>
+          {/* Nav Bar */}
+          <Route path='/'>
+          <nav className='top-nav'>
               <a href='/'>
                 <div className='logo' />
               </a>
@@ -32,6 +26,20 @@ function App() {
               <a href='/routines'>Routines</a>
               <a href='/profile'>Profile</a>
             </nav>
+          </Route>
+          
+          <Switch>
+            <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
+            <Route
+              path="/profile"
+              exact
+              render={props => <Profile {...props} />}
+            />
+
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
+
+            
 
             {/*Routines*/}
             <Routines />
@@ -40,8 +48,7 @@ function App() {
             <div className='footer'>
             </div>
 
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/login" component={Login} />
+            
           </Switch>
         </Router>
       </Router>

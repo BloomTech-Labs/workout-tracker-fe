@@ -4,7 +4,6 @@ const initialState = {
     users: [],
     routines: [],
     routine_exercises: [],
-    exercises: [],
     fetchingUser: false,
     fetchingRoutines: false,
     error: null,

@@ -59,3 +59,8 @@ nav a {
   color: white;
   -webkit-text-stroke: 1px black;
 }
+
+
+.flex-center {
+  width: 100%;
+}
