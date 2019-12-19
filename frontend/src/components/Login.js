@@ -27,7 +27,7 @@ const Login = props => {
   };
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <SignupStyle>
         <div className="form-container">
           <div>

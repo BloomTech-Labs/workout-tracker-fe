@@ -1,54 +1,47 @@
-import React, { Component } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
-import { getUser } from "../../Action/Action.js";
+import React, { useState } from "react";
+import { getMembers } from "../../actions";
 import { connect } from "react-redux";
-
 import "./Profile.css";
-
-class UserInfo extends Component {
+import axios from "axios";
+class Test extends React.Component {
   constructor(props) {
     super(props);
-
-    this.setState = {
-      newUser: this.props.users
+    this.state = {
+      users: []
     };
   }
-
   componentDidMount() {
-    this.props.getUser();
+    axios
+      .get("https://firstrep.herokuapp.com/api/members")
+      .then(response => {
+        console.log(response);
+        this.setState({ users: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
-
   render() {
     return (
-      <div className="user-info-container">
-        <div className="user-info">
-            {console.log('user props', this.props)}
-          <h3>Name: {this.props.first_name}</h3>
-          <div className="user-info-wrapper">
-            <h3>Weight: </h3>
-            <h3>Workout Streak: </h3>
-            <h3>Bench Max: </h3>
-            <h3>Squat Max: </h3>
-          </div>
-          <div className="see-more">
-            <Link to="/profile-info">
-              <button className="see-more-button">See More</button>
-            </Link>
-          </div>
+      <div className='user-info-container'>
+            {this.state.users.map(a => (
+            <div className='user-info' key={a.id}>
+                <h3>Name: {a.first_name}</h3>
+                <div className='user-info-wrapper'>
+                    <h3>Weight: {this.props.weight} </h3>
+                    <h3>Bench Max: {this.props.bench_max}</h3>
+                    <h3>Squat Max: {this.props.squat_max}</h3>
+                </div>
+                <div className='see-more'>
+                    <a className='see-more-button' href='profile-info'>See More</a>     
+                </div> 
+                </div>
+                ))}       
         </div>
-      </div>
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    users: state.users
-  };
-};
-
-const mapDispatchToProps = {
-  getUser
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);
+const mapStateToProps = state => ({
+  allMembers: state.members
+});
+export default connect(mapStateToProps, { getMembers })(Test);
