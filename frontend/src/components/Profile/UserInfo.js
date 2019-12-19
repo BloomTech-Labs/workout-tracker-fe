@@ -10,7 +10,7 @@ class UserInfo extends Component {
     super(props);
 
     this.setState = {
-      newUser: this.props.users[0]
+      newUser: this.props.users
     };
   }
 
@@ -22,7 +22,8 @@ class UserInfo extends Component {
     return (
       <div className="user-info-container">
         <div className="user-info">
-          <h3>Name: {this.props.users.first_name}</h3>
+            {console.log('user props', this.props)}
+          <h3>Name: {this.props.first_name}</h3>
           <div className="user-info-wrapper">
             <h3>Weight: </h3>
             <h3>Workout Streak: </h3>
