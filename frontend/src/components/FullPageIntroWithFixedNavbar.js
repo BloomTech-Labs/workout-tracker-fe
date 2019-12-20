@@ -43,36 +43,10 @@ class FullPageIntroWithFixedNavbar extends React.Component {
   render() {
     return (
       <div>
-      <NavBarStyle/>
+
         <header>
           <Router>
-            { <MDBNavbar color="elegant" dark expand="md" fixed="top">
-              <MDBNavbarBrand href="#">
-                <strong>Navbar</strong>
-              </MDBNavbarBrand>
-              {!this.state.isWideEnough && (
-                <MDBNavbarToggler onClick={this.onClick} />
-              )}
-              <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left>
-                  <MDBNavItem active>
-                    <MDBNavLink to="/">Home</MDBNavLink>
-                  </MDBNavItem>
-                
-                  <MDBNavItem>
-                    <MDBNavLink to="/aboutus">About Us</MDBNavLink>
-                  </MDBNavItem>
-                </MDBNavbarNav>
-                <MDBNavbarNav right>
-                  <MDBNavItem active>             
-                  <MDBNavLink to="/login">Login</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/Signup">Signup</MDBNavLink>
-                  </MDBNavItem>
-                </MDBNavbarNav>
-              </MDBCollapse>
-            </MDBNavbar> }
+           
           </Router>
           <MDBView src="https://images.unsplash.com/photo-1500856056008-859079534e9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80">
             <MDBMask
