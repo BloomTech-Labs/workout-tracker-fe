@@ -1,36 +1,36 @@
-import { FETCHING, FETCHING_SUCCESS, FETCHING_FAILED } from '../Action/Action.js'
+import { EXERCISE_RECORD, EXERCISE_RECORD_SUCCESS, EXERCISE_RECORD_FAILED } from '../actions/index'
 
 const initialState = {
-    users: [],
-    fetchingUser: false,
+    exercises: [],
+    fetchingExercises: false,
     error: null,
 }
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {
+
         case FETCHING:
             return {
                 ...state,
-                fetchingUsers: true,
+                fetchingExercises: true,
                 error: null,
             }
+
         case FETCHING_SUCCESS:
-            
             return {
                 ...state,
-                fetchingUsers: false,
+                fetchingExercises: false,
                 error: null,
-                users: action.payload,
+                exercises: action.payload,
 
             }
         case FETCHING_FAILED:
             return {
                 ...state,
-                fetchingUser: false,
+                fetchingExercises: false,
                 error: action.payload
             
             }
-
         default:
             return state
     }
