@@ -33,7 +33,7 @@ class App extends React.Component {
           </nav>
 
         {/*Profile*/}
-        <Route path='/profile/:id' exact render={(props) => <Profile {...props} />}/>
+        {/* <Route path='/profile/:id' exact render={(props) => <Profile {...props} />}/> */}
         <Route path='/profile' exact render={(props) => <Profile />}/>
 
         {/*Routines*/}
