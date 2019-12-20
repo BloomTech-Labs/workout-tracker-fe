@@ -8,10 +8,10 @@ const AboutUsStyleSection = styled.div`
   }
   .container .member-section {
     width: 50%;
-    height: 600px;
+    height: 400px;
     display: flex;
     padding-top: 100px;
-    padding-right: 15px;
+    padding-right: 30px;
   }
   .container .member-section .member-image img {
     border-radius: 50%;
@@ -23,10 +23,10 @@ const AboutUsStyleSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 200px;
+    height: 160px;
   }
   .container .member-section .member-name h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 1000;
   } 
   .container .member-section .member-name h2 {
@@ -38,8 +38,7 @@ const AboutUsStyleSection = styled.div`
   .container .member-section p {
     width: 60%;
     padding-top: 100px;
-    padding-left: 30px;
-    font-size: 1rem;
+    font-size: 0.8rem;
   } 
 `;
 
