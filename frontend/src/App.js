@@ -8,7 +8,6 @@ import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
 
-import Profile from './components/Profile/Profile.js';
 import Routines from './components/Routines/Routines.js';
 
 
@@ -33,7 +32,7 @@ class App extends React.Component {
           </nav>
 
         {/*Profile*/}
-        {/* <Route path='/profile/:id' exact render={(props) => <Profile {...props} />}/> */}
+        <Route path='/profile/:id' exact render={(props) => <Profile {...props} />}/>
         <Route path='/profile' exact render={(props) => <Profile />}/>
 
         {/*Routines*/}
@@ -52,3 +51,5 @@ class App extends React.Component {
   );
 }
 }
+
+export default App;
