@@ -39,7 +39,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       <div>
         <header>
           <Router>
-            <MDBNavbar color="elegant" dark expand="md" fixed="top">
+            {/* <MDBNavbar color="elegant" dark expand="md" fixed="top">
               <MDBNavbarBrand href="#">
                 <strong>Navbar</strong>
               </MDBNavbarBrand>
@@ -59,7 +59,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
-            </MDBNavbar>
+            </MDBNavbar> */}
           </Router>
           <MDBView src="https://images.unsplash.com/photo-1500856056008-859079534e9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80">
             <MDBMask

@@ -1,50 +1,47 @@
-import React, { Component } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
-import { getUser } from "../../Action/Action.js";
+import React, { useState } from "react";
+import { getMembers } from "../../actions";
 import { connect } from "react-redux";
-
 import "./Profile.css";
-
-class UserInfo extends Component {
-    constructor(props) {
-        super(props)
-
-        this.setState = {
-            newUser: this.props.users
-        }
-    }
-
-    componentDidMount() {
-        this.props.getUser()
-    }
-    
-    render() {
-        return(
-            <div className='user-info-container'>
-                        <div className='user-info'>
-                            <h3>Name: {this.props.users.first_name}</h3>
-                            <div className='user-info-wrapper'>
-                                <h3>Weight: {this.props.users.weight} </h3>
-                                <h3>Bench Max: {this.props.users.bench_max}</h3>
-                                <h3>Squat Max: {this.props.users.squat_max}</h3>
-                            </div>
-                            <div className='see-more'>
-                                <a className='see-more-button' href='profile-info'>See More</a>     
-                            </div>        
-                        </div>
-            </div>
-        )
-    }
+import axios from "axios";
+class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    };
+  }
+  componentDidMount() {
+    axios
+      .get("https://firstrep.herokuapp.com/api/members", "https://firstrep.herokuapp.com/api/memberstatus")
+      .then(response => {
+        console.log(response);
+        this.setState({ users: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+  render() {
+    return (
+      <div className='user-info-container'>
+            {this.state.users.map(a => (
+            <div className='user-info' key={a.id}>
+                <h3>Name: {a.first_name}</h3>
+                <div className='user-info-wrapper'>
+                    <h3>Weight: {a.weight} </h3>
+                    <h3>Bench Max: {this.props.bench_max}</h3>
+                    <h3>Squat Max: {this.props.squat_max}</h3>
+                </div>
+                <div className='see-more'>
+                    <a className='see-more-button' href='profile-info'>See More</a>     
+                </div> 
+                </div>
+                ))}       
+        </div>
+    );
+  }
 }
-
-const mapStateToProps = state => {
-  return {
-    users: state.users
-  };
-};
-
-const mapDispatchToProps = {
-  getUser
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);
+const mapStateToProps = state => ({
+  allMembers: state.members
+});
+export default connect(mapStateToProps, { getMembers })(Test);
