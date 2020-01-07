@@ -11,7 +11,6 @@ function AvoutUs(props) {
 
         <AboutUsStyleSection>
 
-        
         <div class="container">
             <div class='member-section'>
                 <div class='member-header'>
