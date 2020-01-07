@@ -185,7 +185,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
           </MDBView>
           <MDBCarouselCaption>
             <h3 className="h3-responsive">Notification System</h3>
-            <p>Third text</p>
+            <p>Get notifications on your mobile.</p>
           </MDBCarouselCaption>
         </MDBCarouselItem>
       </MDBCarouselInner>

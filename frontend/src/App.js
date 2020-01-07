@@ -27,6 +27,7 @@ function App() {
               <a href='/'>Home</a>
               <a href='/routines'>Routines</a>
               <a href='/profile'>Profile</a>
+              <a href='/aboutus'>About Us</a>
             </nav>
           </Route>
           
