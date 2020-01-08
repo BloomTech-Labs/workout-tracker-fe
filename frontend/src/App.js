@@ -37,14 +37,12 @@ function App() {
               render={props => <Profile {...props} />}
             />
             <Route path="/profile-info" component={MoreInfo} />
-
+            </Switch>
         {/*Routines*/}
         {/* <Route path='/routines' exact render={(props) => <Routines {...props} />}/> */}
-        <Routines />
+        
 
-        {/* Footer */}
-        <div className='footer'>
-        </div>
+       
         
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
@@ -59,7 +57,7 @@ function App() {
             </div>
 
             
-          </Switch>
+          
           </Router>
         </Router>
     </div>
