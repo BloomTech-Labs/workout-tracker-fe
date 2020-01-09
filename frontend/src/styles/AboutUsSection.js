@@ -39,7 +39,10 @@ const AboutUsStyleSection = styled.div`
     width: 60%;
     padding-top: 100px;
     font-size: 0.8rem;
-  } 
+  }
+  .cBtAXH {
+    height: 16%
+  }
 `;
 
 export default AboutUsStyleSection;

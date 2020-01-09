@@ -38,9 +38,6 @@ class Navbar extends React.Component {
           {!this.state.isWideEnough && (
             <MDBNavbarToggler onClick={this.onClick} />
           )}
-          <a href='/'>
-            <div className='logo' />
-          </a>
           <MDBCollapse isOpen={this.state.collapse} navbar>
             <MDBNavbarNav left>
               <MDBNavItem active>

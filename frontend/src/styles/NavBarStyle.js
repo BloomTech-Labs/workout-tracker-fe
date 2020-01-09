@@ -70,9 +70,6 @@ const NavBarStyle = styled.div`
     margin-bottom: 10px;
   }
 
-  logo {
-    height: 40vmin;
-}
 `;
 
 export default NavBarStyle;
