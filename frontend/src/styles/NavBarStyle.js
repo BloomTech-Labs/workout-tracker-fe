@@ -69,6 +69,10 @@ const NavBarStyle = styled.div`
     text-transform: uppercase;
     margin-bottom: 10px;
   }
+
+  logo {
+    height: 40vmin;
+}
 `;
 
 export default NavBarStyle;

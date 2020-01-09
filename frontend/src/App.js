@@ -10,6 +10,7 @@ import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from './components/Routines/Routines.js';
+import NavBar from './components/Navbar'
 
 function App() {
   return (
@@ -18,18 +19,9 @@ function App() {
       <Router>
         <Router>
           {/* Nav Bar */}
-          <Route path='/'>
-          <nav className='top-nav'>
-              <a href='/'>
-                <div className='logo' />
-              </a>
-              <h1>First Rep</h1>
-              <a href='/'>Home</a>
-              <a href='/routines'>Routines</a>
-              <a href='/profile'>Profile</a>
-              <a href='/aboutus'>About Us</a>
-            </nav>
-          </Route>
+
+
+          <NavBar/>
           
           <Switch>
             <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
