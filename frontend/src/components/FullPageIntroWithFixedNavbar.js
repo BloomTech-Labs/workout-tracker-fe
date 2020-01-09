@@ -43,11 +43,10 @@ class FullPageIntroWithFixedNavbar extends React.Component {
   render() {
     return (
       <div>
-
+<NavBarStyle/>
         <header>
           <Router>
-           <NavBarStyle>
-           </NavBarStyle>
+      
           </Router>
           <MDBView src="https://images.unsplash.com/photo-1500856056008-859079534e9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80">
             <MDBMask
