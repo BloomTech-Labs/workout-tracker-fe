@@ -191,8 +191,19 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       </MDBCarouselInner>
     </MDBCarousel>
     </MDBContainer>
-    </FeaturesStyleSection>
-      </div>
+    
+    <div className='container'>
+    <p align="justify">
+      The FitnessBliss fitness web app lets you create, print, track and chart workout routines on your own.
+      By giving you access to powerful workout routines creation tools and a huge exercise database, FitnessBliss
+      will enable you to take control of your workouts by letting you create effective workout routines. 
+      Whether you are using the target muscle workout routine wizard or one of the many pre-built workout routines 
+      for sports or specific body areas, you are sure to find a way to create workout routines that work for you.
+      </p>      
+    </div>
+
+      </FeaturesStyleSection>
+    </div>
     );
   }
 }
