@@ -10,18 +10,23 @@
 
 .container-div{
   padding-top: 50px;
+  display: flex;
+  flex-flow: column;
+  text-align-last: right;
 }
 
 .container-app {
   display: flex;
+  padding-top: 30px;
 }
 
 .container-app p {
-  max-width: 500px;
+  font-size: 18px;
 }
 
 .container h1 {
-  max-width: 500px
+  font-size: 45px;
+  color: yellow;
 }
 
 .container-app img{
