@@ -71,14 +71,41 @@ class FullPageIntroWithFixedNavbar extends React.Component {
         </header>
 
         <main>
-          <MDBContainer className="text-center my-5">
-            <p align="justify" className='first-tittle'>
-            Starting an exercise routine is never easy, especially when you don't know from where to begin.  It's always frustrating when you put an effort 
-            to something but you're not confident about what you're doing and therefore not seeing results. Being able to have an app that you can trust on 
-            instructions and workout plans is essential.
-            </p>
+          <MDBContainer className="text-center my-5 container-div">
+          <div className='container-app'>
+            <img className='first-image'
+              src="https://connect.garmin.com/static/screen-phone-myday-717fec02a4d8eea2690241774363b357.png"
+            />   
+            <div>
+              <h1 className='first-p'>Let the gains begin</h1>
+              <p align="justify" className='first-tittle'>
+              Starting an exercise routine is never easy, especially when you don't know from where to begin.  It's always frustrating when you put an effort 
+              to something but you're not confident about what you're doing and therefore not seeing results. Being able to have an app that you can trust on 
+              instructions and workout plans is essential.
+              </p>
+            </div>
+          </div>
           </MDBContainer>
         </main>
+
+        
+      <div className='container container-div'>
+      <div className='container-app'>
+        <div>
+          <h1>First Rep is an app that lets you create and manage workout routines.</h1>
+          <p align="justify" className='about-app'>
+            First Rep workout app lets you create, print, track and chart workout routines on your own.
+            By giving you access to powerful workout routines creation tools and a huge exercise database, First Rep
+            will enable you to take control of your workouts by letting you create effective workout routines. 
+            Whether you are using the target muscle workout routine or one of the many pre-built workout routines 
+            for sports or specific body areas, you are sure to find a way to create workout routines that work for you.
+            </p> 
+        </div>
+        <img className='second-image'
+          src="https://connect.garmin.com/static/screen-phone-myday-717fec02a4d8eea2690241774363b357.png"
+        />       
+      </div>
+      </div>
 
         <FeaturesStyleSection>
     <MDBContainer>
@@ -89,7 +116,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       showIndicators={true}
       className="z-depth-1"
     >
-      <MDBCarouselInner>
+      <MDBCarouselInner className='caroussel'>
         <MDBCarouselItem itemId="1">
           <MDBView>
             <img
@@ -191,25 +218,6 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       </MDBCarouselInner>
     </MDBCarousel>
     </MDBContainer>
-    
-    <div className='container container-div'>
-      <div className='container-app'>
-        <div>
-          <h1>First Rep is an app that lets you create and manage workout routines.</h1>
-          <p align="justify" className='about-app'>
-            First Rep workout app lets you create, print, track and chart workout routines on your own.
-            By giving you access to powerful workout routines creation tools and a huge exercise database, First Rep
-            will enable you to take control of your workouts by letting you create effective workout routines. 
-            Whether you are using the target muscle workout routine or one of the many pre-built workout routines 
-            for sports or specific body areas, you are sure to find a way to create workout routines that work for you.
-            </p> 
-        </div>
-        <img
-          src="https://connect.garmin.com/static/screen-phone-myday-717fec02a4d8eea2690241774363b357.png"
-        />       
-      </div>
-    </div>
-
       </FeaturesStyleSection>
     </div>
     );

@@ -7,19 +7,32 @@
 
 .first-tittle {
   font-size: 18px;
+  text-align: left;
+}
+
+.first-p {
+  text-align: left;
+}
+
+.first-image{
+  padding-right: 90px;
+  height: 580px;
 }
 
 /* {Features} */
 .about-app {
   padding-top: 40px;
   padding-bottom: 40px;
+  font-size: 18px;
+  text-align: right;
 }
 
 .container-div{
   padding-top: 50px;
   display: flex;
   flex-flow: column;
-  text-align-last: right;
+  text-align: right;
+  max-width: 930px;
 }
 
 .container-app {
@@ -27,15 +40,12 @@
   padding-top: 30px;
 }
 
-.container-app p {
-  font-size: 18px;
-}
-
 .container h1 {
   font-size: 45px;
   color: yellow;
 }
 
-.container-app img{
+.second-image{
   padding-left: 90px;
+  height: 580px;
 }
