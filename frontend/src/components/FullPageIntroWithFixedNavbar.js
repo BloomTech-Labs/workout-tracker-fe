@@ -72,7 +72,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
 
         <main>
           <MDBContainer className="text-center my-5">
-            <p align="justify">
+            <p align="justify" className='first-tittle'>
             Starting an exercise routine is never easy, especially when you don't know from where to begin.  It's always frustrating when you put an effort 
             to something but you're not confident about what you're doing and therefore not seeing results. Being able to have an app that you can trust on 
             instructions and workout plans is essential.
