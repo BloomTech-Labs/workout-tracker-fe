@@ -71,17 +71,19 @@ class FullPageIntroWithFixedNavbar extends React.Component {
         </header>
 
         <main>
-          <MDBContainer className="text-center my-5 container-div">
+          <MDBContainer className="text-center my-5 first-div">
           <div className='container-app'>
             <img className='first-image'
-              src="https://connect.garmin.com/static/screen-phone-myday-717fec02a4d8eea2690241774363b357.png"
+              src="https://s3.images-iherb.com/blog/uploads/best-nutrition-habits-for-workout-recovery-large.jpg"
             />   
             <div>
-              <h1 className='first-p'>Let the gains begin</h1>
+              <h1 className='first-p'>Let the gains begin.</h1>
               <p align="justify" className='first-tittle'>
-              Starting an exercise routine is never easy, especially when you don't know from where to begin.  It's always frustrating when you put an effort 
-              to something but you're not confident about what you're doing and therefore not seeing results. Being able to have an app that you can trust on 
-              instructions and workout plans is essential.
+              <ul className='unorder-list'>
+                <li>Have you own Dashboard</li>
+                <li>Record your workout</li>
+                <li>Track your body status and training analytics</li>
+              </ul>
               </p>
             </div>
           </div>
@@ -108,7 +110,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       </div>
 
         <FeaturesStyleSection>
-    <MDBContainer>
+    <MDBContainer className='caroussel'>
       <MDBCarousel
       activeItem={1}
       length={7}
@@ -116,7 +118,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       showIndicators={true}
       className="z-depth-1"
     >
-      <MDBCarouselInner className='caroussel'>
+      <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
           <MDBView>
             <img

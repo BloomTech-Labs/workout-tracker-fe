@@ -15,15 +15,26 @@
 }
 
 .first-image{
-  padding-right: 90px;
-  height: 580px;
+  padding-right: 45px;
+  height: 360px;
 }
 
-/* {Features} */
+.first-div{
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+  max-width: 930px;
+}
+
+.unorder-list li{
+  font-size: 20px;
+}
+
+/* {second tittle} */
 .about-app {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-size: 18px;
+  font-size: 20px;
   text-align: right;
 }
 
@@ -48,4 +59,11 @@
 .second-image{
   padding-left: 90px;
   height: 580px;
+}
+
+/* {caroussel} */
+
+.caroussel {
+  padding-top: 60px;
+  padding-bottom: 50px;
 }
