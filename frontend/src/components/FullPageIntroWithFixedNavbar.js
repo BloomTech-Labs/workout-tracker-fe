@@ -221,7 +221,13 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     </MDBCarousel>
     </MDBContainer>
       </FeaturesStyleSection>
+      <div>
+        <footer>
+        <p className='footer-copyright'>Copyright © 2020 LambdaSchool. All Rights Reserved.</p>
+        </footer>
+      </div>
     </div>
+    
     );
   }
 }

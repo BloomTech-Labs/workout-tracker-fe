@@ -53,7 +53,7 @@ function AvoutUs(props) {
         </AboutUsStyleSection>
 
         <AboutUsStyleSection>
-        <div class="container">
+        <div class="container members-second-section">
             <div class='member-section'>
                 <div class='member-header'>
                     <div class='member-image'>
@@ -94,30 +94,6 @@ function AvoutUs(props) {
             </div>
         </AboutUsStyleSection>
 
-        <AboutUsStyleSection>
-        <div class="container">
-            
-
-            <div class='member-section'>
-                <div class='member-header'>
-                    <div class='member-image'>
-                        <img src='https://avatars1.githubusercontent.com/u/33002159?s=400&v=4'/>
-                    </div>
-                    <div class='member-name'>
-                        <h1>Bharath Lavendra</h1>
-                        <h2>Developer</h2>
-                    </div>
-                    <div class='member-social'>
-                        <a src='https://github.com/WayneMitt' title='GitHub'>
-                            <image src='img/github.png' class='github'/>
-                        </a>
-                    </div>
-                </div>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                reprehenderit in voluptate velit esse cillum dolore eu fugiatt</p>
-            </div>
-        </div>
-        </AboutUsStyleSection>
 
     </div>
     )

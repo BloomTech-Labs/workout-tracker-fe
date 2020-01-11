@@ -43,6 +43,9 @@ const AboutUsStyleSection = styled.div`
   .cBtAXH {
     height: 16%
   }
+  .members-second-section{
+    height: 500px;
+  }
 `;
 
 export default AboutUsStyleSection;

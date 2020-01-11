@@ -67,3 +67,12 @@
   padding-top: 60px;
   padding-bottom: 50px;
 }
+
+/* {Footer} */
+
+.footer-copyright {
+  background-color: #222;
+  height: 80px;
+  padding-top: 8px;
+  text-align: center;
+}
