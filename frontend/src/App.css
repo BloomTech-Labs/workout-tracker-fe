@@ -7,3 +7,23 @@
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+.container-div{
+  padding-top: 50px;
+}
+
+.container-app {
+  display: flex;
+}
+
+.container-app p {
+  max-width: 500px;
+}
+
+.container h1 {
+  max-width: 500px
+}
+
+.container-app img{
+  padding-left: 90px;
+}

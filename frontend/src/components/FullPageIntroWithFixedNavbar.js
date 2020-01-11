@@ -192,14 +192,22 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     </MDBCarousel>
     </MDBContainer>
     
-    <div className='container'>
-    <p align="justify" className='about-app'>
-      First Rep workout app lets you create, print, track and chart workout routines on your own.
-      By giving you access to powerful workout routines creation tools and a huge exercise database, First Rep
-      will enable you to take control of your workouts by letting you create effective workout routines. 
-      Whether you are using the target muscle workout routine or one of the many pre-built workout routines 
-      for sports or specific body areas, you are sure to find a way to create workout routines that work for you.
-      </p>      
+    <div className='container container-div'>
+      <div className='container-app'>
+        <div>
+          <h1>First Rep is an app that lets you create and manage workout routines.</h1>
+          <p align="justify" className='about-app'>
+            First Rep workout app lets you create, print, track and chart workout routines on your own.
+            By giving you access to powerful workout routines creation tools and a huge exercise database, First Rep
+            will enable you to take control of your workouts by letting you create effective workout routines. 
+            Whether you are using the target muscle workout routine or one of the many pre-built workout routines 
+            for sports or specific body areas, you are sure to find a way to create workout routines that work for you.
+            </p> 
+        </div>
+        <img
+          src="https://connect.garmin.com/static/screen-phone-myday-717fec02a4d8eea2690241774363b357.png"
+        />       
+      </div>
     </div>
 
       </FeaturesStyleSection>
