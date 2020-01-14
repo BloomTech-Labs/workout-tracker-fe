@@ -22,6 +22,26 @@ export const EXERCISE_RECORD = 'EXERCISE_RECORD'
 export const EXERCISE_RECORD_SUCCESS = 'EXERCISE_RECORD_SUCCESS'
 export const EXERCISE_RECORD_FAILED = 'EXERCISE_RECORD_FAILED'
 
+export const FETCHING_STATUS = 'FETCHING_ROUTINES'
+export const FETCHING_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
+export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
+
+export const getStatuss = () => {
+  const promise = axios.get("http://firstrep.herokuapp.com/api/memberstatus");
+  console.log('this is the user', promise)
+  return dispatch => {
+    dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
+    promise
+      .then(response => {
+        dispatch({ type: FETCHING_STATUS_SUCCESS, payload: response.data }); // 2nd state of success is dispatched IF the promise resolves
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: FETCHING_STATUS_FAILED }); // our other 2nd state of 'rejected' will be dispatched here.
+      });
+  };
+};
+
 // export const getUser = () => dispatch => {
 //     dispatch({ type: FETCHING })
 //     axios
@@ -36,7 +56,7 @@ export const EXERCISE_RECORD_FAILED = 'EXERCISE_RECORD_FAILED'
 
 export const getMembers = () => dispatch => {
   axios
-    .get("https://firstrep.herokuapp.com/api/members/1")
+    .get("https://firstrep.herokuapp.com/api/members")
     .then(res =>
       dispatch({
         type: GET_MEMBERS,

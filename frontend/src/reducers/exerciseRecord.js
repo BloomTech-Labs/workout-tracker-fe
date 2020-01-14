@@ -1,4 +1,3 @@
-<<<<<<< HEAD:frontend/src/Reducer/Reducer.js
 import { FETCHING, FETCHING_SUCCESS, FETCHING_FAILED, FETCHING_ROUTINES, FETCHING_ROUTINES_SUCCESS, FETCHING_ROUTINES_FAILED, FETCHING_EXERCISES,FETCHING_EXERCISES_SUCCESS, FETCHING_EXERCISES_FAILED } from '../Action/Action.js'
 
 const initialState = {
@@ -8,13 +7,6 @@ const initialState = {
     exercises: [],
     fetchingUser: false,
     fetchingRoutines: false,
-=======
-import { EXERCISE_RECORD, EXERCISE_RECORD_SUCCESS, EXERCISE_RECORD_FAILED } from '../actions/index'
-
-const initialState = {
-    exercises: [],
-    fetchingExercises: false,
->>>>>>> d985a64f7a80dfa36176819e26577de2a5de9cd7:frontend/src/reducers/exerciseRecord.js
     error: null,
 }
 
@@ -43,7 +35,6 @@ export default function reducer(state = initialState, action) {
                 error: action.payload
             
             }
-<<<<<<< HEAD:frontend/src/Reducer/Reducer.js
 
         case FETCHING_ROUTINES:
             return {
@@ -91,8 +82,6 @@ export default function reducer(state = initialState, action) {
             
             }
 
-=======
->>>>>>> d985a64f7a80dfa36176819e26577de2a5de9cd7:frontend/src/reducers/exerciseRecord.js
         default:
             return state
     }

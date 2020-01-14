@@ -1,70 +1,39 @@
 import React, { useState, useEffect } from "react"
-import Axios from "axios"
+import axios from "axios"
+import { render } from "react-dom"
 
 function Account(props) {
-    const [user, setUser] = useState({
-        id: '',
-        first_name: '',
-        last_name: '',
+    const [data, setData] = useState([{}]);
 
-    })
-
-    const [userStats, setUserStats] = useState({
-        member_id: '',
-        weight: '',
-        height: '',
-        bmi: '',
-        bench_max: '',
-        squat_max: '',
-        mile_time: '',
-        exercise_date: '',
-    })
 
     useEffect(() => {
-        const id = user.id;
-        Axios
-            .get(`https://firstrep.herokuapp.com/api/members/6`)
-            .then(res => {
-                setUser({
-                    firstName: res.data.first_name,
-                    lastName: res.data.last_name
-                })
-            })
-            .catch(err => {
-                console.log(err)
-            })
-
-            Axios
-            .get(`https://firstrep.herokuapp.com/api/memberstatus/6`)
-            .then(res => {
-                setUserStats({
-                    weight: res.data.weight,
-                    height: res.data.height,
-                    BMI: res.data.bmi,
-                    benchMax: res.data.bench_max,
-                    squatMax: res.data.squat_max,
-                    mileTime: res.data.mile_time,
-                    exerciseDate: res.data.exercise_date,
-                })
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    })
+        const fetchData = async () => {
+          const result = await axios("http://localhost:4000/api/members");
+          setData(result.data);
+        };
+        fetchData();
+      }, []);
+    
 
     return (
-        <div className='user-info-container'>
-            <div className='user-info' key={user.id}>
-                <h3>Name: {user.firstName}</h3>
-                <div className='user-info-wrapper'>
-                    <h3>Weight: {userStats.weight} </h3>
-                    <h3>Bench Max: {userStats.benchMax}</h3>
-                    <h3>Squat Max: {userStats.squatMax}</h3>
-                    <h3>Height: {userStats.height}</h3>
-                    <h3>Body Mass Percentage: {userStats.BMI}</h3>
-                    <h3>Mile Time: {userStats.mileTime}</h3>
-                </div>
-            </div>    
+        <div className='user-info-container' key='user'>
+            {data.map(a => (
+                <div className='user-info' key={a.id}>
+                    <h3>Name: {a.firstName}</h3>
+                    <div className='user-info-wrapper' key={a.member_id}>
+                        <h3>Weight: {a.weight} </h3>
+                        <h3>Bench Max: {a.benchMax}</h3>
+                        <h3>Squat Max: {a.squatMax}</h3>
+                        <h3>Height: {a.height}</h3>
+                        <h3>Body Mass Percentage: {a.BMI}</h3>
+                        <h3>Mile Time: {a.mileTime}</h3>
+                    </div>
+                    <div className='see-more'>
+                        <a className='see-more-button' href='profile-info'>See More</a>     
+                    </div> 
+                </div>   
+            ))}
+             
         </div>
     )
 }

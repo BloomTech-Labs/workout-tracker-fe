@@ -11,8 +11,8 @@ export default class Profile extends Component {
   render() {
     return (
       <div className="profile-container">
-        {/* <UserInfo /> */}
-        <MemberProfile />
+        <UserInfo />
+        {/* <MemberProfile /> */}
         <ProgressGraph />
         <CaloriesGraph />
         
