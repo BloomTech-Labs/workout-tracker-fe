@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SignupStyle = styled.div`
-  height: 800px;
+  height: 100%;
   background-color: rgb(76, 92, 150);
   background-color: rgb(46, 49, 65);
   background-image: linear-gradient(to top, #2c2c54, rgb(76, 92, 150));
