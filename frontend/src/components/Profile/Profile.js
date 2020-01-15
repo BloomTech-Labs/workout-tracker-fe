@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"; 
 import "./Profile.css";
 import UserInfo from "./UserInfo.js";
 import ProgressGraph from "./ProgressGraph.js";
