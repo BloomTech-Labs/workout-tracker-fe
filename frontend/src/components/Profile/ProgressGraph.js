@@ -6,27 +6,23 @@ import "./Profile.css";
 class ChartsPage extends React.Component {
   state = {
     dataBar: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
       datasets: [
         {
-          label: "Days",
-          data: [2, 3, 7, 1, 0, 0],
+          label: "First Month",
+          data: [2, 3, 6, 7],
           backgroundColor: [
             "rgba(255, 134,159,0.4)",
             "rgba(98,  182, 239,0.4)",
             "rgba(255, 218, 128,0.4)",
-            "rgba(113, 205, 205,0.4)",
-            "rgba(170, 128, 252,0.4)",
-            "rgba(255, 177, 101,0.4)"
+            "rgba(113, 205, 205,0.4)"
           ],
           borderWidth: 2,
           borderColor: [
             "rgba(255, 134, 159, 1)",
             "rgba(98,  182, 239, 1)",
             "rgba(255, 218, 128, 1)",
-            "rgba(113, 205, 205, 1)",
-            "rgba(170, 128, 252, 1)",
-            "rgba(255, 177, 101, 1)"
+            "rgba(113, 205, 205, 1)"
           ]
         }
       ]
