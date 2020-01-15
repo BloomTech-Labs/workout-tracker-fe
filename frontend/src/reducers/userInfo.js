@@ -1,11 +1,15 @@
 import {
   FETCHING_STATUS,
   FETCHING_STATUS_SUCCESS,
-  FETCHING_STATUS_FAILED
+  FETCHING_STATUS_FAILED,
+  GET_MEMBERS
 } from "../actions/index";
+
+import { GetMembers } from '../actions/index';
 
 const initialState = {
   status: [],
+  member: [],
   fetchingStatus: false,
   error: null,
   loading: false
@@ -32,6 +36,14 @@ export default function reducer(state = initialState, action) {
         ...state,
         fetchingStatus: false,
         error: action.payload
+      };
+
+      case GET_MEMBERS:
+      return {
+        ...state,
+        fetchingStatus: true,
+        error: null,
+        loading: true
       };
     default:
       return state;

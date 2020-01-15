@@ -13,6 +13,7 @@ class Userinfo extends Component {
     this.props.getStatuss();
     this.props.getMembers();
   }
+  
   render() {
     if (this.props.loading) {
       return (
@@ -23,10 +24,11 @@ class Userinfo extends Component {
     } else
       return (
         <div>
-          {console.log("exercise is ", this.props.status)}
+          {console.log("status is ", this.props.status)}
+          {console.log('member is', this.props.member)}
           {this.props.status.map(a => (
             <div className='user-info' key={a.id}>
-            <h3>Name: {a.first_name}</h3>
+            <h3>Name: {this.props.member.first_name}</h3>
             <div className='user-info-wrapper' key={a.member_id}>
                 <h3>Weight: {a.weight} </h3>
                 <h3>Bench Max: {a.bench_max}</h3>
@@ -47,7 +49,8 @@ class Userinfo extends Component {
 const mapStateToProps = state => {
   console.log("this is mapstatetoprops stte ", state);
   return {
-    first_name: state.userInfo.first_name,
+    member: state.userInfo.member,
+    first_name: state.first_name,
     status: state.userInfo.status,
     weight: state.weight,
     height: state.height,

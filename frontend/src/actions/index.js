@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// export const FETCHING = 'FETCHING'
-// export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
-// export const FETCHING_FAILED = 'FETCHING_FAILED'
+export const FETCHING = 'FETCHING'
+export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
+export const FETCHING_FAILED = 'FETCHING_FAILED'
 
 export const GET_MEMBERS = 'GET_MEMBERS'
 
@@ -54,21 +54,20 @@ export const getStatuss = () => {
 //       })
 // }
 
-export const getMembers = () => dispatch => {
-  axios
-    .get("https://firstrep.herokuapp.com/api/members")
-    .then(res =>
-      dispatch({
-        type: GET_MEMBERS,
-        payload: res.data
+export const getMembers = () => {
+  const promise = axios.get("http://firstrep.herokuapp.com/api/members");
+  console.log('this is the member', promise)
+  return dispatch => {
+    dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched
+    promise
+      .then(response => {
+        dispatch({ type: FETCHING_SUCCESS, payload: response.data }); // 2nd state of success is dispatched IF the promise resolves
       })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_MEMBERS,
-        payload: null
-      })
-    );
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: FETCHING_FAILED }); // our other 2nd state of 'rejected' will be dispatched here.
+      });
+  };
 };
 
 export const getRoutines = () => dispatch => {
