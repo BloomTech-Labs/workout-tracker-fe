@@ -28,7 +28,7 @@ class ChartsPage extends React.Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [28, 48, 40, 19]
+          data: [28, 48, 40, 19],
         },
         {
           label: "Second Month",
