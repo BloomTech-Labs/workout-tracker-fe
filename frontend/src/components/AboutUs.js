@@ -8,7 +8,7 @@ function AvoutUs(props) {
 
     return (
     <div>
-
+        <Navbar />
         <AboutUsStyleSection>
         <NavBarStyle/>
         <div class="container">

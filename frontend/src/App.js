@@ -10,8 +10,6 @@ import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from './components/Routines/Routines.js';
-import NavBar from './components/Navbar';
-import ProfileNavbar from './components/Profile/ProfileNavBar'
 
 function App() {
   return (
@@ -20,8 +18,8 @@ function App() {
       <Router>
         <Router>
           {/* Nav Bar */}
-
-          <ProfileNavbar />
+          <div>
+          </div>
           
           <Switch>
           <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
@@ -31,7 +29,6 @@ function App() {
           render={props => <Profile {...props} />}
           />
           
-          <NavBar/>
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/features" component={Features} />
