@@ -6,7 +6,7 @@ import AboutUs from "./components/AboutUs";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Modal from "./components/Modal";
 import "./App.css";
-import Profile from "./components/Profile/Profile";
+import Graphs from "./components/Profile/Graphs";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from './components/Routines/Routines.js';
@@ -24,9 +24,9 @@ function App() {
           <Switch>
           <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
           <Route
-          path="/profile"
+          path="/graphs"
           exact
-          render={props => <Profile {...props} />}
+          render={props => <Graphs {...props} />}
           />
           
             <Route exact path="/signup" component={Signup} />
