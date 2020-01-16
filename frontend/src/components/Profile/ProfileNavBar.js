@@ -44,7 +44,7 @@ class ProfileNavbar extends React.Component {
                 <MDBNavLink to="/profile">Profile</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/aboutus">About Us</MDBNavLink>
+                <MDBNavLink to="/aboutus">Graphs</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
 
