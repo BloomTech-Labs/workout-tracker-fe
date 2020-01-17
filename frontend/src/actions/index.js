@@ -4,7 +4,7 @@ export const FETCHING = 'FETCHING'
 export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
 export const FETCHING_FAILED = 'FETCHING_FAILED'
 
-export const GET_MEMBERS = 'GET_MEMBERS'
+// export const GET_MEMBERS = 'GET_MEMBERS'
 
 export const FETCHING_ROUTINES = 'FETCHING_ROUTINES'
 export const FETCHING_ROUTINES_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
@@ -27,7 +27,7 @@ export const FETCHING_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
 export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
 
 export const getStatuss = () => {
-  const promise = axios.get("http://firstrep.herokuapp.com/api/memberstatus");
+  const promise = axios.get("http://localhost:4000/api/memberstatus");
   console.log('this is the user', promise)
   return dispatch => {
     dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
@@ -55,7 +55,7 @@ export const getStatuss = () => {
 // }
 
 export const getMembers = () => {
-  const promise = axios.get("http://firstrep.herokuapp.com/api/members");
+  const promise = axios.get("http://localhost:4000/api/members");
   console.log('this is the member', promise)
   return dispatch => {
     dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched

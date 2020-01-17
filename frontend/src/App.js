@@ -40,7 +40,7 @@ function App() {
             </Switch>
         {/*Routines*/}
         {/* <Route path='/routines' exact render={(props) => <Routines {...props} />}/> */}
-        
+        <Routines />
 
        
         

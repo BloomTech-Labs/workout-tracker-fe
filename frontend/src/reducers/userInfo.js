@@ -5,12 +5,13 @@ import {
   GET_MEMBERS
 } from "../actions/index";
 
-import { GetMembers } from '../actions/index';
+import { FETCHING, FETCHING_FAILED, FETCHING_SUCCESS } from '../actions/index';
 
 const initialState = {
   status: [],
   member: [],
   fetchingStatus: false,
+  fetchingMember: false,
   error: null,
   loading: false
 };
@@ -38,13 +39,27 @@ export default function reducer(state = initialState, action) {
         error: action.payload
       };
 
-      case GET_MEMBERS:
-      return {
-        ...state,
-        fetchingStatus: true,
-        error: null,
-        loading: true
-      };
+      case FETCHING:
+        return {
+          ...state,
+          fetchingMember: true,
+          error: null,
+          loading: true
+        }
+      case FETCHING_SUCCESS:
+        return {
+          ...state,
+          fetchingMember: false,
+          member: action.payload,
+          error: null,
+          loading: false
+        }
+      case FETCHING_FAILED:
+        return {
+          ...state,
+          fetchingMember: false,
+          error: action.payload
+        }
     default:
       return state;
   }

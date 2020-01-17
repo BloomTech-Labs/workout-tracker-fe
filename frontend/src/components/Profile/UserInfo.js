@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 import "../Routines/Routines.css";
-import { getRoutine } from "../../actions/index";
-import { getStatuss, getMembers } from "../../actions/index";
-import { connect } from "react-redux";
-import axios from "axios";
-import { get } from "https";
+
+import { getStatuss } from "../../actions/index";
+import { connect } from "react-redux"; 
+import MemberProfile from './MemberProfile'
+
 class Userinfo extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
     this.props.getStatuss();
-    this.props.getMembers();
+    
   }
   
   render() {
+
     if (this.props.loading) {
       return (
         <div>
@@ -25,10 +26,10 @@ class Userinfo extends Component {
       return (
         <div>
           {console.log("status is ", this.props.status)}
-          {console.log('member is', this.props.member)}
+          
           {this.props.status.map(a => (
             <div className='user-info' key={a.id}>
-            <h3>Name: {this.props.member.first_name}</h3>
+              <MemberProfile />
             <div className='user-info-wrapper' key={a.member_id}>
                 <h3>Weight: {a.weight} </h3>
                 <h3>Bench Max: {a.bench_max}</h3>
@@ -40,7 +41,7 @@ class Userinfo extends Component {
             <div className='see-more'>
                 <a className='see-more-button' href='profile-info'>See More</a>     
             </div> 
-        </div> 
+            </div>
           ))}
         </div>
       );
@@ -49,8 +50,6 @@ class Userinfo extends Component {
 const mapStateToProps = state => {
   console.log("this is mapstatetoprops stte ", state);
   return {
-    member: state.userInfo.member,
-    first_name: state.first_name,
     status: state.userInfo.status,
     weight: state.weight,
     height: state.height,
@@ -62,4 +61,4 @@ const mapStateToProps = state => {
     loading: state.loading
   };
 };
-export default connect(mapStateToProps, { getStatuss, getMembers })(Userinfo);
+export default connect(mapStateToProps, { getStatuss })(Userinfo);
