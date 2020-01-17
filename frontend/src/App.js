@@ -6,11 +6,10 @@ import AboutUs from "./components/AboutUs";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Modal from "./components/Modal";
 import "./App.css";
-import Profile from "./components/Profile/Profile";
+import Graphs from "./components/Profile/Graphs";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from './components/Routines/Routines.js';
-import NavBar from './components/Navbar'
 
 function App() {
   return (
@@ -19,18 +18,17 @@ function App() {
       <Router>
         <Router>
           {/* Nav Bar */}
-
-
-          <NavBar/>
+          <div>
+          </div>
           
           <Switch>
-            <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
-            <Route
-              path="/profile"
-              exact
-              render={props => <Profile {...props} />}
-            />
-
+          <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
+          <Route
+          path="/graphs"
+          exact
+          render={props => <Graphs {...props} />}
+          />
+          
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/features" component={Features} />
