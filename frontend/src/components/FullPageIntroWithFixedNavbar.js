@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FeaturesStyleSection from '../styles/FeaturesSection'
 import NavBarStyle from "../styles/NavBarStyle";
+import Navbar from "./Navbar";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -43,6 +44,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
   render() {
     return (
       <div>
+      <Navbar />
 <NavBarStyle/>
         <header>
           <Router>

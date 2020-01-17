@@ -1,7 +1,7 @@
 import React, { Component } from "react"; 
-import "./Profile.css";
+import "../Profile.css";
 import UserInfo from "../UserInfo.js";
-import ProgressGraph from "./ProgressGraph.js/index.js";
+import ProgressGraph from "./ProgressGraph.js";
 import CaloriesGraph from "./CaloriesGraph.js";
 import MuscleWorked from "./MuscleWorked";
 import ProfileNavbar from '../ProfileNavBar'

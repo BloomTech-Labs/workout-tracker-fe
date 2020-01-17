@@ -10,7 +10,6 @@ import Graphs from "./components/Profile/Graphs/Graphs";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from './components/Routines/Routines.js';
-import NavBar from './components/Navbar'
 
 function App() {
   return (
@@ -19,9 +18,8 @@ function App() {
       <Router>
         <Router>
           {/* Nav Bar */}
-
-
-          <NavBar/>
+          <div>
+          </div>
           
           <Switch>
             <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
