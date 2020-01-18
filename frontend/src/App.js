@@ -8,7 +8,7 @@ import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
 
-import Profile from './components/Profile/Profile.js';
+
 import Routines from './components/Routines/Routines.js';
 
 
