@@ -37,7 +37,7 @@ export const getStatuss = () => {
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: FETCHING_STATUS_FAILED }); // our other 2nd state of 'rejected' will be dispatched here.
+        dispatch({ type: FETCHING_STATUS_FAILED }); // our other 2nd state of 'rejected' will be difirst_namespatched here.
       });
   };
 };
@@ -55,7 +55,7 @@ export const getStatuss = () => {
 // }
 
 export const getMembers = () => {
-  const promise = axios.get("http://localhost:4000/api/members");
+  const promise = axios.get("https://firstrep.herokuapp.com/api/members");
   console.log('this is the member', promise)
   return dispatch => {
     dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched
