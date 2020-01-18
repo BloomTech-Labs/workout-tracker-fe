@@ -1,7 +1,11 @@
 /* Routines ---------------------------------------*/
+.select-routine-container {
+    margin-top: 50px;
+}
+
 .routine {
     border: 2px solid black;
-    margin: 10px;
+    margin: 30px;
     padding: 20px;
     border-radius: 20px;
     background-color: rgb(65, 90, 139);
@@ -14,10 +18,18 @@
 
 .routines h4 {
     color: white;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.routine-description {
+    border-top: 2px solid black;
+    margin: 30px 0px
 }
 
 h2 {
     color: white;
+    
 }
 
 .routines {

@@ -16,22 +16,22 @@ export default function reducer(state = initialState, action) {
         case FETCHING:
             return {
                 ...state,
-                fetchingUsers: true,
+                fetchingExercises: true,
                 error: null,
             }
 
         case FETCHING_SUCCESS:
             return {
                 ...state,
-                fetchingUsers: false,
+                fetchingExercises: false,
                 error: null,
-                users: action.payload,
+                exercises: action.payload,
 
             }
         case FETCHING_FAILED:
             return {
                 ...state,
-                fetchingUser: false,
+                fetchingExercises: false,
                 error: action.payload
             
             }

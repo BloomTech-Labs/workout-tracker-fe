@@ -3,7 +3,7 @@ import { signUp } from "../actions/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import SignupStyle from "../styles/index";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 // import validateAuth from "../validateAuth";
 // import { useSelector } from "react-redux";
 // import { useDispatch } from "react-redux";
@@ -44,7 +44,7 @@ const Signup = props => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <SignupStyle>
         <div className="form-container">
           <div>

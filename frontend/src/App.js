@@ -7,48 +7,66 @@ import "./App.css";
 import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import AutocompletePage from "./components/AutoCompletePage";
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 06c008c47270025e101f5c45bd58097e0c9b0c2e
 import Routines from './components/Routines/Routines.js';
+import MoreInfo from "./components/Profile/MoreProfileInfo"
 
-
-class App extends React.Component {
-  render() {
-    return (
-      
-      
-      <div className="App">
-        <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet"></link>
+function App() {
+  return (
+    <div className="App">
+      <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet" />
+      <Router>
         <Router>
-        <Switch>
-        {/* Nav Bar */}
+          {/* Nav Bar */}
+          <Route path='/'>
           <nav className='top-nav'>
-            <a href='/'>
-              <div className='logo'></div>
-            </a>
-            <h1>First Rep</h1>
-            <a href='/'>Home</a>
-            <a href='/routines'>Routines</a>
-            <a href='/profile'>Profile</a>
-          </nav>
-
-        {/*Profile*/}
-        <Route path='/profile/:id' exact render={(props) => <Profile {...props} />}/>
-        <Route path='/profile' exact render={(props) => <Profile />}/>
-
+              <a href='/'>
+                <div className='logo' />
+              </a>
+              <h1>First Rep</h1>
+              <a href='/'>Home</a>
+              <a href='/routines'>Routines</a>
+              <a href='/profile'>Profile</a>
+            </nav>
+          </Route>
+          
+          <Switch>
+            <Route exact path="/" component={FullPageIntroWithFixedNavbar} />
+            <Route
+              path="/profile"
+              exact
+              render={props => <Profile {...props} />}
+            />
+            <Route path="/profile-info" component={MoreInfo} />
+            </Switch>
         {/*Routines*/}
         {/* <Route path='/routines' exact render={(props) => <Routines {...props} />}/> */}
         <Routines />
 
-        {/* Footer */}
-        <div className='footer'>
-        </div>
+       
         
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
-          </Switch>
+
+            
+
+            {/*Routines*/}
+            <Routines />
+
+            {/* Footer */}
+            <div className='footer'>
+            </div>
+
+            
+          
+          </Router>
         </Router>
     </div>
   );
 }
-}
+
+export default App;
