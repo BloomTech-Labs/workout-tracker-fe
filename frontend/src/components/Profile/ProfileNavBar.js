@@ -15,7 +15,7 @@ import {
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
 
-class Navbar extends React.Component {
+class ProfileNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,19 +41,16 @@ class Navbar extends React.Component {
           <MDBCollapse isOpen={this.state.collapse} navbar>
             <MDBNavbarNav left>
               <MDBNavItem active>
-                <MDBNavLink to="/">Home</MDBNavLink>
+                <MDBNavLink to="/profile">Profile</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/aboutus">About Us</MDBNavLink>
+                <MDBNavLink to="/graphs">Graphs</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
 
             <MDBNavbarNav right>
-              <MDBNavItem active>             
-              <MDBNavLink to="/login">Login</MDBNavLink>
-            </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/Signup">Signup</MDBNavLink>
+              <MDBNavLink to="/Signout">Sign out</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
@@ -63,7 +60,7 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default ProfileNavbar;
 
 // <a href='/'>
 // <div className='logo' />

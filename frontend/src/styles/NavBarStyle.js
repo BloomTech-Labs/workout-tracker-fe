@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const SignupStyle = styled.div`
-  height: 100%;
+const NavBarStyle = styled.div`
+  height: 13%;
   background-color: rgb(76, 92, 150);
   background-color: rgb(46, 49, 65);
   background-image: linear-gradient(to top, #2c2c54, rgb(76, 92, 150));
@@ -9,8 +9,7 @@ const SignupStyle = styled.div`
   // background-image: url("https://46gb9l10qld536ktv928ai60-wpengine.netdna-ssl.com/wp-content/uploads/2018/09/kid-airport.jpg
   // ");
   //   background-size: cover;
-  position: absolute;
-  top: 50%;
+  position: fixed;
   transform: translateY(-50%);
   width: 100%;
   padding: 0 20px;
@@ -70,6 +69,7 @@ const SignupStyle = styled.div`
     text-transform: uppercase;
     margin-bottom: 10px;
   }
+
 `;
 
-export default SignupStyle;
+export default NavBarStyle;
