@@ -1,66 +1,85 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  font-family: 'Alatsi', sans-serif;
-  font-size: 30px;
-  -webkit-text-stroke: 1px black;
-  text-shadow: 3px 3px black;
-  width: 100%;
-  background: #3F729B;
-}
-
-.App-logo {
-    height: 40vmin;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #09d3ac;
-}
-
-h1 {
-  color:white;
-}
-
-/*Nav Bar*/
-
-.top-nav {
-  background-image: linear-gradient(#3F729B, #1C2331 );
-  
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.top-nav div{
-  width: 75px;
-  height: 75px;
-  background-image: url(Images/Logo.png);
-  background-size: cover;
-}
-nav a {
-  text-decoration: none;
+  background-image: linear-gradient(to top,#2c2c54,rgb(76,92,150));
   color: white;
-  -webkit-text-stroke: 1px black;
 }
 
+/* {First Tittle} */
 
+.first-tittle {
+  font-size: 18px;
+  text-align: left;
+}
+
+.first-p {
+  text-align: left;
+}
+
+.first-image{
+  padding-right: 45px;
+  height: 360px;
+}
+
+.first-div{
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+  max-width: 930px;
+}
+
+.unorder-list li{
+  font-size: 20px;
+}
+
+/* {second tittle} */
+.about-app {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.container-div{
+  padding-top: 50px;
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+  max-width: 930px;
+}
+
+.container-app {
+  display: flex;
+  padding-top: 30px;
+}
+
+.container h1 {
+  font-size: 45px;
+  color: yellow;
+}
+
+.second-image{
+  padding-left: 90px;
+  height: 580px;
+}
+
+/* {caroussel} */
+
+<<<<<<< HEAD
 .flex-center {
   width: 100%;
 }
+=======
+.caroussel {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+/* {Footer} */
+
+.footer-copyright {
+  background-color: #222;
+  height: 37px;
+  padding-top: 8px;
+  text-align: center;
+  margin: 0;
+}
+>>>>>>> e8d784ef038b4cf7797fa0ad391a3a3d98e2786a
