@@ -22,11 +22,7 @@ class MemberProfile extends Component {
       return (
         <div>
           {console.log('member is', this.props.member)}
-          {this.props.member.map(a => (
-            <div className='user-info' key={a.id}>
-                <h2>Name: {a.last_name}</h2>
-            </div>
-          ))}
+            <h2>Name: {this.props.member.last_name}</h2>
         </div>
       );
   }
