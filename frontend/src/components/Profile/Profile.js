@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import UserInfo from "./UserInfo.js";
 import ProgressGraph from "./ProgressGraph.js";
 import CaloriesGraph from "./CaloriesGraph.js";
+import CollapsePage from './CollapsePage.js'
+import WorkoutCounterForm from './WorkoutCounterForm.js'
 
 
 export default class Profile extends Component {
@@ -11,6 +13,8 @@ export default class Profile extends Component {
     return (
       <div className="profile-container">
         <UserInfo />
+        <Route exact path="/records" component={CollapsePage} />
+        <Route exact path="/records" component={WorkoutCounterForm} /> 
         <ProgressGraph />
         <CaloriesGraph />
         

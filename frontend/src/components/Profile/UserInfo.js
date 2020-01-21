@@ -39,7 +39,10 @@ class Userinfo extends Component {
                 <h3>Mile Time: {a.mile_time}</h3>
             </div>
             <div className='see-more'>
-                <a className='see-more-button' href='profile-info'>See More</a>     
+                <a className='see-more-button' href='profile-info'>See More Info</a>
+            </div>
+            <div className='see-more'>
+                <a className='records-button' href='records'>See Records</a>   
             </div> 
             </div>
           ))}
