@@ -26,6 +26,10 @@ export const FETCHING_STATUS = 'FETCHING_ROUTINES'
 export const FETCHING_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
 export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
 
+export const POST_STATUS_START = 'FETCHING_ROUTINES_START'
+export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
+export const POST_STATUS_FAIL = 'FETCHING_ROUTINES_FAIL'
+
 export const getStatuss = () => {
   const promise = axios.get("http://localhost:4000/api/memberstatus");
   console.log('this is the user', promise)
@@ -42,18 +46,7 @@ export const getStatuss = () => {
   };
 };
 
-export const postStatus = input => {
-  dispatch({ type: POST_STATUS_START });
-  return axios
-    .post(`https://firstrep.herokuapp.com/api/memberstatus`, input)
-    .then(res => {
-      console.log("User stats have been set");
-      dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });
-    })
-    .catch(err => {
-      dispatch({ type: POST_STATUS_FAIL, payload: err.message });
-    });
-}
+
 
 export const getMembers = () => {
   const promise = axios.get("http://localhost:4000/api/members");
@@ -93,6 +86,19 @@ export const getExerciseRecords = () => dispatch => {
     .catch(err => {
       dispatch({ type: EXERCISE_RECORD_FAILED, payload: err.response })
     })
+}
+
+export const postStatus = input =>  dispatch => {
+  dispatch({ type: POST_STATUS_START });
+  return dispatch
+    .post(`https://firstrep.herokuapp.com/api/memberstatus`, input)
+    .then(res => {
+      console.log("User stats have been set");
+      dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: POST_STATUS_FAIL, payload: err.message });
+    });
 }
 
 export const signUp = input => dispatch => {
