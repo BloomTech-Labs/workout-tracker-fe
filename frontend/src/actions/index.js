@@ -1,10 +1,10 @@
 import axios from "axios";
 
-// export const FETCHING = 'FETCHING'
-// export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
-// export const FETCHING_FAILED = 'FETCHING_FAILED'
+export const FETCHING = 'FETCHING'
+export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
+export const FETCHING_FAILED = 'FETCHING_FAILED'
 
-export const GET_MEMBERS = 'GET_MEMBERS'
+// export const GET_MEMBERS = 'GET_MEMBERS'
 
 export const FETCHING_ROUTINES = 'FETCHING_ROUTINES'
 export const FETCHING_ROUTINES_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
@@ -22,6 +22,26 @@ export const EXERCISE_RECORD = 'EXERCISE_RECORD'
 export const EXERCISE_RECORD_SUCCESS = 'EXERCISE_RECORD_SUCCESS'
 export const EXERCISE_RECORD_FAILED = 'EXERCISE_RECORD_FAILED'
 
+export const FETCHING_STATUS = 'FETCHING_ROUTINES'
+export const FETCHING_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
+export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
+
+export const getStatuss = () => {
+  const promise = axios.get("http://localhost:4000/api/memberstatus");
+  console.log('this is the user', promise)
+  return dispatch => {
+    dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
+    promise
+      .then(response => {
+        dispatch({ type: FETCHING_STATUS_SUCCESS, payload: response.data }); // 2nd state of success is dispatched IF the promise resolves
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: FETCHING_STATUS_FAILED }); // our other 2nd state of 'rejected' will be difirst_namespatched here.
+      });
+  };
+};
+
 // export const getUser = () => dispatch => {
 //     dispatch({ type: FETCHING })
 //     axios
@@ -34,21 +54,21 @@ export const EXERCISE_RECORD_FAILED = 'EXERCISE_RECORD_FAILED'
 //       })
 // }
 
-export const getMembers = () => dispatch => {
-  axios
-    .get("https://firstrep.herokuapp.com/api/members/1")
-    .then(res =>
-      dispatch({
-        type: GET_MEMBERS,
-        payload: res.data
+export const getMembers = () => {
+  const userId = localStorage.getItem("userId");
+  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}`);
+  console.log('this is the member', promise)
+  return dispatch => {
+    dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched
+    promise
+      .then(response => {
+        dispatch({ type: FETCHING_SUCCESS, payload: response.data }); // 2nd state of success is dispatched IF the promise resolves
       })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_MEMBERS,
-        payload: null
-      })
-    );
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: FETCHING_FAILED }); // our other 2nd state of 'rejected' will be dispatched here.
+      });
+  };
 };
 
 export const getRoutines = () => dispatch => {
@@ -97,6 +117,7 @@ export const login = input => dispatch => {
     .post(`https://firstrep.herokuapp.com/api/members/login`, input)
     .then(res => {
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("userId", res.data.userId);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
