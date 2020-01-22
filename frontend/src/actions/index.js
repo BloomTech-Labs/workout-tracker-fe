@@ -42,17 +42,18 @@ export const getStatuss = () => {
   };
 };
 
-// export const getUser = () => dispatch => {
-//     dispatch({ type: FETCHING })
-//     axios
-//       .get('https://firstrep.herokuapp.com/api/members/1')
-//       .then(response => {
-//         dispatch({ type: FETCHING_SUCCESS, payload: response.data})
-//       })
-//       .catch(err => {
-//         dispatch({ type: FETCHING_FAILED, payload: err.response })
-//       })
-// }
+export const postStatus = input => {
+  dispatch({ type: POST_STATUS_START });
+  return axios
+    .post(`https://firstrep.herokuapp.com/api/memberstatus`, input)
+    .then(res => {
+      console.log("User stats have been set");
+      dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: POST_STATUS_FAIL, payload: err.message });
+    });
+}
 
 export const getMembers = () => {
   const promise = axios.get("http://localhost:4000/api/members");
