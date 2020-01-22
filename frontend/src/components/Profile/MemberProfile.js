@@ -23,6 +23,9 @@ class MemberProfile extends Component {
         <div>
           {console.log('member is', this.props.member)}
             <h2>Name: {this.props.member.first_name}</h2>
+            <h2>Last Name: {this.props.member.last_name}</h2>
+            <h2>username: {this.props.member.username}</h2>
+            <h2>Email: {this.props.member.email}</h2>
         </div>
       );
   }
