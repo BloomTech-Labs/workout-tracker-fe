@@ -56,7 +56,7 @@ export const getStatuss = () => {
 
 export const getMembers = () => {
   const userId = localStorage.getItem("userId");
-  const promise = axios.get(`http://localhost:4000/api/members/${userId}`);
+  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}`);
   console.log('this is the member', promise)
   return dispatch => {
     dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched
@@ -114,7 +114,7 @@ export const signUp = input => dispatch => {
 export const login = input => dispatch => {
   dispatch({ type: LOGIN_START });
   return axios
-    .post(`http://localhost:4000/api/members/login`, input)
+    .post(`https://firstrep.herokuapp.com/api/members/login`, input)
     .then(res => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("userId", res.data.userId);

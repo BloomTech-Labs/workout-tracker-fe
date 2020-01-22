@@ -22,7 +22,7 @@ class MemberProfile extends Component {
       return (
         <div>
           {console.log('member is', this.props.member)}
-            <h2>Name: {this.props.member.last_name}</h2>
+            <h2>Name: {this.props.member.first_name}</h2>
         </div>
       );
   }
