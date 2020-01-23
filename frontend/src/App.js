@@ -1,5 +1,6 @@
 import React from "react";
 import Signup from "./components/Signup";
+import SignOut from "./components/SignOut";
 import Login from "./components/Login";
 import Features from "./components/Features";
 import AboutUs from "./components/AboutUs";
@@ -28,6 +29,7 @@ function App() {
             <Route path="/profile" exact render={props => <Profile {...props} />} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/logout" component={SignOut} />
             <Route exact path="/features" component={Features} />
             <Route exact path="/aboutus" component={AboutUs} />
           </Switch>

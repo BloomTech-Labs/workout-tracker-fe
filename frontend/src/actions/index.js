@@ -118,9 +118,10 @@ export const signUp = input => dispatch => {
 export const signOut = input => dispatch => {
   dispatch({ type: SIGNOUT_START });
   return axios
-    .post(`https://firstrep.herokuapp.com/api/members`, input)
+    .post(`http://localhost:4000/api/members/logout`, input)
     .then(res => {
-      console.log("User successfully added to database");
+      localStorage.removeItem("token");
+      console.log("User successfully Logged Out");
       dispatch({ type: SIGNOUT_SUCCESS, payload: res.data });
     })
     .catch(err => {
