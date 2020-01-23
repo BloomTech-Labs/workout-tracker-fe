@@ -3,7 +3,7 @@ import { login } from "../actions/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import SignupStyle from "../styles/index";
-import Navbar from "./Navbar";
+import ProfileNavBar from "../components/Profile/ProfileNavBar";
 
 const Login = props => {
   const [input, setInput] = useState({
@@ -17,25 +17,18 @@ const Login = props => {
     setInput({ ...input, [props]: event.target.value });
   };
 
-  const handleSubmit = async event => {
-    event.preventDefault();
-    await props.login(input);
+  function handleLogout() {
+    props.history.push("/login");
+  }
 
-    if (localStorage.getItem("token")) {
-      props.history.push("/profile");
-    }
-  };
   return (
     <>
       {/* <Navbar /> */}
-      <Navbar />
+      <ProfileNavBar />
       <SignupStyle>
         <div className="form-container">
-          <div>
-            <h2>SignOut</h2>
-          </div>
           <div>              
-              <button onSubmit={handleSubmit}>SignOut</button>
+              <button onSubmit={handleLogout}>Logout</button>
           </div>
         </div>
       </SignupStyle>

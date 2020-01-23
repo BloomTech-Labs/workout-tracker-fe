@@ -50,7 +50,7 @@ class ProfileNavbar extends React.Component {
 
             <MDBNavbarNav right>
             <MDBNavItem>
-              <MDBNavLink to="/Signout">Sign out</MDBNavLink>
+              <MDBNavLink to="/logout">Logout</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
