@@ -1,40 +1,29 @@
-import React, { useState } from "react";
-import { login } from "../actions/index";
+import React, { Component } from "react";
+import { logOut } from "../actions/index";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import SignupStyle from "../styles/index";
 import ProfileNavBar from "../components/Profile/ProfileNavBar";
 
-const Login = props => {
-  const [input, setInput] = useState({
-    username: "",
-    password: ""
-  });
-
-  const { username, password } = input;
-
-  function handleLogout() {
-    props.history.push("/login");
-  }
-
-  return (
-    <>
-      {/* <Navbar /> */}
-      <ProfileNavBar />
-      <SignupStyle>
-        <div className="form-container">
-          <div>              
-              <button onSubmit={handleLogout}>Logout</button>
-          </div>
-        </div>
-      </SignupStyle>
-    </>
-  );
-};
-
-const mapStateToProps = state => {
-  return {
-    userLogin: state.login.user
+class LogOut extends Component {
+  state = {
+    navigate: false,
   };
-};
-export default withRouter(connect(mapStateToProps, { login })(Login));
+
+  logOut = () => {
+    localStorage.clear("token");
+    this.setState({ navigate: true })
+  };
+
+  render() {
+    const { navigate } = this.state;
+
+    if (navigate) { 
+      return <Redirect to = '/login' push ={true} />;
+    }
+
+    return <button onClick={this.logOut}>LogOut</button>
+  }
+}
+
+export default LogOut;
