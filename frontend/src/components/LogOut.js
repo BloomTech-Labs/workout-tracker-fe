@@ -22,7 +22,15 @@ class LogOut extends Component {
       return <Redirect to = '/login' push ={true} />;
     }
 
-    return <button onClick={this.logOut}>LogOut</button>
+    return (
+
+      <div className="profile-container">
+      < ProfileNavBar/>
+      
+      <button onClick={this.logOut}>Logout</button>
+
+      </div>
+    )
   }
 }
 
