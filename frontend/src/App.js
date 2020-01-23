@@ -9,6 +9,7 @@ import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNav
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from './components/Routines/Routines.js';
 import MoreInfo from "./components/Profile/MoreProfileInfo"
+import Onboard from './components/Profile/ProfileOnboarding'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               exact
               render={props => <Profile {...props} />}
             />
+            <Route exact path="/onboarding" component={Onboard} />
             <Route path="/profile-info" component={MoreInfo} />
             </Switch>
         {/*Routines*/}
