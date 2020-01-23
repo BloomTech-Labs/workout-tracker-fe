@@ -13,10 +13,6 @@ const Login = props => {
 
   const { username, password } = input;
 
-  const handleChange = props => event => {
-    setInput({ ...input, [props]: event.target.value });
-  };
-
   function handleLogout() {
     props.history.push("/login");
   }
