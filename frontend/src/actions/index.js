@@ -18,6 +18,10 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAIL = "SIGNUP_FAIL";
 export const SIGNUP_START = "SIGNUP_START";
 
+export const SIGNOUT_SUCCESS = "SIGNOUT_SUCCESS";
+export const SIGNOUT_FAIL = "SIGNOUT_FAIL";
+export const SIGNOUT_START = "SIGNOUT_START";
+
 export const EXERCISE_RECORD = 'EXERCISE_RECORD'
 export const EXERCISE_RECORD_SUCCESS = 'EXERCISE_RECORD_SUCCESS'
 export const EXERCISE_RECORD_FAILED = 'EXERCISE_RECORD_FAILED'
@@ -102,6 +106,22 @@ export const signUp = input => dispatch => {
     .then(res => {
       console.log("User successfully added to database");
       dispatch({ type: SIGNUP_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      if (err.status === "Error") {
+        localStorage.removeItem("token");
+      }
+      dispatch({ type: SIGNUP_FAIL, payload: err.message });
+    });
+};
+
+export const signOut = input => dispatch => {
+  dispatch({ type: SIGNOUT_START });
+  return axios
+    .post(`https://firstrep.herokuapp.com/api/members`, input)
+    .then(res => {
+      console.log("User successfully added to database");
+      dispatch({ type: SIGNOUT_SUCCESS, payload: res.data });
     })
     .catch(err => {
       if (err.status === "Error") {
