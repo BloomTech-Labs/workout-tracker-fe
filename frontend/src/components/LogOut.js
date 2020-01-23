@@ -23,12 +23,16 @@ class LogOut extends Component {
     }
 
     return (
-
-      <div className="profile-container">
-      < ProfileNavBar/>
       
-      <button onClick={this.logOut}>Logout</button>
+      <div>
+        <ProfileNavBar />
+        <SignupStyle >
+          <div className="profile-container">
+      
+          <button onClick={this.logOut}>Logout</button>
 
+          </div>
+        </SignupStyle> 
       </div>
     )
   }
