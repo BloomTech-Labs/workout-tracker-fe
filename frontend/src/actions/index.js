@@ -18,10 +18,6 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAIL = "SIGNUP_FAIL";
 export const SIGNUP_START = "SIGNUP_START";
 
-export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
-export const LOGOUT_FAIL = "LOGOUT_FAIL";
-export const LOGOUT_START = "LOGOUT_START";
-
 export const EXERCISE_RECORD = 'EXERCISE_RECORD'
 export const EXERCISE_RECORD_SUCCESS = 'EXERCISE_RECORD_SUCCESS'
 export const EXERCISE_RECORD_FAILED = 'EXERCISE_RECORD_FAILED'
@@ -112,23 +108,6 @@ export const signUp = input => dispatch => {
         localStorage.removeItem("token");
       }
       dispatch({ type: SIGNUP_FAIL, payload: err.message });
-    });
-};
-
-export const logOut = input => dispatch => {
-  dispatch({ type: LOGOUT_START });
-  return axios
-    .post(`http://localhost:4000/api/members/logout`, input)
-    .then(res => {
-      localStorage.removeItem("token");
-      console.log("User successfully Logged Out");
-      dispatch({ type: LOGOUT_SUCCESS, payload: res.data });
-    })
-    .catch(err => {
-      if (err.status === "Error") {
-        localStorage.removeItem("token");
-      }
-      dispatch({ type: LOGOUT_FAIL, payload: err.message });
     });
 };
 
