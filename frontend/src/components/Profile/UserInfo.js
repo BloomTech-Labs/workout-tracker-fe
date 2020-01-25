@@ -25,11 +25,10 @@ class Userinfo extends Component {
       return (
         <div>
           {console.log("status is ", this.props.status)}
-          
           {this.props.status.map(a => (
-            <div className='user-info' key={a.id}>
+            <div className='user-info' key='userI'>
               <MemberProfile />
-            <div className='user-info-wrapper' key={a.member_id}>
+            <div className='user-info-wrapper' key={'infow'}>
                 <h3>Weight: {a.weight} </h3>
                 <h3>Bench Max: {a.bench_max}</h3>
                 <h3>Squat Max: {a.squat_max}</h3>
@@ -53,6 +52,7 @@ const mapStateToProps = state => {
   console.log("this is mapstatetoprops stte ", state);
   return {
     status: state.userInfo.status,
+    member_id: state.member_id,
     weight: state.weight,
     height: state.height,
     bmi: state.bmi,

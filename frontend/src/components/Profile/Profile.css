@@ -7,9 +7,12 @@
     align-items: center;
     text-align: center;
     width: 80%;
-    margin: 50px 100px 50px 100px;
-
+    margin: 0px 100px 0px 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
+
+
 
 /* User Information Section */
 /*------------------------------------------------------*/

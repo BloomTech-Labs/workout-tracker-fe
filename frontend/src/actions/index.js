@@ -31,7 +31,8 @@ export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
 export const POST_STATUS_FAIL = 'FETCHING_ROUTINES_FAIL'
 
 export const getStatuss = () => {
-  const promise = axios.get("http://firstrep.herokuapp.com/api/memberstatus");
+  const userId = localStorage.getItem("userId");
+  const promise = axios.get(`http://localhost:4000/api/members/${userId}/status`);
   console.log('this is the user', promise)
   return dispatch => {
     dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
@@ -41,7 +42,7 @@ export const getStatuss = () => {
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: FETCHING_STATUS_FAILED }); // our other 2nd state of 'rejected' will be dispatched here.
+        dispatch({ type: FETCHING_STATUS_FAILED }); // our other 2nd state of 'rejected' will be difirst_namespatched here.
       });
   };
 };
@@ -49,7 +50,8 @@ export const getStatuss = () => {
 
 
 export const getMembers = () => {
-  const promise = axios.get("http://firstrep.herokuapp.com/api/members");
+  const userId = localStorage.getItem("userId");
+  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}`);
   console.log('this is the member', promise)
   return dispatch => {
     dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched
@@ -89,9 +91,10 @@ export const getExerciseRecords = () => dispatch => {
 }
 
 export const postStatus = input =>  dispatch => {
+  const userId = localStorage.getItem('userId')
   dispatch({ type: POST_STATUS_START });
   return axios
-    .post(`http://localhost:4000/api/memberstatus`, input)
+    .post(`http://localhost:4000/api/members/${userId}/status`, input)
     .then(res => {
       console.log("User stats have been set");
       dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });
@@ -123,6 +126,7 @@ export const login = input => dispatch => {
     .post(`https://firstrep.herokuapp.com/api/members/login`, input)
     .then(res => {
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("userId", res.data.userId);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
