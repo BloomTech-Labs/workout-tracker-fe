@@ -91,7 +91,7 @@ export const getExerciseRecords = () => dispatch => {
 export const postStatus = input =>  dispatch => {
   dispatch({ type: POST_STATUS_START });
   return axios
-    .post(`https://firstrep.herokuapp.com/api/memberstatus`, input)
+    .post(`http://localhost:4000/api/memberstatus`, input)
     .then(res => {
       console.log("User stats have been set");
       dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });

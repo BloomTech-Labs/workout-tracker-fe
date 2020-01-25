@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
         ...state,
         ...action.payload,
         statusPosted: true,
-        message: "Successfully signed up a user"
+        message: "Successfully posted status"
       };
 
     case POST_STATUS_FAIL:

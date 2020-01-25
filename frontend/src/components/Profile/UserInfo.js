@@ -11,7 +11,6 @@ class Userinfo extends Component {
   }
   componentDidMount() {
     this.props.getStatuss();
-    
   }
   
   render() {

@@ -13,7 +13,7 @@ export default class Profile extends Component {
   render() {
     return (
       <div className="profile-container">
-        <Route component={UserInfo} />
+        <UserInfo />
         <Route exact path="/records" component={CollapsePage} />
         <Route exact path="/records" component={WorkoutCounterForm} /> 
         <ProgressGraph />

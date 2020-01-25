@@ -34,43 +34,18 @@ const Onboard = props => {
           <div>
             <form onSubmit={registerHandler}>
               <div>
-                <input
-                  value={weight}
-                  required
-                  onChange={handleChange("weight")}
-                  placeholder="Weight"
-                />
-                <input
-                  value={height}
-                  required
-                  onChange={handleChange("height")}
-                  placeholder="Height"
-                />
-                <input
-                  value={bmi}
-                  required
-                  onChange={handleChange("bmi")}
-                  placeholder="Body Mass Index"
-                />
-                <input
-                  value={bench_max}
-                  required
-                  onChange={handleChange("bench_max")}
-                  placeholder="Bench Max"
-                />
-                <input
-                  value={squat_max}
-                  required
-                  onChange={handleChange("squat_max")}
-                  placeholder="Squat Max"
-                />
-                <input
-                  value={mile_time}
-                  required
-                  onChange={handleChange("mile_time")}
-                  placeholder="Mile Time"
-                />
-                
+                <input value={weight} required onChange={handleChange("weight")} placeholder="Weight" />
+
+                <input value={height} required onChange={handleChange("height")} placeholder="Height" />
+
+                <input value={bmi} required onChange={handleChange("bmi")} placeholder="Body Mass Index" />
+
+                <input value={bench_max} required onChange={handleChange("bench_max")} placeholder="Bench Max" />
+
+                <input value={squat_max} required onChange={handleChange("squat_max")} placeholder="Squat Max" />
+
+                <input value={mile_time} required onChange={handleChange("mile_time")} placeholder="Mile Time" />
+
               </div>
               <button>Submit User Stats</button>
             </form>
@@ -79,6 +54,8 @@ const Onboard = props => {
     </>
   );
 };
+
+Onboard.propTypes = {};
 
 const mapStateToProps = state => {
   return {
