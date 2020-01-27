@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FeaturesStyleSection from '../styles/FeaturesSection'
 import Navbar from "./Navbar";
 import {
   MDBContainer,
@@ -100,7 +99,6 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       </div>
       </div>
 
-        <FeaturesStyleSection>
     <MDBContainer className='caroussel'>
       <MDBCarousel
       activeItem={1}
@@ -211,7 +209,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       </MDBCarouselInner>
     </MDBCarousel>
     </MDBContainer>
-      </FeaturesStyleSection>
+
       <div>
         <footer>
         <p className='footer-copyright'>Copyright © 2020 LambdaSchool. All Rights Reserved.</p>

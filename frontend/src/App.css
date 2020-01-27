@@ -68,6 +68,10 @@
   padding-bottom: 50px;
 }
 
+.caroussel img{
+  height: 500px;
+}
+
 /* {Footer} */
 
 .footer-copyright {
