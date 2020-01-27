@@ -68,6 +68,12 @@ h2 {
   padding-right: 45px;
   height: 360px;
 }
+@media (max-width: 900px) {
+  .first-image{
+    padding-right: 45px;
+    height: 265px;
+  }
+}
 
 .first-div{
   display: flex;
@@ -80,12 +86,24 @@ h2 {
   font-size: 20px;
 }
 
+@media (max-width: 900px) {
+  .unorder-list li{
+    font-size: 18px;
+  }
+}
+
 /* {second tittle} */
 .about-app {
   padding-top: 40px;
   padding-bottom: 40px;
   font-size: 20px;
   text-align: right;
+}
+
+@media (max-width: 900px) {
+  .about-app {
+    font-size: 18px;
+  }
 }
 
 .container-div{
@@ -106,10 +124,25 @@ h2 {
   color: yellow;
 }
 
+@media (max-width: 900px) {
+  .container h1 {
+    font-size: 30px;
+    color: yellow;
+  }
+}
+
 .second-image{
   padding-left: 90px;
   height: 580px;
 }
+
+@media (max-width: 900px) {
+  .second-image{
+    padding-left: 90px;
+    height: 460px;
+  }
+}
+
 
 /* {caroussel} */
 
@@ -120,6 +153,12 @@ h2 {
 
 .caroussel img{
   height: 500px;
+}
+
+@media (max-width: 900px) {
+  .caroussel img{
+    height: 400px;
+  }
 }
 
 /* {Footer} */
