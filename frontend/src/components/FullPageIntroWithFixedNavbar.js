@@ -35,6 +35,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       <div>
       <Navbar />
         <header>
+           
           <Router>
       
           </Router>
@@ -82,7 +83,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
 
         
       <div className='container container-div'>
-      <div className='container-app'>
+      <div className='second-container-app'>
         <div>
           <h1>First Rep is an app that lets you create and manage workout routines.</h1>
           <p align="justify" className='about-app'>
