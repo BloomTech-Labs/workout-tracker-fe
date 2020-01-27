@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-import "./Profile.css";
+import "../../css/Profile.css";
 import ProfileNavbar from './ProfileNavBar'
 import MemberProfile from './MemberProfile'
 import UserInfo from './UserInfo'

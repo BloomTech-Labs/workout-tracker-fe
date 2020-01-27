@@ -4,7 +4,7 @@ import LogOut from "./components/LogOut";
 import Login from "./components/Login";
 import AboutUs from "./components/AboutUs";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
+import "./css/App.css";
 import Graphs from "./components/Profile/Graphs/Graphs";
 import Profile from "./components/Profile/Profile"
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
