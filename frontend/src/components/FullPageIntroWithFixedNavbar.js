@@ -1,16 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FeaturesStyleSection from '../styles/FeaturesSection'
-import NavBarStyle from "../styles/NavBarStyle";
 import Navbar from "./Navbar";
 import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBNavItem,
-  MDBNavLink,
   MDBContainer,
   MDBMask,
   MDBView,
@@ -20,8 +12,6 @@ import {
   MDBCarouselInner, 
   MDBCarouselItem
 } from "mdbreact";
-
-import Modal from "./Modal";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -45,7 +35,6 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     return (
       <div>
       <Navbar />
-<NavBarStyle/>
         <header>
           <Router>
       

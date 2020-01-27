@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { logOut } from "../actions/index";
-import { connect } from "react-redux";
-import { withRouter, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import SignupStyle from "../styles/index";
 import ProfileNavBar from "../components/Profile/ProfileNavBar";
 

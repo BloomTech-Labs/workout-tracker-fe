@@ -1,6 +1,5 @@
 import Navbar from "./Navbar";
 import React from 'react';
-import NavBarStyle from "../styles/NavBarStyle";
 import AboutUsStyleSection from "../styles/AboutUsSection"
 
 function AvoutUs(props) {
@@ -10,7 +9,6 @@ function AvoutUs(props) {
     <div>
         <Navbar />
         <AboutUsStyleSection>
-        <NavBarStyle/>
         <div class="container">
             <div class='member-section'>
                 <div class='member-header'>
