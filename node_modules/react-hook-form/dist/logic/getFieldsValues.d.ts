@@ -1,0 +1,2 @@
+declare const _default: <FormValues extends Record<string, any>>(fields: Record<string, any>) => FormValues;
+export default _default;
