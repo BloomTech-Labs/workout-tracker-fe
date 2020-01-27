@@ -68,10 +68,28 @@ h2 {
   padding-right: 45px;
   height: 360px;
 }
+
 @media (max-width: 900px) {
   .first-image{
-    padding-right: 45px;
     height: 265px;
+  }
+}
+
+@media (max-width: 700px) {
+  .first-image{
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  .first-image{
+    height: 200px;
+  }
+}
+
+@media (max-width: 300px) {
+  .first-image{
+    height: 150px;
   }
 }
 
@@ -98,6 +116,12 @@ h2 {
   }
 }
 
+@media (max-width: 400px) {
+  .unorder-list li{
+    font-size: 16px;
+  }
+}
+
 /* {second tittle} */
 .about-app {
   padding-top: 40px;
@@ -121,6 +145,19 @@ h2 {
 @media (max-width: 600px) {
   .about-app {
     text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-app {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 300px) {
+  .about-app {
+    font-size: 15px;
+    padding-top: 20px;
   }
 }
 
@@ -156,6 +193,7 @@ h2 {
 @media (max-width: 600px) {
   .second-container-app {
     text-align: center;
+    padding-top: 0px;
   }
 }
 
@@ -173,6 +211,18 @@ h2 {
 @media (max-width: 650px) {
   .container h1 {
     font-size: 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 300px) {
+  .container h1 {
+    font-size: 20px;
   }
 }
 
@@ -204,6 +254,12 @@ h2 {
   height: 500px;
 }
 
+@media (max-width: 600px) {
+  .caroussel{
+    padding-top: 25px;
+  }
+}
+
 @media (max-width: 900px) {
   .caroussel img{
     height: 400px;
@@ -222,6 +278,18 @@ h2 {
   }
 }
 
+@media (max-width: 400px) {
+  .caroussel img{
+    height: 250px;
+  }
+}
+
+@media (max-width: 300px) {
+  .caroussel img{
+    height: 200px;
+  }
+}
+
 /* {Footer} */
 
 .footer-copyright {
@@ -230,4 +298,28 @@ h2 {
   padding-top: 8px;
   text-align: center;
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .footer-copyright {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-copyright {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 325px) {
+  .footer-copyright {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 300px) {
+  .footer-copyright {
+    font-size: 10px;
+  }
 }
