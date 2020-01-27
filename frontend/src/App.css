@@ -7,7 +7,6 @@ button {
   background: rgb(76, 92, 150);
   text-align: center;
   margin-top: 10px;
-  margin-left: 25px;
   padding: 10px;
   width: 150px;
   border-radius: 5px;
@@ -51,7 +50,7 @@ form {
   border-radius: 5px;
 }
 h2 {
-  margin-left: 200px;
+  text-align: center;
 }
 
 /* {First Tittle} */
