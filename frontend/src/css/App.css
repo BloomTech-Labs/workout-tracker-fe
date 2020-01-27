@@ -92,6 +92,12 @@ h2 {
   }
 }
 
+@media (max-width: 650px) {
+  .unorder-list li{
+    font-size: 17px;
+  }
+}
+
 /* {second tittle} */
 .about-app {
   padding-top: 40px;
@@ -103,6 +109,12 @@ h2 {
 @media (max-width: 900px) {
   .about-app {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .about-app {
+    font-size: 17px;
   }
 }
 
@@ -143,7 +155,12 @@ h2 {
 @media (max-width: 900px) {
   .container h1 {
     font-size: 30px;
-    color: yellow;
+  }
+}
+
+@media (max-width: 650px) {
+  .container h1 {
+    font-size: 25px;
   }
 }
 
