@@ -12,6 +12,7 @@ import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNav
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from "./components/Routines/Routines.js";
 import AddRoutine from "./components/Routines/AddRoutine";
+import AddExercises from "./components/Routines/AddExercises";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route exact path="/features" component={Features} />
             <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/add-routine" component={AddRoutine} />
+            <Route exact path="/add-id" component={AddExercises} />
           </Switch>
         </Router>
       </Router>

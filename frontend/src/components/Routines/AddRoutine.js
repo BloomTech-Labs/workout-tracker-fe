@@ -142,12 +142,12 @@ const AddRoutine = props => {
     </>
   );
 };
-
-// const mapStateToProps = state => {
-//   return {
-//     routine: state.addRoutine
-//   };
-// };
+// not being used atm
+const mapStateToProps = state => {
+  return {
+    routine: state.addRoutine
+  };
+};
 
 export default connect(mapStateToProps, { addRoutine })(AddRoutine);
 
