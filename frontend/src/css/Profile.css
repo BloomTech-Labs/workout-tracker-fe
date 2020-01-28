@@ -91,7 +91,7 @@
     background-color: lightgrey;
 }
 
-/* Calories Graph*/
+/* Calories Graph */
 /*------------------------------------------------------*/
 .calories-graph-container {
     display: flex;
@@ -102,5 +102,10 @@
 }
 
 .weekly-workout {
-    width: 100%;
+    width: 100%;}
+/* Workout Form */
+/*------------------------------------------------------*/
+
+.form-group label {
+    color: white
 }

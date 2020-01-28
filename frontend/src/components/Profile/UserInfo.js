@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "../Routines/Routines.css";
-
+import "../../css/Routines.css";
 import { getStatuss } from "../../actions/index";
 import { connect } from "react-redux"; 
 import MemberProfile from './MemberProfile'
@@ -11,11 +10,10 @@ class Userinfo extends Component {
   }
   componentDidMount() {
     this.props.getStatuss();
-    
   }
   
   render() {
-
+    
     if (this.props.loading) {
       return (
         <div>
@@ -23,14 +21,15 @@ class Userinfo extends Component {
         </div>
       );
     } else
+      
       return (
         <div>
           {console.log("status is ", this.props.status)}
           
           {this.props.status.map(a => (
-            <div className='user-info' key={a.id}>
+            <div className='user-info' key='userI'>
               <MemberProfile />
-            <div className='user-info-wrapper' key={a.member_id}>
+            <div className='user-info-wrapper' key={'infow'}>
                 <h3>Weight: {a.weight} </h3>
                 <h3>Bench Max: {a.bench_max}</h3>
                 <h3>Squat Max: {a.squat_max}</h3>
@@ -39,7 +38,10 @@ class Userinfo extends Component {
                 <h3>Mile Time: {a.mile_time}</h3>
             </div>
             <div className='see-more'>
-                <a className='see-more-button' href='profile-info'>See More</a>     
+                <a className='see-more-button' href='profile-info'>See More Info</a>
+            </div>
+            <div className='see-more'>
+                <a className='records-button' href='records'>See Records</a>   
             </div> 
             </div>
           ))}
@@ -51,6 +53,7 @@ const mapStateToProps = state => {
   console.log("this is mapstatetoprops stte ", state);
   return {
     status: state.userInfo.status,
+    member_id: state.member_id,
     weight: state.weight,
     height: state.height,
     bmi: state.bmi,

@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2";
 import { connect } from 'react-redux';
 import { MDBContainer } from "mdbreact";
 import { addWeek, firstWeek } from '../../../actions/index'
-import "../Profile.css";
+import "../../../css/Profile.css";
 
 class ChartsPage extends React.Component {
     constructor() {
