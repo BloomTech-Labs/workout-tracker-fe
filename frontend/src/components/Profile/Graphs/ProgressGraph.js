@@ -1,86 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import { Bar } from "react-chartjs-2";
+import { connect } from 'react-redux';
 import { MDBContainer } from "mdbreact";
+import { addWeek, firstWeek } from '../../../actions/index'
 import "../Profile.css";
 
 class ChartsPage extends React.Component {
-  state = {
-    dataBar: {
-      labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-      datasets: [
-        {
-          label: "First Month",
-          data: [2, 3, 6, 7],
-          backgroundColor: [
-            "rgba(255, 134,159,0.4)",
-            "rgba(98,  182, 239,0.4)",
-            "rgba(255, 218, 128,0.4)",
-            "rgba(113, 205, 205,0.4)"
-          ],
-          borderWidth: 2,
-          borderColor: [
-            "rgba(255, 134, 159, 1)",
-            "rgba(98,  182, 239, 1)",
-            "rgba(255, 218, 128, 1)",
-            "rgba(113, 205, 205, 1)"
-          ]
-        },
-        {
-          label: "Second Month",
-          data: [4, 5, 1, 2],
-          backgroundColor: [
-            "rgba(255, 134,159,0.4)",
-            "rgba(98,  182, 239,0.4)",
-            "rgba(255, 218, 128,0.4)",
-            "rgba(113, 205, 205,0.4)"
-          ],
-          borderWidth: 2,
-          borderColor: [
-            "rgba(255, 134, 159, 1)",
-            "rgba(98,  182, 239, 1)",
-            "rgba(255, 218, 128, 1)",
-            "rgba(113, 205, 205, 1)"
-          ]
+    constructor() {
+      super()
+      this.state = {
+        first_week: '',
+        second_week: '',
+        third_week: '',
+        fourth_week: '',
         }
-      ]
-    },
-    barChartOptions: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        xAxes: [
-          {
-            barPercentage: 1,
-            gridLines: {
-              display: true,
-              color: "rgba(0, 0, 0, 0.1)"
-            }
-          }
-        ],
-        yAxes: [
-          {
-            gridLines: {
-              display: true,
-              color: "rgba(0, 0, 0, 0.1)"
-            },
-            ticks: {
-              beginAtZero: true
-            }
-          }
-        ]
-      }
     }
-  }
 
+    handleChange = (evt) => {
+      evt.preventDefault()
+      
+      this.props.firstWeek(1)
+    }
+
+    submitWeek = (evt) => {
+      evt.preventDefault()
+
+      const { first_week, second_week, third_week, fourth_week } = this.state
+      this.props.addWeek(first_week, second_week, third_week, fourth_week)
+
+      this.setState({
+        first_week: '',
+        second_week: '',
+        third_week: '',
+        fourth_week: '',
+      })
+    }
 
   render() {
+    const { first_week, second_week, third_week, fourth_week } = this.state
+
     return (
+      <div>
       <MDBContainer>
         <h3 className="mt-5">Weekly Workout</h3>
-        <Bar data={this.state.dataBar} options={this.state.barChartOptions} />
+        <Bar data={this.props.dataBar} options={this.props.barChartOptions} />
       </MDBContainer>
+      <div>
+          <div>
+            <form onSubmit={this.submitWeek}>
+            <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChange} />
+					
+            <br />
+  
+            <input type="number" name="second_week" placeholder="Second Week" value={second_week} onChange={this.handleChange} />
+  
+            <br />
+                      
+            <input type="number" name="third_week" placeholder="Third Week" value={third_week} onChange={this.handleChange} />
+  
+            <br />
+
+            <input type="number" name="fourth_week" placeholder="Fourth Week" value={fourth_week} onChange={this.handleChange} />
+  
+            <br />
+  
+            <button type="submit">Add</button>
+            </form>
+          </div>
+        </div>
+        </div>
     );
   }
 }
 
-export default ChartsPage;
+const mapStateToProps = (state) => {
+  return {
+    weeks: state.graphs.weeks,
+    dataBar: state.graphs.dataBar,
+    barChartOptions: state.graphs.barChartOptions,
+  }
+}
+
+const mapDispatchToProps = {
+  addWeek: addWeek,
+  firstWeek: firstWeek,
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ChartsPage)

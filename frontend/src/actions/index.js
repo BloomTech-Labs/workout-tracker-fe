@@ -26,6 +26,10 @@ export const FETCHING_STATUS = 'FETCHING_ROUTINES'
 export const FETCHING_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
 export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
 
+export const ADD_WEEK = "ADD_WEEK";
+
+export const FIRST_WEEK = 'FIRST_WEEK'
+
 export const getStatuss = () => {
   const promise = axios.get("http://localhost:4000/api/memberstatus");
   console.log('this is the user', promise)
@@ -127,3 +131,25 @@ export const login = input => dispatch => {
       dispatch({ type: LOGIN_FAIL, payload: err.message });
     });
 };
+
+
+export function addWeek( first_week, second_week, third_week, fourth_week){
+  return {
+    type: ADD_WEEK,
+    payload: {
+      first_week,
+      second_week,
+      third_week,
+      fourth_week
+    }
+  }
+}
+
+export function firstWeek( first_week ){
+  return {
+    type: FIRST_WEEK,
+    payload: {
+      first_week
+    }
+  }
+}
