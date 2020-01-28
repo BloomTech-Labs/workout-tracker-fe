@@ -40,7 +40,7 @@ class ChartsPage extends React.Component {
     const { first_week, second_week, third_week, fourth_week } = this.state
 
     return (
-      <div>
+      <div className='weekly-workout form-container'>
       <MDBContainer>
         <h3 className="mt-5">Weekly Workout</h3>
         <Bar data={this.props.dataBar} options={this.props.barChartOptions} />
@@ -48,23 +48,22 @@ class ChartsPage extends React.Component {
       <div>
           <div>
             <form onSubmit={this.submitWeek}>
+
             <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChange} />
-					
+            <button type="submit">Add</button>
             <br />
   
             <input type="number" name="second_week" placeholder="Second Week" value={second_week} onChange={this.handleChange} />
-  
+            <button type="submit">Add</button>
             <br />
                       
             <input type="number" name="third_week" placeholder="Third Week" value={third_week} onChange={this.handleChange} />
-  
+            <button type="submit">Add</button>
             <br />
 
             <input type="number" name="fourth_week" placeholder="Fourth Week" value={fourth_week} onChange={this.handleChange} />
-  
-            <br />
-  
             <button type="submit">Add</button>
+
             </form>
           </div>
         </div>
