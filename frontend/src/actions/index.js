@@ -32,7 +32,11 @@ export const POST_STATUS_FAIL = 'FETCHING_ROUTINES_FAIL'
 
 export const UPDATE_STATUS_START = 'UPDATE)STATUS_START'
 export const UPDATE_STATUS_SUCCESS = 'UPDATE)STATUS_SUCCESS'
-export const UPDATE_STATUS_FAILED = 'UPDATE)STATUS_FAIL'
+export const UPDATE_STATUS_FAILED = 'UPDATESTATUS_FAIL'
+
+export const UPDATE_USER_START = 'UPDATE_USER_START'
+export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS'
+export const UPDATE_USER_FAILED = 'UPDATE_USER_FAILED'
 
 export const getStatuss = () => {
   const userId = localStorage.getItem("userId");
@@ -117,6 +121,19 @@ export const updateStatus = input => dispatch => {
     })
     .catch(err => {
       dispatch({ type: UPDATE_STATUS_FAILED, payload:err.message })
+    })
+}
+
+export const updateUser = input => dispatch => {
+  const userId = localStorage.getItem("userId")
+  dispatch({ type: UPDATE_USER_START})
+  return axios
+    .put(`http://localhost:4000/api/members/${userId}`, input)
+    .then(res => {
+      dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: UPDATE_USER_FAILED, payload:err.message })
     })
 }
 
