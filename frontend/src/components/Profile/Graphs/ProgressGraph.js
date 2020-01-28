@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Bar } from "react-chartjs-2";
 import { connect } from 'react-redux';
 import { MDBContainer } from "mdbreact";
-import { addWeek, firstWeek } from '../../../actions/index'
+import { addWeek, firstWeek, secondWeek, thirdWeek, fourthWeek } from '../../../actions/index'
 
 class ChartsPage extends React.Component {
     constructor() {
@@ -15,10 +15,28 @@ class ChartsPage extends React.Component {
         }
     }
 
-    handleChange = (evt) => {
+    handleChangeFirstWeek = (evt) => {
       evt.preventDefault()
       
-      this.props.firstWeek(1)
+      this.props.firstWeek(evt.target.value)
+    }
+
+    handleChangeSecondWeek = (evt) => {
+      evt.preventDefault()
+      
+      this.props.secondWeek(evt.target.value)
+    }
+
+    handleChangeThirdWeek = (evt) => {
+      evt.preventDefault()
+      
+      this.props.thirdWeek(evt.target.value)
+    }
+
+    handleChangeFourthWeek = (evt) => {
+      evt.preventDefault()
+      
+      this.props.fourthWeek(evt.target.value)
     }
 
     submitWeek = (evt) => {
@@ -48,19 +66,17 @@ class ChartsPage extends React.Component {
           <div>
             <form className='graph-form' onSubmit={this.submitWeek}>
 
-            <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChange} />
-            <button type="submit">Add</button>
+            <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChangeFirstWeek} />
             <br />
   
-            <input type="number" name="second_week" placeholder="Second Week" value={second_week} onChange={this.handleChange} />
-            <button type="submit">Add</button>
+            <input type="number" name="second_week" placeholder="Second Week" value={second_week} onChange={this.handleChangeSecondWeek} />
             <br />
                       
-            <input type="number" name="third_week" placeholder="Third Week" value={third_week} onChange={this.handleChange} />
-            <button type="submit">Add</button>
+            <input type="number" name="third_week" placeholder="Third Week" value={third_week} onChange={this.handleChangeThirdWeek} />
             <br />
 
-            <input type="number" name="fourth_week" placeholder="Fourth Week" value={fourth_week} onChange={this.handleChange} />
+            <input type="number" name="fourth_week" placeholder="Fourth Week" value={fourth_week} onChange={this.handleChangeFourthWeek} />
+            <br />
             <button type="submit">Add</button>
 
             </form>
@@ -82,6 +98,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   addWeek: addWeek,
   firstWeek: firstWeek,
+  secondWeek: secondWeek,
+  thirdWeek: thirdWeek,
+  fourthWeek: fourthWeek,
 }
 
 export default connect(

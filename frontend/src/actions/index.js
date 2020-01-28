@@ -28,7 +28,13 @@ export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
 
 export const ADD_WEEK = "ADD_WEEK";
 
-export const FIRST_WEEK = 'FIRST_WEEK'
+export const FIRST_WEEK = 'FIRST_WEEK';
+
+export const SECOND_WEEK = 'SECOND_WEEK';
+
+export const THIRD_WEEK = 'THIRD_WEEK';
+
+export const FOURTH_WEEK = 'FOURTH_WEEK';
 
 export const POST_STATUS_START = 'FETCHING_ROUTINES_START'
 export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
@@ -192,6 +198,33 @@ export function firstWeek( first_week ){
     type: FIRST_WEEK,
     payload: {
       first_week
+    }
+  }
+}
+
+export function secondWeek( second_week ){
+  return {
+    type: SECOND_WEEK,
+    payload: {
+      second_week
+    }
+  }
+}
+
+export function thirdWeek( third_week ){
+  return {
+    type: THIRD_WEEK,
+    payload: {
+      third_week
+    }
+  }
+}
+
+export function fourthWeek( fourth_week ){
+  return {
+    type: FOURTH_WEEK,
+    payload: {
+      fourth_week
     }
   }
 }

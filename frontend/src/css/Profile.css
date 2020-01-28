@@ -93,9 +93,27 @@
 
 .graph-form {
     flex-direction: row;
-    width: 100%;
     max-width: 100%;
-    padding: 10px;
+    width: 80%;
+}
+
+.graph-form input {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid #c5ecfd;
+    color: #c5ecfd;
+    margin: 0;
+    padding: 0px;
+    margin-right: 10px;
+    width: 80%;
+}
+
+.graph-form button {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px;
 }
 
 /* Calories Graph */

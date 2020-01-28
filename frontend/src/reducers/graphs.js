@@ -1,4 +1,4 @@
-import {ADD_WEEK, FIRST_WEEK} from '../actions/index';
+import {ADD_WEEK, FIRST_WEEK, SECOND_WEEK, THIRD_WEEK, FOURTH_WEEK} from '../actions/index';
 import update from 'immutability-helper';
 
 const initialState = {
@@ -69,19 +69,65 @@ export default function(state = initialState, action) {
             const value = action.payload.first_week
 
             return update(state, {
-                ...state,
                 dataBar: {
                     datasets: {
-                        1: {
-                            data: {
-                                0: {$set: value}
-                            }
+                      0: {
+                        data: {
+                            0: {$set: value}
                         }
+                      }
                     }
                 },
             })
         }
         
+        case SECOND_WEEK: {
+          const value = action.payload.second_week
+
+          return update(state, {
+              dataBar: {
+                  datasets: {
+                      0: {
+                          data: {
+                              1: {$set: value}
+                          }
+                      }
+                  }
+              },
+          })
+      }
+
+      case THIRD_WEEK: {
+        const value = action.payload.third_week
+
+        return update(state, {
+            dataBar: {
+                datasets: {
+                    0: {
+                        data: {
+                            2: {$set: value}
+                        }
+                    }
+                }
+            },
+        })
+      } 
+
+      case FOURTH_WEEK: {
+        const value = action.payload.fourth_week
+
+        return update(state, {
+            dataBar: {
+                datasets: {
+                    0: {
+                        data: {
+                            3: {$set: value}
+                        }
+                    }
+                }
+            },
+        })
+      }
         default:
             return state
     }
