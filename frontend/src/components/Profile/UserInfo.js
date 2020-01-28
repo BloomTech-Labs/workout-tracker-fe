@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "../Routines/Routines.css";
-
+import "../../css/Routines.css";
 import { getStatuss } from "../../actions/index";
 import { connect } from "react-redux"; 
 import MemberProfile from './MemberProfile'

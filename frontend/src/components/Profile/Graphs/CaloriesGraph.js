@@ -2,7 +2,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { MDBContainer } from "mdbreact";
-import "../Profile.css";
+import "../../../css/Profile.css";
 
 class ChartsPage extends React.Component {
   state = {
