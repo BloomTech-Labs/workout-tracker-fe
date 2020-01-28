@@ -13,6 +13,8 @@ import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNav
 import AutocompletePage from "./components/AutoCompletePage";
 import Routines from './components/Routines/Routines.js';
 import ProfileOnboarding from './components/Profile/ProfileOnboarding'
+import UpdateStats from './components/Profile/UpdateProfile/UpdateStats'
+import UpdateUser from './components/Profile/UpdateProfile/UpdateUser'
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
             <Route exact path="/logout" component={LogOut} />
             <Route exact path="/features" component={Features} />
             <Route exact path="/aboutus" component={AboutUs} />
+            <Route exact path='/update-status' component={UpdateStats} />
+            <Route exact path='/update-user' component={UpdateUser} />
           </Switch>
         </Router>
       </Router>

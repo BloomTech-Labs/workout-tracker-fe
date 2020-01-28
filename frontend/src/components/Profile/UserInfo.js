@@ -14,7 +14,7 @@ class Userinfo extends Component {
   }
   
   render() {
-
+    
     if (this.props.loading) {
       return (
         <div>
@@ -22,9 +22,11 @@ class Userinfo extends Component {
         </div>
       );
     } else
+      
       return (
         <div>
           {console.log("status is ", this.props.status)}
+          
           {this.props.status.map(a => (
             <div className='user-info' key='userI'>
               <MemberProfile />

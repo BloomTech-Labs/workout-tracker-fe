@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { postStatus } from "../../actions/index";
+import { updateStatus } from "../../../actions/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getStatuss } from '../../actions/index'
 
-const Onboard = props => {
+const UpdateStats = props => {
   const [input, setInput] = useState({
     member_id: '',
     weight: '',
@@ -15,11 +14,6 @@ const Onboard = props => {
     mile_time: '',
   });
 
-  const testForStats = (weight) => {
-    getStatuss()
-    this.props.weight = weight
-  }
-
   const { member_id, weight, height, bmi, bench_max, squat_max, mile_time } = input;
 
   const handleChange = props => event => {
@@ -28,7 +22,7 @@ const Onboard = props => {
 
   const registerHandler = async event => {
     event.preventDefault();
-    await props.postStatus(input);
+    await props.updateStatus(input);
     props.history.push("/profile");
   };
   // if(testForStats()) {
@@ -36,7 +30,7 @@ const Onboard = props => {
     <>
         <div className="status-forum">
           <div>
-            <h2>Status Inputs</h2>
+            <h2>Update Profile Stats</h2>
           </div>
           <div>
             <form onSubmit={registerHandler}>
@@ -54,7 +48,7 @@ const Onboard = props => {
                 <input value={mile_time} required onChange={handleChange("mile_time")} placeholder="Mile Time" />
 
               </div>
-              <button>Submit User Stats</button>
+              <button>Update User Stats</button>
             </form>
           </div>
         </div>
@@ -71,7 +65,7 @@ const Onboard = props => {
   // }
 };
 
-Onboard.propTypes = {};
+UpdateStats.propTypes = {};
 
 const mapStateToProps = state => {
   return {
@@ -84,4 +78,5 @@ const mapStateToProps = state => {
     mile_time: state.mile_time,
   };
 };
-export default withRouter(connect(mapStateToProps, { postStatus })(Onboard));
+
+export default withRouter(connect(mapStateToProps, { updateStatus })(UpdateStats));
