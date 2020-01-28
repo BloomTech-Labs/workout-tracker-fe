@@ -8,6 +8,11 @@ import "./css/App.css";
 import Graphs from "./components/Profile/Graphs/Graphs";
 import Profile from "./components/Profile/Profile"
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
+// import AutocompletePage from "./components/AutoCompletePage";
+// import Routines from './components/Routines/Routines.js';
+import ProfileOnboarding from './components/Profile/ProfileOnboarding'
+import UpdateStats from './components/Profile/UpdateProfile/UpdateStats'
+import UpdateUser from './components/Profile/UpdateProfile/UpdateUser'
 
 
 function App() {
@@ -26,8 +31,11 @@ function App() {
             <Route path="/profile" exact render={props => <Profile {...props} />} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
+            <Route exact path='/onboarding' component={ProfileOnboarding} />
             <Route exact path="/logout" component={LogOut} />
             <Route exact path="/aboutus" component={AboutUs} />
+            <Route exact path='/update-status' component={UpdateStats} />
+            <Route exact path='/update-user' component={UpdateUser} />
           </Switch>
         </Router>
       </Router>

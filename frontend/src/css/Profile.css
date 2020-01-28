@@ -91,7 +91,7 @@
     background-color: lightgrey;
 }
 
-/* Calories Graph*/
+/* Calories Graph */
 /*------------------------------------------------------*/
 .calories-graph-container {
     display: flex;
@@ -99,4 +99,11 @@
     align-items: center;
     width: 80%;
     background-color: lightgrey;
+}
+
+/* Workout Form */
+/*------------------------------------------------------*/
+
+.form-group label {
+    color: white
 }
