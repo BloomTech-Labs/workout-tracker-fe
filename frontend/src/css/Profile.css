@@ -91,6 +91,13 @@
     background-color: lightgrey;
 }
 
+.graph-form {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+
 /* Calories Graph */
 /*------------------------------------------------------*/
 .calories-graph-container {

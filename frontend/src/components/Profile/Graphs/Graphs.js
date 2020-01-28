@@ -1,5 +1,4 @@
 import React, { Component } from "react"; 
-import "../../../css/Profile.css";
 import UserInfo from "../UserInfo.js";
 import ProgressGraph from "./ProgressGraph.js";
 import CaloriesGraph from "./CaloriesGraph.js";

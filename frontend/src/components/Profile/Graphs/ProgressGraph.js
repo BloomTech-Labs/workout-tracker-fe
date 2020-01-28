@@ -3,7 +3,6 @@ import { Bar } from "react-chartjs-2";
 import { connect } from 'react-redux';
 import { MDBContainer } from "mdbreact";
 import { addWeek, firstWeek } from '../../../actions/index'
-import "../../../css/Profile.css";
 
 class ChartsPage extends React.Component {
     constructor() {
@@ -40,14 +39,14 @@ class ChartsPage extends React.Component {
     const { first_week, second_week, third_week, fourth_week } = this.state
 
     return (
-      <div className='weekly-workout form-container'>
+      <div className='weekly-workout'>
       <MDBContainer>
         <h3 className="mt-5">Weekly Workout</h3>
         <Bar data={this.props.dataBar} options={this.props.barChartOptions} />
       </MDBContainer>
       <div>
           <div>
-            <form onSubmit={this.submitWeek}>
+            <form className='graph-form' onSubmit={this.submitWeek}>
 
             <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChange} />
             <button type="submit">Add</button>
