@@ -59,7 +59,7 @@ export const UPDATE_USER_FAILED = 'UPDATE_USER_FAILED'
 
 export const getStatuss = () => {
   const userId = localStorage.getItem("userId");
-  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}/status`);
+  const promise = axios.get(`https://firstrep.herokuapp.com/api/members/${userId}/status`);
   console.log('this is the user', promise)
   return dispatch => {
     dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
@@ -77,7 +77,7 @@ export const getStatuss = () => {
 
 export const getMembers = () => {
   const userId = localStorage.getItem("userId");
-  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}`);
+  const promise = axios.get(`https://firstrep.herokuapp.com/api/members/${userId}`);
   console.log('this is the member', promise)
   return dispatch => {
     dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched
@@ -120,7 +120,7 @@ export const postStatus = input =>  dispatch => {
   const userId = localStorage.getItem('userId')
   dispatch({ type: POST_STATUS_START });
   return axios
-    .post(`http://firstrep.herokuapp.com/api/members/${userId}/status`, input)
+    .post(`https://firstrep.herokuapp.com/api/members/${userId}/status`, input)
     .then(res => {
       console.log("User stats have been set");
       dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });
@@ -134,7 +134,7 @@ export const updateStatus = input => dispatch => {
   const userId = localStorage.getItem("userId")
   dispatch({ type: UPDATE_STATUS_START})
   return axios
-    .put(`http://firstrep.herokuapp.com/api/members/${userId}/status`, input)
+    .put(`https://firstrep.herokuapp.com/api/members/${userId}/status`, input)
     .then(res => {
       dispatch({ type: UPDATE_STATUS_SUCCESS, payload: res.data })
     })
@@ -147,7 +147,7 @@ export const updateUser = input => dispatch => {
   const userId = localStorage.getItem("userId")
   dispatch({ type: UPDATE_USER_START})
   return axios
-    .put(`http://firstrep.herokuapp.com/api/members/${userId}`, input)
+    .put(`https://firstrep.herokuapp.com/api/members/${userId}`, input)
     .then(res => {
       dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data })
     })

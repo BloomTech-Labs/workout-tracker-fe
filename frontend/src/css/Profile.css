@@ -6,13 +6,20 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 80%;
     margin: 0px 100px 0px 100px;
     padding-top: 100px;
     padding-bottom: 50px;
 }
 
+@media (max-width: 400px) {
+    .profile-container h2 {
+        font-size: 20px;
+    }
+  }
 
+.member-information {
+    height: 950px;
+}
 
 /* User Information Section */
 /*------------------------------------------------------*/
