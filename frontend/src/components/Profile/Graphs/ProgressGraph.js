@@ -19,24 +19,32 @@ class ChartsPage extends React.Component {
       evt.preventDefault()
       
       this.props.firstWeek(evt.target.value)
+
+      this.setState({ first_week: evt.target.value})
     }
 
     handleChangeSecondWeek = (evt) => {
       evt.preventDefault()
       
       this.props.secondWeek(evt.target.value)
+
+      this.setState({ second_week: evt.target.value})
     }
 
     handleChangeThirdWeek = (evt) => {
       evt.preventDefault()
       
       this.props.thirdWeek(evt.target.value)
+
+      this.setState({ third_week: evt.target.value})
     }
 
     handleChangeFourthWeek = (evt) => {
       evt.preventDefault()
       
       this.props.fourthWeek(evt.target.value)
+
+      this.setState({ fourth_week: evt.target.value})
     }
 
     submitWeek = (evt) => {
@@ -64,7 +72,7 @@ class ChartsPage extends React.Component {
       </MDBContainer>
       <div>
           <div>
-            <form className='graph-form' onSubmit={this.submitWeek}>
+            <form className='graph-form'>
 
             <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChangeFirstWeek} />
             <br />

@@ -10,7 +10,7 @@ const initialState = {
         datasets: [
           {
             label: "First Month",
-            data: [2, 3, 6, 7],
+            data: [0, 0, 0, 0],
             backgroundColor: [
               "rgba(255, 134,159,0.4)",
               "rgba(98,  182, 239,0.4)",
