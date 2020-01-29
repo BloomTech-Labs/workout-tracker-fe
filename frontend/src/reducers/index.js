@@ -3,11 +3,13 @@ import signUp from "./signUp";
 import exerciseRecord from "./exerciseRecord";
 import userInfo from "./userInfo";
 import graphs from "./graphs";
+import calories from './calories'
 import { combineReducers } from "redux";
 export default combineReducers({
   login,
   signUp,
   exerciseRecord,
   userInfo,
-  graphs
+  graphs,
+  calories
 });

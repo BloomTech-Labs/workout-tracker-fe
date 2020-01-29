@@ -29,12 +29,14 @@ export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
 export const ADD_WEEK = "ADD_WEEK";
 
 export const FIRST_WEEK = 'FIRST_WEEK';
-
 export const SECOND_WEEK = 'SECOND_WEEK';
-
 export const THIRD_WEEK = 'THIRD_WEEK';
-
 export const FOURTH_WEEK = 'FOURTH_WEEK';
+
+export const FIRST_WEEK_CALORIES = "FIRST_WEEK_CALORIES";
+export const SECOND_WEEK_CALORIES = "SECOND_WEEK_CALORIES";
+export const THIRD_WEEK_CALORIES = "THIRD_WEEK_CALORIES";
+export const FOURTH_WEEK_CALORIES = "FOURTH_WEEK_CALORIES"
 
 export const POST_STATUS_START = 'FETCHING_ROUTINES_START'
 export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
@@ -193,11 +195,11 @@ export function addWeek( first_week, second_week, third_week, fourth_week){
   }
 }
 
-export function firstWeek( first_week ){
+export function firstWeek( first_week, first_week_calories ){
   return {
     type: FIRST_WEEK,
     payload: {
-      first_week
+      first_week,
     }
   }
 }
@@ -225,6 +227,42 @@ export function fourthWeek( fourth_week ){
     type: FOURTH_WEEK,
     payload: {
       fourth_week
+    }
+  } 
+}
+
+export function firstWeekCalories( first_week_calories ){
+  return {
+    type: FIRST_WEEK_CALORIES,
+    payload: {
+      first_week_calories
+    }
+  }
+}
+
+export function secondWeekCalories( second_week_calories ){
+    return {
+      type: SECOND_WEEK_CALORIES,
+      payload: {
+        second_week_calories
+    }
+  }
+}
+
+  export function thirdWeekCalories( third_week_calories ){
+      return {
+        type: THIRD_WEEK_CALORIES,
+        payload: {
+          third_week_calories
+    }
+  }
+}
+
+export function fourthWeekCalories( fourth_week_calories ){
+  return {
+    type: FOURTH_WEEK_CALORIES,
+    payload: {
+      fourth_week_calories
     }
   }
 }
