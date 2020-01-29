@@ -13,6 +13,8 @@ import AutocompletePage from "./components/AutoCompletePage";
 import Routines from "./components/Routines/Routines.js";
 import AddRoutine from "./components/Routines/AddRoutine";
 import AddExercises from "./components/Routines/AddExercises";
+import ExerciseRecords from "./components/Profile/Record-workout/ExerciseRecords";
+import RoutineRecords from "./components/Profile/Record-workout/RoutineRecords";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
             <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/add-routine" component={AddRoutine} />
             <Route exact path="/add-id" component={AddExercises} />
+            <Route exact path="/exercise-records" component={ExerciseRecords} />
+            <Route exact path="/routine-records" component={RoutineRecords} />
           </Switch>
         </Router>
       </Router>
