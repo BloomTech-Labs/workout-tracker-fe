@@ -26,8 +26,21 @@ export const FETCHING_STATUS = 'FETCHING_ROUTINES'
 export const FETCHING_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
 export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
 
+export const POST_STATUS_START = 'FETCHING_ROUTINES_START'
+export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
+export const POST_STATUS_FAIL = 'FETCHING_ROUTINES_FAIL'
+
+export const UPDATE_STATUS_START = 'UPDATE)STATUS_START'
+export const UPDATE_STATUS_SUCCESS = 'UPDATE_STATUS_SUCCESS'
+export const UPDATE_STATUS_FAILED = 'UPDATESTATUS_FAIL'
+
+export const UPDATE_USER_START = 'UPDATE_USER_START'
+export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS'
+export const UPDATE_USER_FAILED = 'UPDATE_USER_FAILED'
+
 export const getStatuss = () => {
-  const promise = axios.get("http://localhost:4000/api/memberstatus");
+  const userId = localStorage.getItem("userId");
+  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}/status`);
   console.log('this is the user', promise)
   return dispatch => {
     dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
@@ -42,17 +55,6 @@ export const getStatuss = () => {
   };
 };
 
-// export const getUser = () => dispatch => {
-//     dispatch({ type: FETCHING })
-//     axios
-//       .get('https://firstrep.herokuapp.com/api/members/1')
-//       .then(response => {
-//         dispatch({ type: FETCHING_SUCCESS, payload: response.data})
-//       })
-//       .catch(err => {
-//         dispatch({ type: FETCHING_FAILED, payload: err.response })
-//       })
-// }
 
 export const getMembers = () => {
   const userId = localStorage.getItem("userId");
@@ -92,6 +94,46 @@ export const getExerciseRecords = () => dispatch => {
     })
     .catch(err => {
       dispatch({ type: EXERCISE_RECORD_FAILED, payload: err.response })
+    })
+}
+
+export const postStatus = input =>  dispatch => {
+  const userId = localStorage.getItem('userId')
+  dispatch({ type: POST_STATUS_START });
+  return axios
+    .post(`http://firstrep.herokuapp.com/api/members/${userId}/status`, input)
+    .then(res => {
+      console.log("User stats have been set");
+      dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: POST_STATUS_FAIL, payload: err.message });
+    });
+}
+
+export const updateStatus = input => dispatch => {
+  const userId = localStorage.getItem("userId")
+  dispatch({ type: UPDATE_STATUS_START})
+  return axios
+    .put(`http://firstrep.herokuapp.com/api/members/${userId}/status`, input)
+    .then(res => {
+      dispatch({ type: UPDATE_STATUS_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: UPDATE_STATUS_FAILED, payload:err.message })
+    })
+}
+
+export const updateUser = input => dispatch => {
+  const userId = localStorage.getItem("userId")
+  dispatch({ type: UPDATE_USER_START})
+  return axios
+    .put(`http://firstrep.herokuapp.com/api/members/${userId}`, input)
+    .then(res => {
+      dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: UPDATE_USER_FAILED, payload:err.message })
     })
 }
 
