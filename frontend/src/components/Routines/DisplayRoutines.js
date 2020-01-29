@@ -16,7 +16,12 @@ function DisplayRoutines() {
     fetchData();
   }, []);
 
-  const obj = {};
+  const submitReq = data => {
+    axios
+      .get(`https://firstrep.herokuapp.com/api/routines/${data}`)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
 
   // onClick={obj['routine_name']}
 
@@ -25,7 +30,7 @@ function DisplayRoutines() {
     <ul>
       {console.log("id is ", id)}
       {data.map(a => (
-        <li onClick={{}}>{a.routine_name}</li>
+        <li onClick={submitReq(a.id)}>{a.routine_name}</li>
       ))}
     </ul>
   );
