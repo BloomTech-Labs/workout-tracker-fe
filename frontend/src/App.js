@@ -8,7 +8,6 @@ import "./css/App.css";
 import Graphs from "./components/Profile/Graphs/Graphs";
 import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
-import AutocompletePage from "./components/AutoCompletePage";
 import Routines from "./components/Routines/Routines.js";
 import RecordRoutine from "./components/Routines/RecordRoutine";
 import ProfileOnboarding from './components/Profile/ProfileOnboarding'
