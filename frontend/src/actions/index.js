@@ -38,6 +38,13 @@ export const SECOND_WEEK_CALORIES = "SECOND_WEEK_CALORIES";
 export const THIRD_WEEK_CALORIES = "THIRD_WEEK_CALORIES";
 export const FOURTH_WEEK_CALORIES = "FOURTH_WEEK_CALORIES"
 
+export const FIRST_WEEK_MUSCLE = "FIRST_WEEK_MUSCLE";
+export const SECOND_WEEK_MUSCLE = "SECOND_WEEK_MUSCLE";
+export const THIRD_WEEK_MUSCLE = "THIRD_WEEK_MUSCLE";
+export const FOURTH_WEEK_MUSCLE = "FOURTH_WEEK_MUSCLE";
+export const FIFTH_WEEK_MUSCLE = "FIFTH_WEEK_MUSCLE";
+export const SIX_WEEK_MUSCLE = "SIX_WEEK_MUSCLE";
+
 export const POST_STATUS_START = 'FETCHING_ROUTINES_START'
 export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
 export const POST_STATUS_FAIL = 'FETCHING_ROUTINES_FAIL'
@@ -263,6 +270,60 @@ export function fourthWeekCalories( fourth_week_calories ){
     type: FOURTH_WEEK_CALORIES,
     payload: {
       fourth_week_calories
+    }
+  }
+}
+
+export function firstWeekMuscle( first_week_muscle ){
+  return {
+    type: FIRST_WEEK_MUSCLE,
+    payload: {
+      first_week_muscle
+    }
+  }
+}
+
+export function secondWeekMuscle( second_week_muscle ){
+  return {
+    type: SECOND_WEEK_MUSCLE,
+    payload: {
+      second_week_muscle
+    }
+  }
+}
+
+export function thirdWeekMuscle( third_week_muscle ){
+  return {
+    type: THIRD_WEEK_MUSCLE,
+    payload: {
+      third_week_muscle
+    }
+  }
+}
+
+export function fourthWeekMuscle( fourth_week_muscle ){
+  return {
+    type: FOURTH_WEEK_MUSCLE,
+    payload: {
+      fourth_week_muscle
+    }
+  }
+}
+
+export function fifthWeekMuscle( fifth_week_muscle ){
+  return {
+    type: FIFTH_WEEK_MUSCLE,
+    payload: {
+      fifth_week_muscle
+    }
+  }
+}
+
+export function sixWeekMuscle( six_week_muscle ){
+  return {
+    type: SIX_WEEK_MUSCLE,
+    payload: {
+      six_week_muscle
     }
   }
 }

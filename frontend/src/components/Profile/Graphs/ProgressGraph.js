@@ -65,7 +65,7 @@ class ChartsPage extends React.Component {
     const { first_week, second_week, third_week, fourth_week } = this.state
 
     return (
-      <div className='weekly-workout'>
+      <div >
       <MDBContainer>
         <h3 className="mt-5">Weekly Workout</h3>
         <Bar data={this.props.dataBar} options={this.props.barChartOptions} />

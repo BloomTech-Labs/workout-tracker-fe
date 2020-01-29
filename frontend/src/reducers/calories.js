@@ -1,4 +1,4 @@
-import {ADD_WEEK, FIRST_WEEK_CALORIES, SECOND_WEEK_CALORIES, THIRD_WEEK_CALORIES, FOURTH_WEEK_CALORIES} from '../actions/index';
+import {ADD_WEEK, FIRST_WEEK_CALORIES, SECOND_WEEK_CALORIES, THIRD_WEEK_CALORIES, FOURTH_WEEK_CALORIES } from '../actions/index';
 import update from 'immutability-helper';
 
 const initialState = {
@@ -127,6 +127,7 @@ export default function(state = initialState, action) {
             },
         })
       }
+
         default:
             return state
     }

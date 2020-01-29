@@ -4,6 +4,7 @@ import exerciseRecord from "./exerciseRecord";
 import userInfo from "./userInfo";
 import graphs from "./graphs";
 import calories from './calories'
+import muscle from './muscle'
 import { combineReducers } from "redux";
 export default combineReducers({
   login,
@@ -11,5 +12,6 @@ export default combineReducers({
   exerciseRecord,
   userInfo,
   graphs,
-  calories
+  calories,
+  muscle
 });
