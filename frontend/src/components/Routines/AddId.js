@@ -90,7 +90,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import "../../styles/index";
 
-const AddExercises = props => {
+const AddId = props => {
   const [input, setInput] = useState({
     exercise_id: []
   });
@@ -147,4 +147,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { addRoutine })(AddExercises);
+export default connect(mapStateToProps, { addRoutine })(AddId);
