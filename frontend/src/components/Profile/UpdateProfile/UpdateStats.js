@@ -13,9 +13,10 @@ const UpdateStats = props => {
     bench_max: '',
     squat_max: '',
     mile_time: '',
+    id: '',
   });
 
-  const { member_id, weight, height, bmi, bench_max, squat_max, mile_time } = input;
+  const { member_id, id, weight, height, bmi, bench_max, squat_max, mile_time } = input;
 
   const handleChange = props => event => {
     setInput({ ...input, [props]: event.target.value });
@@ -23,12 +24,11 @@ const UpdateStats = props => {
 
   const registerHandler = async event => {
     event.preventDefault();
-    await props.updateStatus(input);
+    await props.updateStatus(input, this.props.id);
     props.history.push("/profile");
   };
   // if(testForStats()) {
   return (
-    <>
         <div className="status-forum onboarding-height">
         <ProfileNavbar />
           <div>
@@ -37,6 +37,7 @@ const UpdateStats = props => {
           <div>
             <form className='onboarding-input' onSubmit={registerHandler}>
               <div>
+              <input type='hidden'  value={id}  />
                 <input value={weight} required onChange={handleChange("weight")} placeholder="Weight" />
 
                 <input value={height} required onChange={handleChange("height")} placeholder="Height" />
@@ -54,7 +55,6 @@ const UpdateStats = props => {
             </form>
           </div>
         </div>
-    </>
   );
   // } else {
   //   return (
@@ -78,6 +78,7 @@ const mapStateToProps = state => {
     bench_max: state.bench_max,
     squat_max: state.squat_max,
     mile_time: state.mile_time,
+    id: state.id
   };
 };
 
