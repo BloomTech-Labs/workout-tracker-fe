@@ -142,14 +142,8 @@ const AddRoutine = props => {
     </>
   );
 };
-// not being used atm
-const mapStateToProps = state => {
-  return {
-    routine: state.addRoutine
-  };
-};
 
-export default connect(mapStateToProps, { addRoutine })(AddRoutine);
+export default AddRoutine;
 
 // import React, { useState } from "react";
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import AddRoutine from "./AddRoutine";
 // import "./RecordRoutines.css";
 // import Search from "./Search";
 import "../../styles/index";
@@ -53,9 +54,9 @@ const SearchBar = props => {
             <ul>List of Exercises</ul>
             {newData.map(a => (
               <>
-                <li>
+                <li datatype={a.Ex}>
                   {a}
-                  <button>Add Exercise</button>
+                  <button onClick={{}}>Add Exercise</button>
                 </li>
               </>
             ))}
@@ -139,14 +140,15 @@ function AddExercise() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="routine">Routine</label>
+        <AddRoutine />
+        {/* <label htmlFor="routine">Routine</label>
         <input
           type="text"
           name="routine"
           id="routine"
           value={ownerState.routine}
           onChange={handleOwnerChange}
-        />
+        /> */}
 
         {indexes.map(index => {
           const fieldName = `exercise[${index}]`;
