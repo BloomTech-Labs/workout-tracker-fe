@@ -6,8 +6,6 @@ const SearchBar = () => {
     query: ""
   });
 
-  const [toggle, setToggle] = useState(false);
-
   const [data, setData] = useState("");
 
   const { query } = input;
@@ -26,13 +24,21 @@ const SearchBar = () => {
         // { headers: { "Content-Type": "application/json" } }
       )
       //   .then(res => setData(res))
-      .then(res => setData(res.data))
+      .then(res =>
+        setData(res.data.exercises.map(a => a.Exercise_Name_Complete))
+      )
       .catch(err => console.log(err));
   };
 
-  const componentDidMount = () => {};
+  // restricting search results
+  let length = data.length / 2;
+  let newData = data.slice(0, length);
 
-  if (data) {
+  {
+    console.log(newData, "fddsf");
+  }
+
+  if (newData) {
     return (
       <>
         <form onSubmit={handleSubmit}>
@@ -43,10 +49,10 @@ const SearchBar = () => {
             placeholder="Search Exercise"
           />
           <div>
-            {data.exercises.map(a => (
+            <ul>List of Exercises</ul>
+            {newData.map(a => (
               <>
-                <ul>List of Exercises</ul>
-                <li>{a.Exercise_Name_Complete}</li>
+                <li>{a}</li>
               </>
             ))}
           </div>
