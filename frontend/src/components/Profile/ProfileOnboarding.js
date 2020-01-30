@@ -38,10 +38,10 @@ const Onboard = props => {
         <div className="status-forum onboarding-height">
         <ProfileNavbar />
           <div>
-            <h2>Status Inputs</h2>
+            <h2></h2>
           </div>
           <div>
-            <form onSubmit={registerHandler}>
+            <form className='onboarding-input' onSubmit={registerHandler}>
               <div>
                 <input value={weight} required onChange={handleChange("weight")} placeholder="Weight" />
 

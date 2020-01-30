@@ -24,6 +24,10 @@
     height: 950px;
 }
 
+.onboarding-input {
+    width: 300px;
+}
+
 /* User Information Section */
 /*------------------------------------------------------*/
 .user-info-container {
