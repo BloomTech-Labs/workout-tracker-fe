@@ -68,6 +68,7 @@ class CaloriesPage extends React.Component {
       <div>
         <MDBContainer>
           <h3 className="mt-5">Calories Lost</h3>
+          <h6>(calories/week)</h6>
           <Line data={this.props.dataLine} options={{ responsive: true }} />
         </MDBContainer>
         <div>

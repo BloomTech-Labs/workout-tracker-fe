@@ -68,11 +68,12 @@ class ChartsPage extends React.Component {
       <div >
       <MDBContainer>
         <h3 className="mt-5">Weekly Workout</h3>
+        <h6>(days/week)</h6>
         <Bar data={this.props.dataBar} options={this.props.barChartOptions} />
       </MDBContainer>
       <div>
           <div>
-            <form onSubmit={this.submitWeek} className='graph-form'>
+            <form className='graph-form'>
 
             <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChangeFirstWeek} />
             <br />

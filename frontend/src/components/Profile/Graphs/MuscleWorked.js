@@ -90,6 +90,7 @@ render() {
     <div>
       <MDBContainer>
         <h3 className="mt-5">Muscle Worked</h3>
+        <h6>(days/month)</h6>
         <Bar data={this.props.dataBar} options={this.props.barChartOptions} />
       </MDBContainer>
       <div>
