@@ -6,6 +6,7 @@ import AddRoutine from "./AddRoutine";
 // import "./RecordRoutines.css";
 // import Search from "./Search";
 import "../../styles/index";
+import SignupStyle from "../../styles/index";
 
 const SearchBar = props => {
   const [input, setInput] = useState({
@@ -47,7 +48,7 @@ const SearchBar = props => {
 
   if (newData) {
     return (
-      <>
+      <SignupStyle>
         <button onClick={clearExerciseList}>Clear Search Results</button>
         <form onSubmit={handleSubmit}>
           <input
@@ -68,7 +69,7 @@ const SearchBar = props => {
             ))}
           </div>
         </form>
-      </>
+      </SignupStyle>
     );
   }
 
@@ -121,27 +122,8 @@ function AddExercise() {
 
   const clearExerciseList = () => {};
 
-  // search bar
-
-  //   const [apiResults, setApiResults] = useState([]);
-  //   const [queryString, setQueryString] = useState([]);
-
-  //   const search = exercise => {
-  //     axios
-  //       .post(`https://firstrep.herokuapp.com/api/routines`, exercise)
-  //       .then(res => setApiResults({ res }));
-  //   };
-
-  //   const onChange = e => {
-  //     setQueryString({
-  //       ...queryString,
-  //       [e.target.name]: [e.target.value]
-  //     });
-  //     search(e.target.value);
-  //   };
-
   return (
-    <>
+    <SignupStyle>
       <form onSubmit={handleSubmit(onSubmit)}>
         <AddRoutine />
         {/* <label htmlFor="routine">Routine</label>
@@ -183,8 +165,27 @@ function AddExercise() {
       </form>
 
       <SearchBar />
-    </>
+    </SignupStyle>
   );
 }
 
 export default AddExercise;
+
+// search bar
+
+//   const [apiResults, setApiResults] = useState([]);
+//   const [queryString, setQueryString] = useState([]);
+
+//   const search = exercise => {
+//     axios
+//       .post(`https://firstrep.herokuapp.com/api/routines`, exercise)
+//       .then(res => setApiResults({ res }));
+//   };
+
+//   const onChange = e => {
+//     setQueryString({
+//       ...queryString,
+//       [e.target.name]: [e.target.value]
+//     });
+//     search(e.target.value);
+//   };
