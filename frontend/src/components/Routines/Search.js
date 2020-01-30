@@ -34,10 +34,6 @@ const SearchBar = () => {
   let length = data.length / 2;
   let newData = data.slice(0, length);
 
-  {
-    console.log(newData, "fddsf");
-  }
-
   if (newData) {
     return (
       <>
@@ -56,11 +52,6 @@ const SearchBar = () => {
               </>
             ))}
           </div>
-          {/* {this.state.people.map(person => (
-              <ul key={person.name}>
-                <li>{person.name}</li>
-              </ul>
-            ))} */}
         </form>
       </>
     );

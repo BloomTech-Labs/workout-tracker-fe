@@ -17,6 +17,7 @@ import ExerciseRecords from "./components/Profile/Record-workout/ExerciseRecords
 import RoutineRecords from "./components/Profile/Record-workout/RoutineRecords";
 import AddExercise from "./components/Routines/AddExercise";
 import DisplayRoutines from "./components/Routines/DisplayRoutines";
+import FriendList from "./components/Routines/FriendList";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
             <Route exact path="/routine-records" component={RoutineRecords} />
             <Route exact path="/add-exercise" component={AddExercise} />
             <Route exact path="/display-routine" component={DisplayRoutines} />
+            <Route exact path="/form" component={FriendList} />
           </Switch>
         </Router>
       </Router>
