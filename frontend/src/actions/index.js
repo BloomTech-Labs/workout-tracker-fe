@@ -40,7 +40,7 @@ export const UPDATE_USER_FAILED = 'UPDATE_USER_FAILED'
 
 export const getStatuss = () => {
   const userId = localStorage.getItem("userId");
-  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}/status`);
+  const promise = axios.get(`https://firstrep.herokuapp.com/api/members/${userId}/status`);
   console.log('this is the user', promise)
   return dispatch => {
     dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
@@ -58,7 +58,7 @@ export const getStatuss = () => {
 
 export const getMembers = () => {
   const userId = localStorage.getItem("userId");
-  const promise = axios.get(`http://firstrep.herokuapp.com/api/members/${userId}`);
+  const promise = axios.get(`https://firstrep.herokuapp.com/api/members/${userId}`);
   console.log('this is the member', promise)
   return dispatch => {
     dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched

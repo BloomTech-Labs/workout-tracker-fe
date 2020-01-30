@@ -20,6 +20,7 @@ class MemberProfile extends Component {
       );
     } else
       return (
+        <>
         <div>
           {console.log('member is', this.props.member)}
             <h2>Name: {this.props.member.first_name}</h2>
@@ -27,6 +28,7 @@ class MemberProfile extends Component {
             <h2>username: {this.props.member.username}</h2>
             <h2>Email: {this.props.member.email}</h2>
         </div>
+        </>
       );
   }
 }

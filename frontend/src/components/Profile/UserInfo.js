@@ -42,9 +42,11 @@ class Userinfo extends Component {
             </div>
             <div className='see-more'>
                 <a className='records-button' href='records'>See Records</a>   
-            </div> 
+            </div>
+            
             </div>
           ))}
+          <a href='update-status' classname='update-btn'>UpdateProfile</a>
         </div>
       );
   }
