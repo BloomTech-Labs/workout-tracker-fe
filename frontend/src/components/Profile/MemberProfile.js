@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../css/Routines.css";
 import { getMembers } from "../../actions/index";
 import { connect } from "react-redux"; 
+import { Link } from "react-router-dom";
 
 class MemberProfile extends Component {
   constructor(props) {
@@ -11,6 +12,15 @@ class MemberProfile extends Component {
     this.props.getMembers(); 
   }
   
+  handleClick(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    alert('click. but dont redirect...');
+
+    return false;
+
+  }
+
   render() {
     if (this.props.loading) {
       return (
@@ -29,7 +39,9 @@ class MemberProfile extends Component {
               <h2>Email: {this.props.member.email}</h2>
           </div>
           <div>
-              <a className='see-more-button' href='/profile-info'>See More Info</a>
+
+          <Link to='/profile-info'>See More Info</Link>
+
           </div>
         </div>
       );

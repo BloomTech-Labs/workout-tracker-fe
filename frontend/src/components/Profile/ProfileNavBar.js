@@ -36,9 +36,6 @@ class ProfileNavbar extends React.Component {
               <MDBNavItem>
                 <MDBNavLink to="/profile">Profile</MDBNavLink>
               </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/profile-info">Profile info</MDBNavLink>
-              </MDBNavItem>
               <MDBNavItem >
                 <MDBNavLink to="/profile-onboarding">Onboading</MDBNavLink>
               </MDBNavItem>
