@@ -26,7 +26,7 @@ class Search extends React.Component {
       .catch(err => console.log(err));
   };
 
-  //   handleChange = props => event => {
+  //  x handleChange = props => event => {
   //     setInput({ ...input, [props]: event.target.value });
   //   };
 
