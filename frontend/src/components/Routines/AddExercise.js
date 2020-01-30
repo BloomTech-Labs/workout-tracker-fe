@@ -20,6 +20,11 @@ const SearchBar = props => {
     setInput({ ...input, [props]: event.target.value });
   };
 
+  const clearExerciseList = e => {
+    e.preventDefault();
+    setData([]);
+  };
+
   const handleSubmit = async event => {
     event.preventDefault();
     const url = `https://firstrep.herokuapp.com/api/exrx/`;
@@ -43,6 +48,7 @@ const SearchBar = props => {
   if (newData) {
     return (
       <>
+        <button onClick={clearExerciseList}>Clear Search Results</button>
         <form onSubmit={handleSubmit}>
           <input
             value={query}
@@ -75,11 +81,6 @@ const SearchBar = props => {
           onChange={handleChange("query")}
           placeholder="Search Exercise"
         />
-        {/* {this.state.people.map(person => (
-            <ul key={person.name}>
-              <li>{person.name}</li>
-            </ul>
-          ))} */}
       </form>
     </>
   );
@@ -117,6 +118,8 @@ function AddExercise() {
   const clearExercises = () => {
     setIndexes([]);
   };
+
+  const clearExerciseList = () => {};
 
   // search bar
 
