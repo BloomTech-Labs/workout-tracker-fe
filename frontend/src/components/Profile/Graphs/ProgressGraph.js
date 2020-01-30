@@ -72,7 +72,7 @@ class ChartsPage extends React.Component {
       </MDBContainer>
       <div>
           <div>
-            <form className='graph-form'>
+            <form onSubmit={this.submitWeek} className='graph-form'>
 
             <input type="number" name="first_week" placeholder="First Week" value={first_week} onChange={this.handleChangeFirstWeek} />
             <br />

@@ -202,7 +202,7 @@ export function addWeek( first_week, second_week, third_week, fourth_week){
   }
 }
 
-export function firstWeek( first_week, first_week_calories ){
+export function firstWeek( first_week ){
   return {
     type: FIRST_WEEK,
     payload: {

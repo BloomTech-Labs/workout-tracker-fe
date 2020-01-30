@@ -27,7 +27,7 @@ class MemberProfile extends Component {
             <h2>username: {this.props.member.username}</h2>
             <h2>Email: {this.props.member.email}</h2>
         </div>
-        </>
+        
       );
   }
 }
