@@ -4,6 +4,7 @@ import { getStatuss } from "../../actions/index";
 import { connect } from "react-redux"; 
 import ProfileNavbar from './ProfileNavBar'
 import MemberProfile from './MemberProfile'
+import { Link } from "react-router-dom";
 
 class Userinfo extends Component {
   constructor(props) {
@@ -36,7 +37,8 @@ class Userinfo extends Component {
                 <h3>Body Mass Percentage: {a.bmi}</h3>
                 <h3>Mile Time: {a.mile_time}</h3>
             </div>
-            <a href='update-status' classname='/update-btn'>UpdateProfile</a>
+
+            <Link to='/update-status'>UpdateProfile</Link>
             
             </div>
           ))}
