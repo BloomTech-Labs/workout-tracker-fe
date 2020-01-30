@@ -29,7 +29,7 @@ class MemberProfile extends Component {
               <h2>Email: {this.props.member.email}</h2>
           </div>
           <div>
-              <a className='see-more-button' href='profile-info'>See More Info</a>
+              <a className='see-more-button' href='/profile-info'>See More Info</a>
           </div>
         </div>
       );

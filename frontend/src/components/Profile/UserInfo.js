@@ -36,7 +36,7 @@ class Userinfo extends Component {
                 <h3>Body Mass Percentage: {a.bmi}</h3>
                 <h3>Mile Time: {a.mile_time}</h3>
             </div>
-            <a href='update-status' classname='update-btn'>UpdateProfile</a>
+            <a href='update-status' classname='/update-btn'>UpdateProfile</a>
             
             </div>
           ))}
