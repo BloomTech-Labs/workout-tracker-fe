@@ -29,13 +29,13 @@ const UpdateStats = props => {
   // if(testForStats()) {
   return (
     <>
-        <div className="status-forum">
+        <div className="status-forum onboarding-height">
         <ProfileNavbar />
           <div>
             <h2>Update Profile Stats</h2>
           </div>
           <div>
-            <form onSubmit={registerHandler}>
+            <form className='onboarding-input' onSubmit={registerHandler}>
               <div>
                 <input value={weight} required onChange={handleChange("weight")} placeholder="Weight" />
 
