@@ -20,14 +20,18 @@ class MemberProfile extends Component {
       );
     } else
       return (
-        <div className="member-information">
-          {console.log('member is', this.props.member)}
-            <h2>Name: {this.props.member.first_name}</h2>
-            <h2>Last Name: {this.props.member.last_name}</h2>
-            <h2>username: {this.props.member.username}</h2>
-            <h2>Email: {this.props.member.email}</h2>
+        <div>
+          <div className="member-information">
+            {console.log('member is', this.props.member)}
+              <h2>Name: {this.props.member.first_name}</h2>
+              <h2>Last Name: {this.props.member.last_name}</h2>
+              <h2>username: {this.props.member.username}</h2>
+              <h2>Email: {this.props.member.email}</h2>
+          </div>
+          <div>
+              <a className='see-more-button' href='profile-info'>See More Info</a>
+          </div>
         </div>
-        
       );
   }
 }

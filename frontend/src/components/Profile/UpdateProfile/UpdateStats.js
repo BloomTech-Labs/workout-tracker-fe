@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { updateStatus } from "../../../actions/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import ProfileNavbar from '../ProfileNavBar'
 
 const UpdateStats = props => {
   const [input, setInput] = useState({
@@ -29,6 +30,7 @@ const UpdateStats = props => {
   return (
     <>
         <div className="status-forum">
+        <ProfileNavbar />
           <div>
             <h2>Update Profile Stats</h2>
           </div>

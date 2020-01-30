@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { postStatus } from "../../actions/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getStatuss } from '../../actions/index'
+import { getStatuss } from '../../actions/index';
+import ProfileNavbar from './ProfileNavBar'
 
 const Onboard = props => {
   const [input, setInput] = useState({
@@ -34,7 +35,8 @@ const Onboard = props => {
   // if(testForStats()) {
   return (
     <>
-        <div className="status-forum">
+        <div className="status-forum onboarding-height">
+        <ProfileNavbar />
           <div>
             <h2>Status Inputs</h2>
           </div>

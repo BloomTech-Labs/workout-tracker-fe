@@ -13,6 +13,7 @@ import RecordRoutine from "./components/Routines/RecordRoutine";
 import ProfileOnboarding from './components/Profile/ProfileOnboarding'
 import UpdateStats from './components/Profile/UpdateProfile/UpdateStats'
 import UpdateUser from './components/Profile/UpdateProfile/UpdateUser'
+import UserInfo from "./components/Profile/UserInfo";
 
 function App() {
   return (
@@ -37,6 +38,16 @@ function App() {
               path="/profile"
               exact
               render={props => <Profile {...props} />}
+            />
+            <Route
+              path="/profile-info"
+              exact
+              component= {UserInfo}
+            />
+            <Route
+              path="/profile-onboarding"
+              exact
+              component= {ProfileOnboarding}
             />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
