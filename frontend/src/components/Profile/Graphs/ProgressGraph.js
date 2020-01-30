@@ -54,10 +54,10 @@ class ChartsPage extends React.Component {
       this.props.addWeek(first_week, second_week, third_week, fourth_week)
 
       this.setState({
-        first_week: '',
-        second_week: '',
-        third_week: '',
-        fourth_week: '',
+        first_week: evt.target.value,
+        second_week: evt.target.value,
+        third_week: evt.target.value,
+        fourth_week: evt.target.value,
       })
     }
 

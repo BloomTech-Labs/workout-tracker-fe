@@ -58,11 +58,12 @@ const initialState = {
 export default function(state = initialState, action) {
     switch (action.type) {
         case ADD_WEEK: {
-            const newWeek = state.week.concat([action.payload])
 
+          console.log(action.payload)
             return {
-                ...state,
-                week:newWeek
+              ...state,
+              ...action.payload,
+              message: "Successfully saved graph"
             }
         }
         case FIRST_WEEK: {

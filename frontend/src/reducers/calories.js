@@ -56,14 +56,6 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case ADD_WEEK: {
-            const newWeek = state.week.concat([action.payload])
-
-            return {
-                ...state,
-                week:newWeek
-            }
-        }
         case FIRST_WEEK_CALORIES: {
             const value = action.payload.first_week_calories
 
