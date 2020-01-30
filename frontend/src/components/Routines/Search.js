@@ -1,62 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-class Search extends React.Component {
-  token = null;
-  state = {
+const SearchBar = () => {
+  const [input, setInput] = useState({
     query: ""
+  });
+
+  const [toggle, setToggle] = useState(false);
+
+  const [data, setData] = useState("");
+
+  const { query } = input;
+
+  const handleChange = props => event => {
+    setInput({ ...input, [props]: event.target.value });
   };
 
-  onChange = e => {
-    const { value } = e.target;
-    this.setState({
-      query: value
-    });
-    this.search({ search: value });
-  };
-
-  search = query => {
-    const url = `https://swapi.co/api/people?search=${query}`;
-    const token = {};
-    this.token = token;
-    let parsedQuery = JSON.stringify(query);
-    axios
-      .post(`https://firstrep.herokuapp.com/api/exrx/`, parsedQuery)
+  const handleSubmit = async event => {
+    event.preventDefault();
+    let parsedQuery = toString(query);
+    const url = `https://firstrep.herokuapp.com/api/exrx/`;
+    await axios
+      .post(url, { search: parsedQuery })
+      //   .then(res => setData(res))
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
 
-  //  x handleChange = props => event => {
-  //     setInput({ ...input, [props]: event.target.value });
-  //   };
+  const componentDidMount = () => {};
 
-  handleSubmit = data => {
-    this.search(data);
-  };
-  componentDidMount() {
-    this.handleSubmit("");
-  }
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          className="search-box"
-          placeholder="Search for..."
-          onChange={this.onChange}
-          value={this.state.query}
-        />
-        {/* {this.state.people.map(person => (
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        value={query}
+        required
+        onChange={handleChange("query")}
+        placeholder="Search Exercise"
+      />
+      {/* {this.state.people.map(person => (
           <ul key={person.name}>
             <li>{person.name}</li>
           </ul>
         ))} */}
-      </form>
-    );
-  }
-}
+    </form>
+  );
+};
 
-export default Search;
+export default SearchBar;
+
+// class Search extends React.Component {
+//   token = null;
+//   state = {
+//     query: ""
+//   };
+
+//   onChange = e => {
+//     const { value } = e.target;
+//     this.setState({
+//       query: value
+//     });
+//     this.search({ search: value });
+//   };
+
+//   search = query => {
+//     const url = `https://swapi.co/api/people?search=${query}`;
+//     const token = {};
+//     this.token = token;
+//     let parsedQuery = JSON.stringify(query);
+//     axios
+//       .post(`https://firstrep.herokuapp.com/api/exrx/`, parsedQuery)
+//       .then(res => console.log(res))
+//       .catch(err => console.log(err));
+//   };
+
+//   //  x handleChange = props => event => {
+//   //     setInput({ ...input, [props]: event.target.value });
+//   //   };
+
+//   handleSubmit = data => {
+//     this.search(data);
+//   };
+//   componentDidMount() {
+//     this.handleSubmit("");
+//   }
+//   render() {
+//     return (
+//       <form onSubmit={this.handleSubmit}>
+//         <input
+//           type="text"
+//           className="search-box"
+//           placeholder="Search for..."
+//           onChange={this.onChange}
+//           value={this.state.query}
+//         />
+//         {/* {this.state.people.map(person => (
+//           <ul key={person.name}>
+//             <li>{person.name}</li>
+//           </ul>
+//         ))} */}
+//       </form>
+//     );
+//   }
+// }
+
+// export default Search;
 
 // import React, { useState } from "react";
 // import axios from "axios";
