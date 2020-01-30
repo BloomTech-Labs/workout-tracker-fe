@@ -29,7 +29,7 @@ const Signup = props => {
   const registerHandler = async e => {
     e.preventDefault();
     await props.signUp(input);
-    props.history.push("/onboarding");
+    props.history.push("/login");
   };
 
   //   const dispatch = useDispatch();

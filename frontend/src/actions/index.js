@@ -130,11 +130,11 @@ export const postStatus = input =>  dispatch => {
     });
 }
 
-export const updateStatus = (input, id) => dispatch => {
+export const updateStatus = (input, status_id) => dispatch => {
   const userId = localStorage.getItem("userId")
   dispatch({ type: UPDATE_STATUS_START})
   return axios
-    .put(`https://firstrep.herokuapp.com/api/members/${userId}/status/${id}`, input)
+    .put(`https://firstrep.herokuapp.com/api/members/${userId}/status/${status_id}`, input)
     .then(res => {
       dispatch({ type: UPDATE_STATUS_SUCCESS, payload: res.data })
     })
