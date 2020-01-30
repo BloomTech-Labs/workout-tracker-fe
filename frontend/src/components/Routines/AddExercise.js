@@ -60,7 +60,6 @@ function AddExercise() {
 
   return (
     <>
-      <Search />
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="routine">Routine</label>
         <input
@@ -99,6 +98,8 @@ function AddExercise() {
         </button>
         <input type="submit" />
       </form>
+
+      <Search />
     </>
   );
 }

@@ -18,31 +18,64 @@ const SearchBar = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    let parsedQuery = toString(query);
     const url = `https://firstrep.herokuapp.com/api/exrx/`;
     await axios
-      .post(url, { search: parsedQuery })
+      .post(
+        url,
+        { search: query }
+        // { headers: { "Content-Type": "application/json" } }
+      )
       //   .then(res => setData(res))
-      .then(res => console.log(res))
+      .then(res => setData(res.data))
       .catch(err => console.log(err));
   };
 
   const componentDidMount = () => {};
 
+  if (data) {
+    return (
+      <>
+        <form onSubmit={handleSubmit}>
+          <input
+            value={query}
+            required
+            onChange={handleChange("query")}
+            placeholder="Search Exercise"
+          />
+          <div>
+            {data.exercises.map(a => (
+              <>
+                <ul>List of Exercises</ul>
+                <li>{a.Exercise_Name_Complete}</li>
+              </>
+            ))}
+          </div>
+          {/* {this.state.people.map(person => (
+              <ul key={person.name}>
+                <li>{person.name}</li>
+              </ul>
+            ))} */}
+        </form>
+      </>
+    );
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        value={query}
-        required
-        onChange={handleChange("query")}
-        placeholder="Search Exercise"
-      />
-      {/* {this.state.people.map(person => (
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={query}
+          required
+          onChange={handleChange("query")}
+          placeholder="Search Exercise"
+        />
+        {/* {this.state.people.map(person => (
           <ul key={person.name}>
             <li>{person.name}</li>
           </ul>
         ))} */}
-    </form>
+      </form>
+    </>
   );
 };
 
