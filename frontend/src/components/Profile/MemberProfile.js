@@ -39,7 +39,9 @@ class MemberProfile extends Component {
               <h2>Email: {this.props.member.email}</h2>
           </div>
           <div>
+
           <Link to='/profile-info'>See More Info</Link>
+
           </div>
         </div>
       );
