@@ -6,13 +6,20 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 80%;
     margin: 0px 100px 0px 100px;
     padding-top: 100px;
     padding-bottom: 50px;
 }
 
+@media (max-width: 400px) {
+    .profile-container h2 {
+        font-size: 20px;
+    }
+  }
 
+.member-information {
+    height: 950px;
+}
 
 /* User Information Section */
 /*------------------------------------------------------*/
@@ -91,6 +98,31 @@
     background-color: lightgrey;
 }
 
+.graph-form {
+    flex-direction: row;
+    max-width: 100%;
+    width: 80%;
+}
+
+.graph-form input {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid #c5ecfd;
+    color: #c5ecfd;
+    margin: 0;
+    padding: 0px;
+    margin-right: 10px;
+    width: 80%;
+}
+
+.graph-form button {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px;
+}
+
 /* Calories Graph */
 /*------------------------------------------------------*/
 .calories-graph-container {
@@ -101,6 +133,8 @@
     background-color: lightgrey;
 }
 
+.weekly-workout {
+    width: 100%;}
 /* Workout Form */
 /*------------------------------------------------------*/
 
