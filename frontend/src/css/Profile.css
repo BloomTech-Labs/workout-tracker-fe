@@ -3,7 +3,6 @@
 .profile-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
     margin: 0px 100px 0px 100px;
@@ -17,7 +16,11 @@
     }
   }
 
-.member-information {
+.profile-height {
+    height: 950px;
+}
+
+.onboarding-height {
     height: 950px;
 }
 
@@ -31,18 +34,9 @@
     width: 100%;
 }
 
-.user-info{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 100px 50px 100px;
-    border: solid rgb(77, 143, 230);
-    border-radius: 20px;
-    flex-direction: column;
-    width: 100%;
-    background-image: linear-gradient(to top, rgb(77, 143, 230), rgb(13, 90, 190));
-    
+.user-information{
+    padding-top: 85px;
+    text-align: center;
 }
 
 .see-more{
@@ -140,4 +134,12 @@
 
 .form-group label {
     color: white
+}
+
+.status-forum div h2 {
+    padding-top: 100px;
+}
+
+.status-forum div button {
+    font-size: 13px;
 }

@@ -33,8 +33,11 @@ class ProfileNavbar extends React.Component {
           )}
           <MDBCollapse isOpen={this.state.collapse} navbar>
             <MDBNavbarNav left>
-              <MDBNavItem active>
+              <MDBNavItem>
                 <MDBNavLink to="/profile">Profile</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem >
+                <MDBNavLink to="/profile-onboarding">Onboading</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="/graphs">Graphs</MDBNavLink>

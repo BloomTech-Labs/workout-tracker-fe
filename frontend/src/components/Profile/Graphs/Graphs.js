@@ -11,7 +11,6 @@ export default class Profile extends Component {
     return (
       <div className="profile-container">
         <ProfileNavbar />
-        <UserInfo />
         <ProgressGraph />
         <CaloriesGraph />
         <MuscleWorked />

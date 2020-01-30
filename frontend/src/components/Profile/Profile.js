@@ -7,10 +7,9 @@ import '../../css/Profile.css'
 export default class Profile extends Component {
   render() {
     return (
-      <div className="profile-container">
+      <div className="profile-container profile-height">
         <ProfileNavbar />
         <MemberProfile />
-        <a href='update-user' classname='update-btn'>UpdateProfile</a>
       </div>
     );
   }
