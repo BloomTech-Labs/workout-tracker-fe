@@ -47,13 +47,7 @@ function SearchBar(props) {
   const handleButtonClick = async e => {
     e.preventDefault();
     let val = e.target.dataset.value;
-
     setId(val);
-
-    // axios
-    //   .post(`https://firstrep.herokuapp.com/api/exrx/`, { search: id })
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log(err));
   };
 
   // restricting search results
@@ -62,14 +56,14 @@ function SearchBar(props) {
 
   if (newData) {
     return (
-      //   <SignupStyle>
+      // <SignupStyle>
       <>
         <AddExercise id={id} />
         <>
           <button onClick={clearExerciseList}>Clear Search Results</button>
           <form onSubmit={handleSubmit}>
             <input
-              value={id}
+              value={query}
               required
               onChange={handleChange("query")}
               placeholder="Search Exercise"
@@ -156,14 +150,13 @@ function AddExercise({ id }) {
         {indexes.map(index => {
           const fieldName = `exercise[${index}]`;
           return (
-            <fieldset name={id} key={fieldName}>
+            <fieldset name={id[0]} key={fieldName}>
               <label>
                 Exercise {id}:
                 <input
                   type="text"
                   name={`${fieldName}.exercise`}
                   ref={register}
-                  value={id}
                 />
               </label>
 
