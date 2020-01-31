@@ -14,6 +14,9 @@ const SearchBar = props => {
   });
 
   const [data, setData] = useState("");
+  const [exercise, setExercise] = useState("");
+  const [id, setId] = useState("");
+  const [name, setName] = useState("");
 
   const { query } = input;
 
@@ -30,25 +33,37 @@ const SearchBar = props => {
     event.preventDefault();
     const url = `https://firstrep.herokuapp.com/api/exrx/`;
     await axios
-      .post(
-        url,
-        { search: query }
-        // { headers: { "Content-Type": "application/json" } }
-      )
-      //   .then(res => setData(res))
-      .then(res =>
-        setData(res.data.exercises.map(a => a.Exercise_Name_Complete))
-      )
+      .post(url, { search: query })
+      .then(res => setData(res.data))
+      .catch(err => console.log(err));
+    if (data) {
+      setExercise(data.exercises);
+      setName(data);
+    }
+  };
+
+  const handleButtonClick = async e => {
+    e.preventDefault();
+    let val = e.target.dataset.value;
+
+    setId(val);
+    {
+      console.log("this is id", val);
+    }
+    axios
+      .post(`https://firstrep.herokuapp.com/api/exrx/`, { search: id })
+      .then(res => console.log(res))
       .catch(err => console.log(err));
   };
 
   // restricting search results
-  let length = data.length / 2;
-  let newData = data.slice(0, length);
+  let length = exercise.length / 2;
+  let newData = exercise.slice(0, length);
 
   if (newData) {
     return (
-      <SignupStyle>
+      //   <SignupStyle>
+      <>
         <button onClick={clearExerciseList}>Clear Search Results</button>
         <form onSubmit={handleSubmit}>
           <input
@@ -61,15 +76,21 @@ const SearchBar = props => {
             <ul>List of Exercises</ul>
             {newData.map(a => (
               <>
-                <li datatype={a.Ex}>
-                  {a}
-                  <button onClick={{}}>Add Exercise</button>
+                <li>
+                  {a.Exercise_Name_Complete}
+
+                  <button
+                    onClick={handleButtonClick}
+                    data-value={a.Exercise_Name_Complete}
+                  >
+                    Add Exercise
+                  </button>
                 </li>
               </>
             ))}
           </div>
         </form>
-      </SignupStyle>
+      </>
     );
   }
 
@@ -120,21 +141,11 @@ function AddExercise() {
     setIndexes([]);
   };
 
-  const clearExerciseList = () => {};
-
   return (
-    <SignupStyle>
+    // <SignupStyle>
+    <>
+      <AddRoutine />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <AddRoutine />
-        {/* <label htmlFor="routine">Routine</label>
-        <input
-          type="text"
-          name="routine"
-          id="routine"
-          value={ownerState.routine}
-          onChange={handleOwnerChange}
-        /> */}
-
         {indexes.map(index => {
           const fieldName = `exercise[${index}]`;
           return (
@@ -165,7 +176,8 @@ function AddExercise() {
       </form>
 
       <SearchBar />
-    </SignupStyle>
+    </>
+    // </SignupStyle>
   );
 }
 
