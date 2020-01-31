@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -9,13 +9,15 @@ import "../../styles/index";
 import SignupStyle from "../../styles/index";
 
 const SearchBar = props => {
+  const [id, setId] = useState("");
+
   const [input, setInput] = useState({
     query: ""
   });
 
   const [data, setData] = useState("");
   const [exercise, setExercise] = useState("");
-  const [id, setId] = useState("");
+
   const [name, setName] = useState("");
 
   const { query } = input;
@@ -47,13 +49,10 @@ const SearchBar = props => {
     let val = e.target.dataset.value;
 
     setId(val);
-    {
-      console.log("this is id", val);
-    }
-    axios
-      .post(`https://firstrep.herokuapp.com/api/exrx/`, { search: id })
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+    // axios
+    //   .post(`https://firstrep.herokuapp.com/api/exrx/`, { search: id })
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err));
   };
 
   // restricting search results
@@ -67,7 +66,7 @@ const SearchBar = props => {
         <button onClick={clearExerciseList}>Clear Search Results</button>
         <form onSubmit={handleSubmit}>
           <input
-            value={query}
+            value={id}
             required
             onChange={handleChange("query")}
             placeholder="Search Exercise"
@@ -108,7 +107,7 @@ const SearchBar = props => {
   );
 };
 
-function AddExercise() {
+function AddExercise({ id }) {
   const [indexes, setIndexes] = React.useState([]);
   const [counter, setCounter] = React.useState(0);
   const [ownerState, setOwnerState] = useState({
@@ -128,7 +127,7 @@ function AddExercise() {
   };
 
   const addExercise = () => {
-    setIndexes(prevIndexes => [...prevIndexes, counter]);
+    setIndexes(id => [...id, counter]);
     setCounter(prevCounter => prevCounter + 1);
   };
 
@@ -149,13 +148,14 @@ function AddExercise() {
         {indexes.map(index => {
           const fieldName = `exercise[${index}]`;
           return (
-            <fieldset name={fieldName} key={fieldName}>
+            <fieldset name={id} key={fieldName}>
               <label>
-                Exercise {index}:
+                Exercise {id}:
                 <input
                   type="text"
                   name={`${fieldName}.exercise`}
                   ref={register}
+                  value={id}
                 />
               </label>
 
@@ -175,7 +175,7 @@ function AddExercise() {
         <input type="submit" />
       </form>
 
-      <SearchBar />
+      <SearchBar id={id} />
     </>
     // </SignupStyle>
   );
