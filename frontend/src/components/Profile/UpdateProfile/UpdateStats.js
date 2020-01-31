@@ -10,11 +10,11 @@ class updateStats extends React.Component {
     this.state = {
       id: props.location.status.id || "",
       weight: props.location.status.weight || "",
-      height: '',
-      bmi: '',
-      bench_max: '',
-      squat_max: '',
-      mile_time: '',
+      height: props.location.status.height || '',
+      bmi: props.location.status.bmi || '',
+      bench_max: props.location.status.bench_max || '',
+      squat_max: props.location.status.squat_max || '',
+      mile_time: props.location.status.mile_time || '',
     }
   }
 
