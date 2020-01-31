@@ -8,7 +8,7 @@ import AddRoutine from "./AddRoutine";
 import "../../styles/index";
 import SignupStyle from "../../styles/index";
 
-const SearchBar = props => {
+function SearchBar(props) {
   const [id, setId] = useState("");
 
   const [input, setInput] = useState({
@@ -49,6 +49,7 @@ const SearchBar = props => {
     let val = e.target.dataset.value;
 
     setId(val);
+
     // axios
     //   .post(`https://firstrep.herokuapp.com/api/exrx/`, { search: id })
     //   .then(res => console.log(res))
@@ -63,49 +64,55 @@ const SearchBar = props => {
     return (
       //   <SignupStyle>
       <>
-        <button onClick={clearExerciseList}>Clear Search Results</button>
-        <form onSubmit={handleSubmit}>
-          <input
-            value={id}
-            required
-            onChange={handleChange("query")}
-            placeholder="Search Exercise"
-          />
-          <div>
-            <ul>List of Exercises</ul>
-            {newData.map(a => (
-              <>
-                <li>
-                  {a.Exercise_Name_Complete}
+        <AddExercise id={id} />
+        <>
+          <button onClick={clearExerciseList}>Clear Search Results</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              value={id}
+              required
+              onChange={handleChange("query")}
+              placeholder="Search Exercise"
+            />
+            <div>
+              <ul>List of Exercises</ul>
+              {newData.map(a => (
+                <>
+                  <li>
+                    {a.Exercise_Name_Complete}
 
-                  <button
-                    onClick={handleButtonClick}
-                    data-value={a.Exercise_Name_Complete}
-                  >
-                    Add Exercise
-                  </button>
-                </li>
-              </>
-            ))}
-          </div>
-        </form>
+                    <button
+                      onClick={handleButtonClick}
+                      data-value={a.Exercise_Name_Complete}
+                    >
+                      Add Exercise
+                    </button>
+                  </li>
+                </>
+              ))}
+            </div>
+          </form>
+        </>
       </>
     );
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={query}
-          required
-          onChange={handleChange("query")}
-          placeholder="Search Exercise"
-        />
-      </form>
+      <AddExercise id={id} />
+      <>
+        <form onSubmit={handleSubmit}>
+          <input
+            value={query}
+            required
+            onChange={handleChange("query")}
+            placeholder="Search Exercise"
+          />
+        </form>
+      </>
     </>
   );
-};
+}
 
 function AddExercise({ id }) {
   const [indexes, setIndexes] = React.useState([]);
@@ -145,6 +152,7 @@ function AddExercise({ id }) {
     <>
       <AddRoutine />
       <form onSubmit={handleSubmit(onSubmit)}>
+        {console.log("this is ", id)}
         {indexes.map(index => {
           const fieldName = `exercise[${index}]`;
           return (
@@ -174,14 +182,12 @@ function AddExercise({ id }) {
         </button>
         <input type="submit" />
       </form>
-
-      <SearchBar id={id} />
     </>
     // </SignupStyle>
   );
 }
 
-export default AddExercise;
+export default SearchBar;
 
 // search bar
 

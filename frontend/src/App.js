@@ -15,9 +15,10 @@ import AddRoutine from "./components/Routines/AddRoutine";
 import AddId from "./components/Routines/AddId";
 import ExerciseRecords from "./components/Profile/Record-workout/ExerciseRecords";
 import RoutineRecords from "./components/Profile/Record-workout/RoutineRecords";
-import AddExercise from "./components/Routines/AddExercise";
+import AddExercise from "./components/Routines/SearchBar";
 import DisplayRoutines from "./components/Routines/DisplayRoutines";
 import FriendList from "./components/Routines/FriendList";
+import SearchBar from "./components/Routines/SearchBar";
 
 function App() {
   return (
@@ -51,7 +52,7 @@ function App() {
             <Route exact path="/add-id" component={AddId} />
             <Route exact path="/exercise-records" component={ExerciseRecords} />
             <Route exact path="/routine-records" component={RoutineRecords} />
-            <Route exact path="/add-exercise" component={AddExercise} />
+            <Route exact path="/add-exercise" component={SearchBar} />
             <Route exact path="/display-routine" component={DisplayRoutines} />
             <Route exact path="/form" component={FriendList} />
           </Switch>
