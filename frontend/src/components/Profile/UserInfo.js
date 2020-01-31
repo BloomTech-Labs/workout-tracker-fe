@@ -27,18 +27,18 @@ class Userinfo extends Component {
       return (
         <div className='status-forum'>
           <ProfileNavbar />
-          {this.props.status.map(a => (
+          {this.props.status.map(status => (
             <div className='user-information' key='userI'>
             <div key={'infow'}>
-                <h3>Weight: {a.weight} </h3>
-                <h3>Bench Max: {a.bench_max}</h3>
-                <h3>Squat Max: {a.squat_max}</h3>
-                <h3>Height: {a.height}</h3>
-                <h3>Body Mass Percentage: {a.bmi}</h3>
-                <h3>Mile Time: {a.mile_time}</h3>
+                <h3>Weight: {status.weight} </h3>
+                <h3>Bench Max: {status.bench_max}</h3>
+                <h3>Squat Max: {status.squat_max}</h3>
+                <h3>Height: {status.height}</h3>
+                <h3>Body Mass Percentage: {status.bmi}</h3>
+                <h3>Mile Time: {status.mile_time}</h3>
             </div>
 
-            <Link to='/update-status'>UpdateProfile</Link>
+            <Link to={{pathname: `/update-status`, status}}  >UpdateProfile</Link>
             
             </div>
           ))}

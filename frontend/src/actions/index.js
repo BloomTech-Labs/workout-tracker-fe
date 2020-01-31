@@ -49,7 +49,7 @@ export const POST_STATUS_START = 'FETCHING_ROUTINES_START'
 export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
 export const POST_STATUS_FAIL = 'FETCHING_ROUTINES_FAIL'
 
-export const UPDATE_STATUS_START = 'UPDATE)STATUS_START'
+export const UPDATE_STATUS_START = 'UPDATE_STATUS_START'
 export const UPDATE_STATUS_SUCCESS = 'UPDATE_STATUS_SUCCESS'
 export const UPDATE_STATUS_FAILED = 'UPDATESTATUS_FAIL'
 
@@ -130,16 +130,17 @@ export const postStatus = input =>  dispatch => {
     });
 }
 
-export const updateStatus = (input, status_id) => dispatch => {
+export const updateStatus = (input) => dispatch => {
   const userId = localStorage.getItem("userId")
-  dispatch({ type: UPDATE_STATUS_START})
+  const statusId = input.id
+  dispatch({ type: POST_STATUS_START})
   return axios
-    .put(`https://firstrep.herokuapp.com/api/members/${userId}/status/${status_id}`, input)
+    .put(`https://firstrep.herokuapp.com/api/members/${userId}/status/${statusId}`, input)
     .then(res => {
-      dispatch({ type: UPDATE_STATUS_SUCCESS, payload: res.data })
+      dispatch({ type: POST_STATUS_SUCCESS, payload: res.data })
     })
     .catch(err => {
-      dispatch({ type: UPDATE_STATUS_FAILED, payload:err.message })
+      dispatch({ type: POST_STATUS_FAIL, payload:err.message })
     })
 }
 
