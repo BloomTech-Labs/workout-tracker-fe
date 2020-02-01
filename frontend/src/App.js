@@ -17,7 +17,7 @@ import AddExercise from "./components/Routines/SearchBar";
 import DisplayRoutines from "./components/Routines/DisplayRoutines";
 import FriendList from "./components/Routines/FriendList";
 import SearchBar from "./components/Routines/SearchBar";
-import RecordRoutine from "./components/Routines/RecordRoutine";
+// import RecordRoutine from "./components/Routines/RecordRoutine";
 import ProfileOnboarding from './components/Profile/ProfileOnboarding'
 import UpdateStats from './components/Profile/UpdateProfile/UpdateStats'
 import UpdateUser from './components/Profile/UpdateProfile/UpdateUser'
@@ -69,7 +69,7 @@ function App() {
             <Route exact path="/add-exercise/:id" component={SearchBar} />
             <Route exact path="/display-routine" component={DisplayRoutines} />
             <Route exact path="/form" component={FriendList} />
-            <Route exact path="/routine" component={RecordRoutine} />
+            {/* <Route exact path="/routine" component={RecordRoutine} /> */}
             <Route exact path='/update-status' component={UpdateStats} />
             <Route exact path='/update-user' component={UpdateUser} />
           </Switch>
