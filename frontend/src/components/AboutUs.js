@@ -1,16 +1,17 @@
-import React, { Component } from "react";
 import Navbar from "./Navbar";
-import "../css/about-us.css"
-import { render } from "react-dom";
+import React from 'react';
+import NavBarStyle from "../styles/NavBarStyle";
+import AboutUsStyleSection from "../styles/AboutUsSection"
 
-class AvoutUs extends Component {
+function AvoutUs(props) {
 
-    render() {
-        return (
-        <div>
+
+    return (
+    <div>
         <Navbar />
-
-        <div class="container-about">
+        <AboutUsStyleSection>
+        <NavBarStyle/>
+        <div class="container">
             <div class='member-section'>
                 <div class='member-header'>
                     <div class='member-image'>
@@ -49,8 +50,10 @@ class AvoutUs extends Component {
                 reprehenderit in voluptate velit esse cillum dolore eu fugiat</p>
             </div>
         </div>
+        </AboutUsStyleSection>
 
-        <div class="container-about members-second-section">
+        <AboutUsStyleSection>
+        <div class="container members-second-section">
             <div class='member-section'>
                 <div class='member-header'>
                     <div class='member-image'>
@@ -88,10 +91,12 @@ class AvoutUs extends Component {
                 <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
                 reprehenderit in voluptate velit esse cillum t</p>
             </div>
-        </div>
+            </div>
+        </AboutUsStyleSection>
+
+
     </div>
-    );
-    }
+    )
 }
 
 

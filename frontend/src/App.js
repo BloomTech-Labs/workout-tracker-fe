@@ -1,13 +1,15 @@
 import React from "react";
 import Signup from "./components/Signup";
-import LogOut from "./components/LogOut";
 import Login from "./components/Login";
+import Features from "./components/Features";
 import AboutUs from "./components/AboutUs";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./css/App.css";
+import Modal from "./components/Modal";
+import "./App.css";
 import Graphs from "./components/Profile/Graphs/Graphs";
 import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
+import AutocompletePage from "./components/AutoCompletePage";
 import Routines from "./components/Routines/Routines.js";
 import AddRoutine from "./components/Routines/AddRoutine";
 import AddId from "./components/Routines/AddId";
@@ -47,20 +49,9 @@ function App() {
               exact
               render={props => <Profile {...props} />}
             />
-            <Route
-              path="/profile-info"
-              exact
-              component= {UserInfo}
-            />
-            <Route
-              path="/profile-onboarding"
-              exact
-              component= {ProfileOnboarding}
-            />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
-            <Route exact path='/onboarding' component={ProfileOnboarding} />
-            <Route exact path="/logout" component={LogOut} />
+            <Route exact path="/features" component={Features} />
             <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/add-routine" component={AddRoutine} />
             <Route exact path="/add-id" component={AddId} />

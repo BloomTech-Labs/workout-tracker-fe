@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-import "../../../css/Profile.css";
+import "../Profile.css";
 import ProfileNavbar from '../ProfileNavBar'
 
 export default class Profile extends Component {

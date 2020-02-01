@@ -3,30 +3,16 @@
 .profile-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    width: 80%;
     margin: 0px 100px 0px 100px;
     padding-top: 100px;
     padding-bottom: 50px;
 }
 
-@media (max-width: 400px) {
-    .profile-container h2 {
-        font-size: 20px;
-    }
-  }
 
-.profile-height {
-    height: 950px;
-}
-
-.onboarding-height {
-    height: 950px;
-}
-
-.onboarding-input {
-    width: 300px;
-}
 
 /* User Information Section */
 /*------------------------------------------------------*/
@@ -38,9 +24,18 @@
     width: 100%;
 }
 
-.user-information{
-    padding-top: 85px;
-    text-align: center;
+.user-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 100px 50px 100px;
+    border: solid rgb(77, 143, 230);
+    border-radius: 20px;
+    flex-direction: column;
+    width: 100%;
+    background-image: linear-gradient(to top, rgb(77, 143, 230), rgb(13, 90, 190));
+    
 }
 
 .see-more{
@@ -96,32 +91,7 @@
     background-color: lightgrey;
 }
 
-.graph-form {
-    flex-direction: row;
-    max-width: 100%;
-    width: 80%;
-}
-
-.graph-form input {
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-    border: 0px;
-    border-bottom: 2px solid #c5ecfd;
-    color: #c5ecfd;
-    margin: 0;
-    padding: 0px;
-    margin-right: 10px;
-    width: 80%;
-}
-
-.graph-form button {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 5px;
-}
-
-/* Calories Graph */
+/* Calories Graph*/
 /*------------------------------------------------------*/
 .calories-graph-container {
     display: flex;
@@ -129,25 +99,4 @@
     align-items: center;
     width: 80%;
     background-color: lightgrey;
-}
-
-.weekly-workout {
-    width: 100%;}
-/* Workout Form */
-/*------------------------------------------------------*/
-
-.form-group label {
-    color: white
-}
-
-.status-forum div h2 {
-    padding-top: 100px;
-}
-
-.status-forum div button {
-    font-size: 13px;
-}
-
-.status-forum {
-    height: 950px;
 }

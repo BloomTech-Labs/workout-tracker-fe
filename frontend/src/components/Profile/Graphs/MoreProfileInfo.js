@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { getMembers } from "../../actions";
 import { connect } from "react-redux";
-import "../../../css/Profile.css";
+import "./Profile";
 import axios from "axios";
 
 class MoreInfo extends React.Component {

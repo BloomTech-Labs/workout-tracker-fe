@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FeaturesStyleSection from '../styles/FeaturesSection'
+import NavBarStyle from "../styles/NavBarStyle";
 import Navbar from "./Navbar";
 import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBNavItem,
+  MDBNavLink,
   MDBContainer,
   MDBMask,
   MDBView,
@@ -11,6 +20,8 @@ import {
   MDBCarouselInner, 
   MDBCarouselItem
 } from "mdbreact";
+
+import Modal from "./Modal";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -34,8 +45,8 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     return (
       <div>
       <Navbar />
+<NavBarStyle/>
         <header>
-           
           <Router>
       
           </Router>
@@ -83,7 +94,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
 
         
       <div className='container container-div'>
-      <div className='second-container-app'>
+      <div className='container-app'>
         <div>
           <h1>First Rep is an app that lets you create and manage workout routines.</h1>
           <p align="justify" className='about-app'>
@@ -100,6 +111,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       </div>
       </div>
 
+        <FeaturesStyleSection>
     <MDBContainer className='caroussel'>
       <MDBCarousel
       activeItem={1}
@@ -210,7 +222,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
       </MDBCarouselInner>
     </MDBCarousel>
     </MDBContainer>
-
+      </FeaturesStyleSection>
       <div>
         <footer>
         <p className='footer-copyright'>Copyright © 2020 LambdaSchool. All Rights Reserved.</p>

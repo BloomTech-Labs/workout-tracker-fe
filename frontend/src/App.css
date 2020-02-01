@@ -1,0 +1,79 @@
+.App {
+  background-image: linear-gradient(to top,#2c2c54,rgb(76,92,150));
+  color: white;
+}
+
+/* {First Tittle} */
+
+.first-tittle {
+  font-size: 18px;
+  text-align: left;
+}
+
+.first-p {
+  text-align: left;
+}
+
+.first-image{
+  padding-right: 45px;
+  height: 360px;
+}
+
+.first-div{
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+  max-width: 930px;
+}
+
+.unorder-list li{
+  font-size: 20px;
+}
+
+/* {second tittle} */
+.about-app {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.container-div{
+  padding-top: 50px;
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+  max-width: 930px;
+}
+
+.container-app {
+  display: flex;
+  padding-top: 30px;
+}
+
+.container h1 {
+  font-size: 45px;
+  color: yellow;
+}
+
+.second-image{
+  padding-left: 90px;
+  height: 580px;
+}
+
+/* {caroussel} */
+
+.caroussel {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+/* {Footer} */
+
+.footer-copyright {
+  background-color: #222;
+  height: 37px;
+  padding-top: 8px;
+  text-align: center;
+  margin: 0;
+}
