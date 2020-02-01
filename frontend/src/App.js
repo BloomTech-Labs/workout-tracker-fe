@@ -52,7 +52,7 @@ function App() {
             <Route exact path="/add-id" component={AddId} />
             <Route exact path="/exercise-records" component={ExerciseRecords} />
             <Route exact path="/routine-records" component={RoutineRecords} />
-            <Route exact path="/add-exercise" component={SearchBar} />
+            <Route exact path="/add-exercise/:id" component={SearchBar} />
             <Route exact path="/display-routine" component={DisplayRoutines} />
             <Route exact path="/form" component={FriendList} />
           </Switch>

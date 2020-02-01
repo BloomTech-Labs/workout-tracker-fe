@@ -1,101 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useRoutes, useRedirect } from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import { addRoutine } from "../../actions/index";
 import { connect } from "react-redux";
+import SearchBar from "./SearchBar";
 // import "./RecordRoutines.css";
 import axios from "axios";
 import "../../styles/index";
 import Axios from "axios";
-
-// const AddRoutine = props => {
-//   const [indexes, setIndexes] = React.useState([]);
-//   const [counter, setCounter] = React.useState(0);
-//   const [ownerState, setOwnerState] = useState({
-//     routine_name: ""
-//   });
-//   const { register, handleSubmit } = useForm();
-
-//   const handleOwnerChange = e =>
-//     setOwnerState({
-//       ...ownerState.routine_name,
-//       [e.target.name]: [e.target.value]
-//     });
-
-//   const onSubmit = data => {
-//     console.log(data);
-//     props.addRoutine(data, 1);
-//   };
-
-//   const { memberId } = props;
-
-//   const addExercise = () => {
-//     setIndexes(prevIndexes => [...prevIndexes, counter]);
-//     setCounter(prevCounter => prevCounter + 1);
-//   };
-
-//   const removeExercise = index => () => {
-//     setIndexes(prevIndexes => [...prevIndexes.filter(item => item !== index)]);
-//     setCounter(prevCounter => prevCounter - 1);
-//   };
-
-//   const clearExercises = () => {
-//     setIndexes([]);
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)}>
-//       <label htmlFor="routine">Routine</label>
-//       <input
-//         type="text"
-//         name="routine"
-//         id="routine"
-//         value={ownerState.routine_name}
-//         onChange={handleOwnerChange}
-//       />
-
-//       {indexes.map(index => {
-//         const fieldName = `routine_name[${index}]`;
-//         return (
-//           <fieldset name={fieldName} key={fieldName}>
-//             <label>
-//               Exercise {index}:
-//               <input
-//                 type="text"
-//                 name={`${fieldName}.routine_description`}
-//                 ref={register}
-//               />
-//             </label>
-
-//             <button type="button" onClick={removeExercise(index)}>
-//               Remove
-//             </button>
-//           </fieldset>
-//         );
-//       })}
-
-//       <button type="button" onClick={addExercise}>
-//         Add Exercise
-//       </button>
-//       <button type="button" onClick={clearExercises}>
-//         Clear Exercises
-//       </button>
-//       <input type="submit" />
-//     </form>
-//   );
-// };
-
-// const mapStateToProps = state => {
-//   return {
-//     routine: state.addRoutine
-//   };
-// };
 
 const AddRoutine = props => {
   const [input, setInput] = useState({
     routine_name: "",
     routine_description: ""
   });
+
+  const [id, setId] = useState(0);
 
   const { routine_name, routine_description } = input;
 
@@ -107,9 +27,12 @@ const AddRoutine = props => {
     event.preventDefault();
     await axios
       .post(`https://firstrep.herokuapp.com/api/routines`, input)
-      .then(res => console.log(res))
+      .then(res => props.history.push(`/add-exercise/${res.data.id}`))
       .catch(err => console.log(err));
+
+    //
   };
+
   return (
     <>
       {/* <Navbar /> */}
