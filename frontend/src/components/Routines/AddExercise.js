@@ -9,7 +9,7 @@ import "../../styles/index";
 import SignupStyle from "../../styles/index";
 
 const SearchBar = props => {
-  const [id, setId] = useState("");
+  const [id, setId] = useState([]);
 
   const [input, setInput] = useState({
     query: ""
@@ -47,8 +47,12 @@ const SearchBar = props => {
   const handleButtonClick = async e => {
     e.preventDefault();
     let val = e.target.dataset.value;
+    let exerciseId = e.target.dataset.id;
 
-    setId(val);
+    setId(id.concat({exercise_id: exerciseId, exercise_name: val}));
+    console.log("val", val)
+    console.log("array", id)
+    // console.log(val.exercise_id)
     // axios
     //   .post(`https://firstrep.herokuapp.com/api/exrx/`, { search: id })
     //   .then(res => console.log(res))
@@ -72,7 +76,15 @@ const SearchBar = props => {
             placeholder="Search Exercise"
           />
           <div>
-            <ul>List of Exercises</ul>
+            <ul>Added Exercises</ul>
+            {id.map(a => (
+              <>
+              <li>{a.exercise_name}</li>
+              </>
+            ))}
+          </div>
+          <div>
+            <ul>Search Results</ul>
             {newData.map(a => (
               <>
                 <li>
@@ -80,6 +92,7 @@ const SearchBar = props => {
 
                   <button
                     onClick={handleButtonClick}
+                    data-id={a.Exercise_Id}
                     data-value={a.Exercise_Name_Complete}
                   >
                     Add Exercise
@@ -143,7 +156,7 @@ function AddExercise({ id }) {
   return (
     // <SignupStyle>
     <>
-      <AddRoutine />
+      <AddRoutine exercises={id} />
       <form onSubmit={handleSubmit(onSubmit)}>
         {indexes.map(index => {
           const fieldName = `exercise[${index}]`;
