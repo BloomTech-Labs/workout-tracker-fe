@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import SignupStyle from "../styles/index";
 import Navbar from "./Navbar";
+import { Redirect } from 'react-router'
 // import Navbar from "./Navbar";
 // import validateAuth from "../validateAuth";
 // import { useSelector } from "react-redux";
@@ -17,7 +18,7 @@ const Signup = props => {
     last_name: "",
     email: "",
     username: "",
-    password: ""
+    password: "",
   });
 
   const { first_name, last_name, email, username, password } = input;
@@ -29,8 +30,10 @@ const Signup = props => {
   const registerHandler = async e => {
     e.preventDefault();
     await props.signUp(input);
+    
     props.history.push("/login");
   };
+
 
   //   const dispatch = useDispatch();
   //   const incrementCounter = useCallback(
@@ -43,7 +46,9 @@ const Signup = props => {
   //   };
   //   <form onSubmit={() => dispatch(signUp(first_name, last_name, Email))}>
 
+  
   return (
+    
     <>
       {/* <Navbar /> */}
       <Navbar />
@@ -89,6 +94,7 @@ const Signup = props => {
               </div>
               <button>Signup</button>
             </form>
+            )}
           </div>
         </div>
       </SignupStyle>

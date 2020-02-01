@@ -1,19 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   MDBNavbar,
-  MDBNavbarBrand,
   MDBNavbarNav,
   MDBNavbarToggler,
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
-  MDBContainer,
-  MDBMask,
-  MDBView,
-  MDBBtn
 } from "mdbreact";
-import { BrowserRouter as Router } from "react-router-dom";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -40,7 +33,7 @@ class Navbar extends React.Component {
           )}
           <MDBCollapse isOpen={this.state.collapse} navbar>
             <MDBNavbarNav left>
-              <MDBNavItem active>
+              <MDBNavItem>
                 <MDBNavLink to="/">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
@@ -49,7 +42,7 @@ class Navbar extends React.Component {
             </MDBNavbarNav>
 
             <MDBNavbarNav right>
-              <MDBNavItem active>             
+              <MDBNavItem>             
               <MDBNavLink to="/login">Login</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>

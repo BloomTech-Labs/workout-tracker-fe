@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Routines.css';
+import '../../css/Routines.css';
 import { getRoutines } from '../../actions/index'
 import { connect } from 'react-redux';
 import axios from 'axios'
