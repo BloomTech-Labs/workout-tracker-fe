@@ -1,14 +1,12 @@
 import axios from "axios";
 
-export const FETCHING = 'FETCHING'
-export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
-export const FETCHING_FAILED = 'FETCHING_FAILED'
+export const FETCHING = "FETCHING";
+export const FETCHING_SUCCESS = "FETCHING_SUCCESS";
+export const FETCHING_FAILED = "FETCHING_FAILED";
 
-// export const GET_MEMBERS = 'GET_MEMBERS'
-
-export const FETCHING_ROUTINES = 'FETCHING_ROUTINES'
-export const FETCHING_ROUTINES_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
-export const FETCHING_ROUTINES_FAILED = 'FETCHING_ROUTINES_FAILED'
+export const FETCHING_ROUTINES = "FETCHING_ROUTINES";
+export const FETCHING_ROUTINES_SUCCESS = "FETCHING_ROUTINES_SUCCESS";
+export const FETCHING_ROUTINES_FAILED = "FETCHING_ROUTINES_FAILED";
 
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
@@ -18,14 +16,21 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAIL = "SIGNUP_FAIL";
 export const SIGNUP_START = "SIGNUP_START";
 
-export const EXERCISE_RECORD = 'EXERCISE_RECORD'
-export const EXERCISE_RECORD_SUCCESS = 'EXERCISE_RECORD_SUCCESS'
-export const EXERCISE_RECORD_FAILED = 'EXERCISE_RECORD_FAILED'
+export const EXERCISE_RECORD = "EXERCISE_RECORD";
+export const EXERCISE_RECORD_SUCCESS = "EXERCISE_RECORD_SUCCESS";
+export const EXERCISE_RECORD_FAILED = "EXERCISE_RECORD_FAILED";
 
-export const FETCHING_STATUS = 'FETCHING_ROUTINES'
-export const FETCHING_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
-export const FETCHING_STATUS_FAILED = 'FETCHING_ROUTINES_FAILED'
+export const FETCHING_STATUS = "FETCHING_ROUTINES";
+export const FETCHING_STATUS_SUCCESS = "FETCHING_ROUTINES_SUCCESS";
+export const FETCHING_STATUS_FAILED = "FETCHING_ROUTINES_FAILED";
 
+export const ADDING_EXERCISE = "ADDING_EXERCISE";
+export const ADDING_EXERCISE_SUCCESS = "ADDING_EXERCISE_SUCCESS";
+export const ADDING_EXERCISE_FAILED = "ADDING_EXERCISE_FAILED";
+
+export const ADDING_ROUTINE = "ADDING_ROUTINE";
+export const ADDING_ROUTINE_SUCCESS = "ADDING_ROUTINE_SUCCESS";
+export const ADDING_ROUTINE_FAILED = "ADDING_ROUTINE_FAILED";
 export const ADD_WEEK = "ADD_WEEK";
 
 export const FIRST_WEEK = 'FIRST_WEEK';
@@ -56,6 +61,10 @@ export const UPDATE_STATUS_FAILED = 'UPDATESTATUS_FAIL'
 export const UPDATE_USER_START = 'UPDATE_USER_START'
 export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS'
 export const UPDATE_USER_FAILED = 'UPDATE_USER_FAILED'
+
+export const getStatus = () => {
+  const promise = axios.get("http://localhost:4000/api/memberstatus");
+  console.log("this is the user", promise)};
 
 export const getStatuss = () => {
   const userId = localStorage.getItem("userId");
@@ -93,28 +102,28 @@ export const getMembers = () => {
 };
 
 export const getRoutines = () => dispatch => {
-  dispatch({ type: FETCHING_ROUTINES })
+  dispatch({ type: FETCHING_ROUTINES });
   axios
-    .get('https://firstrep.herokuapp.com/api/routines')
+    .get("https://firstrep.herokuapp.com/api/routines")
     .then(response => {
-      dispatch({ type: FETCHING_ROUTINES_SUCCESS, payload: response.data})
+      dispatch({ type: FETCHING_ROUTINES_SUCCESS, payload: response.data });
     })
     .catch(err => {
-      dispatch({ type: FETCHING_ROUTINES_FAILED, payload: err.response })
-    })
-}
+      dispatch({ type: FETCHING_ROUTINES_FAILED, payload: err.response });
+    });
+};
 
 export const getExerciseRecords = () => dispatch => {
-  dispatch({ type: EXERCISE_RECORD })
+  dispatch({ type: EXERCISE_RECORD });
   axios
-    .get('https://firstrep.herokuapp.com/api/')
+    .get("https://firstrep.herokuapp.com/api/")
     .then(response => {
-      dispatch({ type: EXERCISE_RECORD_SUCCESS, payload: response.data})
+      dispatch({ type: EXERCISE_RECORD_SUCCESS, payload: response.data });
     })
     .catch(err => {
-      dispatch({ type: EXERCISE_RECORD_FAILED, payload: err.response })
-    })
-}
+      dispatch({ type: EXERCISE_RECORD_FAILED, payload: err.response });
+    });
+};
 
 export const postStatus = input =>  dispatch => {
   const userId = localStorage.getItem('userId')

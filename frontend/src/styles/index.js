@@ -15,6 +15,61 @@ const SignupStyle = styled.div`
   align-content: center;
   justify-content: center;
   display: flex;
+  .h2-routine {
+    margin-left: 100px;
+  }
+  .form_container {
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+  }
+  form {
+    display: flex;
+    max-width: 60%;
+    width: 500px;
+    margin: 0 auto;
+
+    background: rgb(46, 49, 65);
+    opacity: 1;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 5px;
+  }
+  h2 {
+    margin-left: 200px;
+  }
+  body {
+  }
+
+  input {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+    margin: 10px 0;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid #c5ecfd;
+    padding: 10px;
+    color: #c5ecfd;
+    width: 100%;
+  }
+
+  button {
+    background: rgb(76, 92, 150);
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 25px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
 `;
 
 export default SignupStyle;
