@@ -18,6 +18,9 @@ const SignupStyle = styled.div`
   align-content: center;
   justify-content: center;
   display: flex;
+  .h2-routine {
+    margin-left: 100px;
+  }
   .form_container {
     background-size: cover;
     height: 100vh;

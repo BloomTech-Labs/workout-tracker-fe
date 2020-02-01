@@ -46,17 +46,18 @@ const SearchBar = props => {
   };
 
   {
-    console.log("this is ", id);
+    console.log(props);
   }
 
   const exerciseSubmit = async e => {
     e.preventDefault();
-    axios.post(
-      `https://firstrep.herokuapp.com/api/routinesexercises/${props.match.params.id}`,
-      {
-        exercise_id: [1008]
-      }
-    );
+    await axios
+      .post(
+        `https://firstrep.herokuapp.com/api/routinesexercises/${props.match.params.id}`,
+        { exercise_id: id.map(a => a.exercise_id) }
+      )
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
 
   // restricting search results
@@ -65,45 +66,46 @@ const SearchBar = props => {
 
   if (newData) {
     return (
-      //   <SignupStyle>
       <>
-        <button onClick={clearExerciseList}>Clear Search Results</button>
-        <form onSubmit={handleSubmit}>
-          <input
-            required
-            onChange={handleChange("query")}
-            placeholder="Search Exercise"
-          />
-          <div>
-            <ul>Added Exercises</ul>
-            {id.map((a, i) => (
-              <>
-                <li>
-                  {a.exercise_name}
-                  <button data-id={i}>Remove</button>
-                </li>
-              </>
-            ))}
-            <button onClick={exerciseSubmit}>Finish</button>
-          </div>
-          <div>
-            <ul>Search Results</ul>
-            {newData.map(a => (
-              <>
-                <li>
-                  {a.Exercise_Name_Complete}
-                  <button
-                    onClick={handleButtonClick}
-                    data-id={a.Exercise_Id}
-                    data-value={a.Exercise_Name_Complete}
-                  >
-                    Add Exercise
-                  </button>
-                </li>
-              </>
-            ))}
-          </div>
-        </form>
+        <>
+          <button onClick={clearExerciseList}>Clear Search Results</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              required
+              onChange={handleChange("query")}
+              placeholder="Search Exercise"
+            />
+            <div>
+              <ul>Added Exercises</ul>
+              {id.map((a, i) => (
+                <>
+                  <li>
+                    {a.exercise_name}
+                    <button data-id={i}>Remove</button>
+                  </li>
+                </>
+              ))}
+              <button onClick={exerciseSubmit}>Finish</button>
+            </div>
+            <div>
+              <ul>Search Results</ul>
+              {newData.map(a => (
+                <>
+                  <li>
+                    {a.Exercise_Name_Complete}
+                    <button
+                      onClick={handleButtonClick}
+                      data-id={a.Exercise_Id}
+                      data-value={a.Exercise_Name_Complete}
+                    >
+                      Add Exercise
+                    </button>
+                  </li>
+                </>
+              ))}
+            </div>
+          </form>
+        </>
       </>
     );
   }

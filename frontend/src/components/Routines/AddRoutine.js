@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import SearchBar from "./SearchBar";
 // import "./RecordRoutines.css";
 import axios from "axios";
+import SignupStyle from "../../styles/index";
 import "../../styles/index";
 import Axios from "axios";
 
@@ -28,6 +29,7 @@ const AddRoutine = props => {
     await axios
       .post(`https://firstrep.herokuapp.com/api/routines`, input)
       .then(res => props.history.push(`/add-exercise/${res.data.id}`))
+      // .then(res=>console)
       .catch(err => console.log(err));
 
     //
@@ -39,7 +41,7 @@ const AddRoutine = props => {
 
       <div className="form-container">
         <div>
-          <h2>Add A Routine</h2>
+          <h2>Create A New Routine Name</h2>
         </div>
         <div>
           <form onSubmit={handleSubmit}>
