@@ -6,9 +6,6 @@ const SignupStyle = styled.div`
   background-color: rgb(46, 49, 65);
   background-image: linear-gradient(to top, #2c2c54, rgb(76, 92, 150));
   background-size: auto, cover;
-  // background-image: url("https://46gb9l10qld536ktv928ai60-wpengine.netdna-ssl.com/wp-content/uploads/2018/09/kid-airport.jpg
-  // ");
-  //   background-size: cover;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

@@ -31,10 +31,45 @@ export const ADDING_EXERCISE_FAILED = "ADDING_EXERCISE_FAILED";
 export const ADDING_ROUTINE = "ADDING_ROUTINE";
 export const ADDING_ROUTINE_SUCCESS = "ADDING_ROUTINE_SUCCESS";
 export const ADDING_ROUTINE_FAILED = "ADDING_ROUTINE_FAILED";
+export const ADD_WEEK = "ADD_WEEK";
+
+export const FIRST_WEEK = 'FIRST_WEEK';
+export const SECOND_WEEK = 'SECOND_WEEK';
+export const THIRD_WEEK = 'THIRD_WEEK';
+export const FOURTH_WEEK = 'FOURTH_WEEK';
+
+export const FIRST_WEEK_CALORIES = "FIRST_WEEK_CALORIES";
+export const SECOND_WEEK_CALORIES = "SECOND_WEEK_CALORIES";
+export const THIRD_WEEK_CALORIES = "THIRD_WEEK_CALORIES";
+export const FOURTH_WEEK_CALORIES = "FOURTH_WEEK_CALORIES"
+
+export const FIRST_WEEK_MUSCLE = "FIRST_WEEK_MUSCLE";
+export const SECOND_WEEK_MUSCLE = "SECOND_WEEK_MUSCLE";
+export const THIRD_WEEK_MUSCLE = "THIRD_WEEK_MUSCLE";
+export const FOURTH_WEEK_MUSCLE = "FOURTH_WEEK_MUSCLE";
+export const FIFTH_WEEK_MUSCLE = "FIFTH_WEEK_MUSCLE";
+export const SIX_WEEK_MUSCLE = "SIX_WEEK_MUSCLE";
+
+export const POST_STATUS_START = 'FETCHING_ROUTINES_START'
+export const POST_STATUS_SUCCESS = 'FETCHING_ROUTINES_SUCCESS'
+export const POST_STATUS_FAIL = 'FETCHING_ROUTINES_FAIL'
+
+export const UPDATE_STATUS_START = 'UPDATE_STATUS_START'
+export const UPDATE_STATUS_SUCCESS = 'UPDATE_STATUS_SUCCESS'
+export const UPDATE_STATUS_FAILED = 'UPDATESTATUS_FAIL'
+
+export const UPDATE_USER_START = 'UPDATE_USER_START'
+export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS'
+export const UPDATE_USER_FAILED = 'UPDATE_USER_FAILED'
 
 export const getStatus = () => {
   const promise = axios.get("http://localhost:4000/api/memberstatus");
-  console.log("this is the user", promise);
+  console.log("this is the user", promise)};
+
+export const getStatuss = () => {
+  const userId = localStorage.getItem("userId");
+  const promise = axios.get(`https://firstrep.herokuapp.com/api/members/${userId}/status`);
+  console.log('this is the user', promise)
   return dispatch => {
     dispatch({ type: FETCHING_STATUS }); // first state of 'fetching' is dispatched
     promise
@@ -48,24 +83,11 @@ export const getStatus = () => {
   };
 };
 
-// export const getUser = () => dispatch => {
-//     dispatch({ type: FETCHING })
-//     axios
-//       .get('https://firstrep.herokuapp.com/api/members/1')
-//       .then(response => {
-//         dispatch({ type: FETCHING_SUCCESS, payload: response.data})
-//       })
-//       .catch(err => {
-//         dispatch({ type: FETCHING_FAILED, payload: err.response })
-//       })
-// }
 
 export const getMembers = () => {
   const userId = localStorage.getItem("userId");
-  const promise = axios.get(
-    `http://firstrep.herokuapp.com/api/members/${userId}`
-  );
-  console.log("this is the member", promise);
+  const promise = axios.get(`https://firstrep.herokuapp.com/api/members/${userId}`);
+  console.log('this is the member', promise)
   return dispatch => {
     dispatch({ type: FETCHING }); // first state of 'fetching' is dispatched
     promise
@@ -103,6 +125,47 @@ export const getExerciseRecords = () => dispatch => {
     });
 };
 
+export const postStatus = input =>  dispatch => {
+  const userId = localStorage.getItem('userId')
+  dispatch({ type: POST_STATUS_START });
+  return axios
+    .post(`https://firstrep.herokuapp.com/api/members/${userId}/status`, input)
+    .then(res => {
+      console.log("User stats have been set");
+      dispatch({ type: POST_STATUS_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: POST_STATUS_FAIL, payload: err.message });
+    });
+}
+
+export const updateStatus = (input) => dispatch => {
+  const userId = localStorage.getItem("userId")
+  const statusId = input.id
+  dispatch({ type: POST_STATUS_START})
+  return axios
+    .put(`https://firstrep.herokuapp.com/api/members/${userId}/status/${statusId}`, input)
+    .then(res => {
+      dispatch({ type: POST_STATUS_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: POST_STATUS_FAIL, payload:err.message })
+    })
+}
+
+export const updateUser = input => dispatch => {
+  const userId = localStorage.getItem("userId")
+  dispatch({ type: UPDATE_USER_START})
+  return axios
+    .put(`https://firstrep.herokuapp.com/api/members/${userId}`, input)
+    .then(res => {
+      dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: UPDATE_USER_FAILED, payload:err.message })
+    })
+}
+
 export const signUp = input => dispatch => {
   dispatch({ type: SIGNUP_START });
   return axios
@@ -136,45 +199,141 @@ export const login = input => dispatch => {
     });
 };
 
-// add exercise
 
-export const addExercise = (exercise_id, exerciseData) => dispatch => {
-  dispatch({ type: ADDING_EXERCISE });
-  return axios
-    .post(
-      `https://firstrep.herokuapp.com/api/memberRoutineRecords/${exercise_id}`,
-      exerciseData
-    )
-    .then(res => {
-      dispatch({
-        type: ADDING_EXERCISE_SUCCESS,
-        payload: res.data
-      });
-    })
-    .catch(err => {
-      dispatch({
-        type: ADDING_EXERCISE_FAILED,
-        payload: err.response.data
-      });
-    });
-};
+export function addWeek( first_week, second_week, third_week, fourth_week){
+  return {
+    type: ADD_WEEK,
+    payload: {
+      first_week,
+      second_week,
+      third_week,
+      fourth_week
+    }
+  }
+}
 
-// add routine
+export function firstWeek( first_week ){
+  return {
+    type: FIRST_WEEK,
+    payload: {
+      first_week,
+    }
+  }
+}
 
-export const addRoutine = (routine_id, routineData) => dispatch => {
-  dispatch({ type: ADDING_ROUTINE });
-  return axios
-    .post(`https://firstrep.herokuapp.com/api/routines`, routineData)
-    .then(res => {
-      dispatch({
-        type: ADDING_ROUTINE_SUCCESS,
-        payload: res.data
-      });
-    })
-    .catch(err => {
-      dispatch({
-        type: ADDING_ROUTINE_FAILED,
-        payload: err.response.data
-      });
-    });
-};
+export function secondWeek( second_week ){
+  return {
+    type: SECOND_WEEK,
+    payload: {
+      second_week
+    }
+  }
+}
+
+export function thirdWeek( third_week ){
+  return {
+    type: THIRD_WEEK,
+    payload: {
+      third_week
+    }
+  }
+}
+
+export function fourthWeek( fourth_week ){
+  return {
+    type: FOURTH_WEEK,
+    payload: {
+      fourth_week
+    }
+  } 
+}
+
+export function firstWeekCalories( first_week_calories ){
+  return {
+    type: FIRST_WEEK_CALORIES,
+    payload: {
+      first_week_calories
+    }
+  }
+}
+
+export function secondWeekCalories( second_week_calories ){
+    return {
+      type: SECOND_WEEK_CALORIES,
+      payload: {
+        second_week_calories
+    }
+  }
+}
+
+  export function thirdWeekCalories( third_week_calories ){
+      return {
+        type: THIRD_WEEK_CALORIES,
+        payload: {
+          third_week_calories
+    }
+  }
+}
+
+export function fourthWeekCalories( fourth_week_calories ){
+  return {
+    type: FOURTH_WEEK_CALORIES,
+    payload: {
+      fourth_week_calories
+    }
+  }
+}
+
+export function firstWeekMuscle( first_week_muscle ){
+  return {
+    type: FIRST_WEEK_MUSCLE,
+    payload: {
+      first_week_muscle
+    }
+  }
+}
+
+export function secondWeekMuscle( second_week_muscle ){
+  return {
+    type: SECOND_WEEK_MUSCLE,
+    payload: {
+      second_week_muscle
+    }
+  }
+}
+
+export function thirdWeekMuscle( third_week_muscle ){
+  return {
+    type: THIRD_WEEK_MUSCLE,
+    payload: {
+      third_week_muscle
+    }
+  }
+}
+
+export function fourthWeekMuscle( fourth_week_muscle ){
+  return {
+    type: FOURTH_WEEK_MUSCLE,
+    payload: {
+      fourth_week_muscle
+    }
+  }
+}
+
+export function fifthWeekMuscle( fifth_week_muscle ){
+  return {
+    type: FIFTH_WEEK_MUSCLE,
+    payload: {
+      fifth_week_muscle
+    }
+  }
+}
+
+export function sixWeekMuscle( six_week_muscle ){
+  return {
+    type: SIX_WEEK_MUSCLE,
+    payload: {
+      six_week_muscle
+    }
+  }
+}

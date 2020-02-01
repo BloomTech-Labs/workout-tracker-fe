@@ -6,11 +6,12 @@ import axios from "axios";
 import AddRoutine from "./AddRoutine";
 // import "./RecordRoutines.css";
 // import Search from "./Search";
-import "../../styles/index";
+// import "../../styles/index";
 import SignupStyle from "../../styles/index";
 
 const SearchBar = props => {
   const [id, setId] = useState([]);
+  const [click, setClick] = useState(false);
   const [input, setInput] = useState({
     query: ""
   });
@@ -45,7 +46,6 @@ const SearchBar = props => {
   };
 
   const exerciseSubmit = async e => {
-    e.preventDefault();
     await axios
       .post(
         `https://firstrep.herokuapp.com/api/routinesexercises/${props.match.params.id}`,
@@ -53,6 +53,7 @@ const SearchBar = props => {
       )
       .then(res => props.history.push(`/display-routine/`))
       .catch(err => console.log(err));
+    setClick(true);
   };
 
   // restricting search results
@@ -70,7 +71,7 @@ const SearchBar = props => {
               onChange={handleChange("query")}
               placeholder="Search Exercise"
             />
-            <div>
+            <form>
               <ul>Added Exercises</ul>
               {id.map((a, i) => (
                 <>
@@ -81,7 +82,7 @@ const SearchBar = props => {
                 </>
               ))}
               <button onClick={exerciseSubmit}>Finish</button>
-            </div>
+            </form>
             <div>
               <ul>Search Results</ul>
               {newData.map(a => (
@@ -104,6 +105,7 @@ const SearchBar = props => {
       </>
     );
   }
+
   return (
     <>
       <form onSubmit={handleSubmit}>

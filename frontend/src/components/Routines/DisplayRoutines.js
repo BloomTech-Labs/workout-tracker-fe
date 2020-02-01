@@ -47,13 +47,14 @@ function DisplayRoutines() {
   };
 
   const memberId = localStorage.getItem("userId");
-  const submitRoutine = async e => {
+  const submitRoutine = async (props, e) => {
     e.preventDefault();
     const url = `https://firstrep.herokuapp.com/api/memberRoutineRecords`;
     await axios
       .post(url, { member_id: memberId, routine_id: routineId })
       .then(res => console.log(res))
       .catch(err => console.log(err));
+    props.history.push("/graph");
   };
 
   if (loading) {
@@ -72,7 +73,7 @@ function DisplayRoutines() {
             </div>
           </ul>
         ))}
-        <button>Finish</button>
+        <button onClick={submitRoutine}>Finish</button>
       </form>
     );
   }

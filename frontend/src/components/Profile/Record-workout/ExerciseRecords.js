@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
-import { addRoutine } from "../../../actions";
+
 import { connect } from "react-redux";
 // import "./RecordRoutines.css";
 import axios from "axios";
@@ -84,4 +84,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { addRoutine })(ExerciseRecords);
+export default ExerciseRecords;

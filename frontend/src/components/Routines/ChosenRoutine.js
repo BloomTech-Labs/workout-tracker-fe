@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Routines.css';
+import '../../css/Routines.css';
 
 export default class ChosenRoutine extends Component {
 
