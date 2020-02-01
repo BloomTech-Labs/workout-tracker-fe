@@ -8,8 +8,13 @@ import AddRoutine from "./AddRoutine";
 import "../../styles/index";
 import SignupStyle from "../../styles/index";
 
+<<<<<<< HEAD:frontend/src/components/Routines/SearchBar.js
 function SearchBar(props) {
   const [id, setId] = useState("");
+=======
+const SearchBar = props => {
+  const [id, setId] = useState([]);
+>>>>>>> 6bcb185a7f134fdfa8588ea2fc93fc6bb6e448cc:frontend/src/components/Routines/AddExercise.js
 
   const [input, setInput] = useState({
     query: ""
@@ -47,9 +52,17 @@ function SearchBar(props) {
   const handleButtonClick = async e => {
     e.preventDefault();
     let val = e.target.dataset.value;
+    let exerciseId = e.target.dataset.id;
 
+<<<<<<< HEAD:frontend/src/components/Routines/SearchBar.js
     setId(val);
 
+=======
+    setId(id.concat({exercise_id: exerciseId, exercise_name: val}));
+    console.log("val", val)
+    console.log("array", id)
+    // console.log(val.exercise_id)
+>>>>>>> 6bcb185a7f134fdfa8588ea2fc93fc6bb6e448cc:frontend/src/components/Routines/AddExercise.js
     // axios
     //   .post(`https://firstrep.herokuapp.com/api/exrx/`, { search: id })
     //   .then(res => console.log(res))
@@ -108,6 +121,35 @@ function SearchBar(props) {
             onChange={handleChange("query")}
             placeholder="Search Exercise"
           />
+<<<<<<< HEAD:frontend/src/components/Routines/SearchBar.js
+=======
+          <div>
+            <ul>Added Exercises</ul>
+            {id.map(a => (
+              <>
+              <li>{a.exercise_name}</li>
+              </>
+            ))}
+          </div>
+          <div>
+            <ul>Search Results</ul>
+            {newData.map(a => (
+              <>
+                <li>
+                  {a.Exercise_Name_Complete}
+
+                  <button
+                    onClick={handleButtonClick}
+                    data-id={a.Exercise_Id}
+                    data-value={a.Exercise_Name_Complete}
+                  >
+                    Add Exercise
+                  </button>
+                </li>
+              </>
+            ))}
+          </div>
+>>>>>>> 6bcb185a7f134fdfa8588ea2fc93fc6bb6e448cc:frontend/src/components/Routines/AddExercise.js
         </form>
       </>
     </>
@@ -150,7 +192,7 @@ function AddExercise({ id }) {
   return (
     // <SignupStyle>
     <>
-      <AddRoutine />
+      <AddRoutine exercises={id} />
       <form onSubmit={handleSubmit(onSubmit)}>
         {console.log("this is ", id)}
         {indexes.map(index => {
