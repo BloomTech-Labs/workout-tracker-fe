@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -41,13 +42,7 @@ const SearchBar = props => {
     let val = e.target.dataset.value;
     let exerciseId = e.target.dataset.id;
     setId(id.concat({ exercise_id: exerciseId, exercise_name: val }));
-    console.log("val", val);
-    console.log("array", id);
   };
-
-  {
-    console.log(props);
-  }
 
   const exerciseSubmit = async e => {
     e.preventDefault();
@@ -56,7 +51,7 @@ const SearchBar = props => {
         `https://firstrep.herokuapp.com/api/routinesexercises/${props.match.params.id}`,
         { exercise_id: id.map(a => a.exercise_id) }
       )
-      .then(res => console.log(res))
+      .then(res => props.history.push(`/display-routine/`))
       .catch(err => console.log(err));
   };
 
