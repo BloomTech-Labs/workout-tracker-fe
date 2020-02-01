@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../Navbar";
+import { Route, Link } from "react-router-dom";
 import SimpleModal from "./SimpleModal";
 function DisplayRoutines() {
   const [data, setData] = useState([]);
@@ -57,7 +58,7 @@ function DisplayRoutines() {
 
   if (loading) {
     return (
-      <form onSubmit={submitRoutine}>
+      <form className="display-form" onSubmit={submitRoutine}>
         {console.log("this is exercise ", exercise)}
         {exercise.map((a, i) => (
           <ul>
@@ -78,8 +79,9 @@ function DisplayRoutines() {
   return (
     <>
       <Navbar />
-      <ul>
+      <ul style={{ "padding-top": "60px" }}>
         {console.log("data is ", data)}
+        <h3>Choose Routine From List Below</h3>
         {data.map(a => (
           <>
             <ul data-value={a.id} onClick={submitReq}>
@@ -89,6 +91,9 @@ function DisplayRoutines() {
           </>
         ))}
       </ul>
+      <Route>
+        <Link to="/add-routine">Click Here To Create A New Routine</Link>
+      </Route>
     </>
   );
 }
