@@ -15,7 +15,8 @@ const Onboard = props => {
     squat_max: '',
     mile_time: '',
   });
-
+  
+  
   const testForStats = (weight) => {
     getStatuss()
     this.props.weight = weight
@@ -29,6 +30,7 @@ const Onboard = props => {
 
   const registerHandler = async event => {
     event.preventDefault();
+    
     await props.postStatus(input);
     props.history.push("/profile");
   };
@@ -38,7 +40,7 @@ const Onboard = props => {
         <div className="status-forum onboarding-height">
         <ProfileNavbar />
           <div>
-            <h2></h2>
+            <h2>Profile Information</h2>
           </div>
           <div>
             <form className='onboarding-input' onSubmit={registerHandler}>

@@ -55,25 +55,25 @@ render() {
     <div className="status-forum onboarding-height">
         <ProfileNavbar />
           <div>
-            <h2>Update Profile Stats</h2>
+            <h2>Update Profile Information</h2>
           </div>
-      <form className='onboarding-input' onSubmit={this.submitUpdate}>
-        <div>
-          <input name='weight' type="number" value={weight} onChange={this.handleChange} placeholder="Weight" />
-
-          <input name='height' type="number" value={height} onChange={this.handleChange} placeholder="Height" />
-
-          <input name='bmi' type="number" value={bmi} onChange={this.handleChange} placeholder="Body Mass Index" />
-
-          <input name='bench_max' type="number" value={bench_max} onChange={this.handleChange} placeholder="Bench Max" />
-
-          <input name='squat_max' type="number" value={squat_max} onChange={this.handleChange} placeholder="Squat Max" />
-
-          <input name='mile_time' type="number" value={mile_time} onChange={this.handleChange} placeholder="Mile Time" />
-
-        </div>
-          <button>Submit User Stats</button>
-      </form>
+          <form className='onboarding-input' onSubmit={this.submitUpdate}>
+            <div>
+              <input name='weight' type="number" value={weight} onChange={this.handleChange} placeholder="Weight" />
+    
+              <input name='height' type="number" value={height} onChange={this.handleChange} placeholder="Height" />
+    
+              <input name='bmi' type="number" value={bmi} onChange={this.handleChange} placeholder="Body Mass Index" />
+    
+              <input name='bench_max' type="number" value={bench_max} onChange={this.handleChange} placeholder="Bench Max" />
+    
+              <input name='squat_max' type="number" value={squat_max} onChange={this.handleChange} placeholder="Squat Max" />
+    
+              <input name='mile_time' type="number" value={mile_time} onChange={this.handleChange} placeholder="Mile Time" />
+    
+            </div>
+              <button>Submit User Stats</button>
+          </form>
   </div>
   )
   }
