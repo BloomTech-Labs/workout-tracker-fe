@@ -147,3 +147,7 @@
 .status-forum div button {
     font-size: 13px;
 }
+
+.status-forum {
+    height: 950px;
+}

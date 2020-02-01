@@ -25,6 +25,7 @@ const Login = props => {
       props.history.push("/profile");
     }
   };
+  
   return (
     <>
       {/* <Navbar /> */}
