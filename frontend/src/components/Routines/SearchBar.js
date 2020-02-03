@@ -51,9 +51,10 @@ const SearchBar = props => {
         `https://firstrep.herokuapp.com/api/routinesexercises/${props.match.params.id}`,
         { exercise_id: id.map(a => a.exercise_id) }
       )
-      .then(res => props.history.push(`/display-routine/`))
+      .then(res => console.log(res))
       .catch(err => console.log(err));
     setClick(true);
+    props.history.push(`/display-routine/`);
   };
 
   // restricting search results
@@ -121,18 +122,3 @@ const SearchBar = props => {
 };
 
 export default SearchBar;
-// search bar
-//   const [apiResults, setApiResults] = useState([]);
-//   const [queryString, setQueryString] = useState([]);
-//   const search = exercise => {
-//     axios
-//       .post(`https://firstrep.herokuapp.com/api/routines`, exercise)
-//       .then(res => setApiResults({ res }));
-//   };
-//   const onChange = e => {
-//     setQueryString({
-//       ...queryString,
-//       [e.target.name]: [e.target.value]
-//     });
-//     search(e.target.value);
-//   };

@@ -1,10 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Login from "../Login";
 import Navbar from "../Navbar";
 import { Route, Link } from "react-router-dom";
+
+import ReactDOM from "react-dom";
 import SimpleModal from "./SimpleModal";
-function DisplayRoutines() {
+
+function DisplayRoutines(props) {
   const [data, setData] = useState([]);
   const [id, setId] = useState([]);
   const [exercise, setExercise] = useState([]);
@@ -36,6 +40,7 @@ function DisplayRoutines() {
       .catch(err => console.log(err));
     setLoading(true);
   };
+
   const showInstructions = async e => {
     e.preventDefault();
     let exerciseId = e.target.dataset.id;
@@ -47,19 +52,24 @@ function DisplayRoutines() {
   };
 
   const memberId = localStorage.getItem("userId");
+
+  const { history } = props;
+
   const submitRoutine = async (props, e) => {
-    e.preventDefault();
     const url = `https://firstrep.herokuapp.com/api/memberRoutineRecords`;
     await axios
       .post(url, { member_id: memberId, routine_id: routineId })
       .then(res => console.log(res))
       .catch(err => console.log(err));
-    props.history.push("/graph");
   };
+
+  // const onButton = props => {
+  //   props.history.push("/login");
+  // };
 
   if (loading) {
     return (
-      <form className="display-form" onSubmit={submitRoutine}>
+      <form className="display-form">
         {console.log("this is exercise ", exercise)}
         {exercise.map((a, i) => (
           <ul>
@@ -68,8 +78,10 @@ function DisplayRoutines() {
               toggle instructions
             </button>
             <div className={isactive == i + 1 ? "" : "hidden"}>
+              {console.log("this is the data ", a)}
               <li>{a.Instructions_Execution}</li>
               <li>{a.Instructions_Preparation}</li>
+              <img style={{ width: "300px" }} src={a.GIF_Img} alt="" />\
             </div>
           </ul>
         ))}

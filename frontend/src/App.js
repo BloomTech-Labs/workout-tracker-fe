@@ -22,6 +22,7 @@ import ProfileOnboarding from "./components/Profile/ProfileOnboarding";
 import UpdateStats from "./components/Profile/UpdateProfile/UpdateStats";
 import UpdateUser from "./components/Profile/UpdateProfile/UpdateUser";
 import UserInfo from "./components/Profile/UserInfo";
+import CollapsePage from "./components/Profile/CollapsePage";
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
             {/* <Route exact path="/routine" component={RecordRoutine} /> */}
             <Route exact path="/update-status" component={UpdateStats} />
             <Route exact path="/update-user" component={UpdateUser} />
+            <Route exact path="/collapse-page" component={CollapsePage} />
           </Switch>
         </Router>
       </Router>
