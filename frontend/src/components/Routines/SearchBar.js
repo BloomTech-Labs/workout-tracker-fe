@@ -3,11 +3,13 @@ import { useParams, useHistory } from "react-router";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import AddRoutine from "./AddRoutine";
 // import "./RecordRoutines.css";
 // import Search from "./Search";
 // import "../../styles/index";
 import SignupStyle from "../../styles/index";
+import Pagination from "./Pagination";
+
+import { MDBDataTable } from "mdbreact";
 
 const SearchBar = props => {
   const [id, setId] = useState([]);
@@ -15,6 +17,7 @@ const SearchBar = props => {
   const [input, setInput] = useState({
     query: ""
   });
+
   const [data, setData] = useState("");
   const [exercise, setExercise] = useState("");
   const [name, setName] = useState("");
@@ -22,10 +25,19 @@ const SearchBar = props => {
   const handleChange = props => event => {
     setInput({ ...input, [props]: event.target.value });
   };
+
   const clearExerciseList = e => {
     e.preventDefault();
     setExercise([]);
   };
+
+  const deleteExercise = async e => {
+    let key = e.target.dataset.id;
+    let newArr = id;
+    newArr.splice(key, 1);
+    setId(newArr);
+  };
+
   const handleSubmit = async event => {
     event.preventDefault();
     const url = `https://firstrep.herokuapp.com/api/exrx/`;
@@ -58,8 +70,26 @@ const SearchBar = props => {
   };
 
   // restricting search results
-  let length = exercise.length / 2;
-  let newData = exercise.slice(0, length);
+  // let length = exercise.length / 2;
+  // let newData = exercise;
+
+  // const [inputs, setInputs] = useState({
+  //   perPage: 6,
+  //   currentPage: 1
+  // });
+
+  // let { perPage, currentPage } = inputs;
+
+  const [perPage, setPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const page = number => {
+    setCurrentPage(number);
+  };
+
+  const last = currentPage * perPage;
+  const first = last - perPage;
+  const newData = exercise.slice(first, last);
 
   if (newData) {
     return (
@@ -78,7 +108,9 @@ const SearchBar = props => {
                 <>
                   <li>
                     {a.exercise_name}
-                    <button data-id={i}>Remove</button>
+                    <button onClick={deleteExercise} data-id={i}>
+                      Remove
+                    </button>
                   </li>
                 </>
               ))}
@@ -86,7 +118,7 @@ const SearchBar = props => {
             </form>
             <div>
               <ul>Search Results</ul>
-              {newData.map(a => (
+              {exercise.map(a => (
                 <>
                   <li>
                     {a.Exercise_Name_Complete}
@@ -101,6 +133,12 @@ const SearchBar = props => {
                 </>
               ))}
             </div>
+            <Pagination
+              total={exercise.length}
+              perPage={perPage}
+              page={page}
+              selected={currentPage}
+            />
           </form>
         </>
       </>
