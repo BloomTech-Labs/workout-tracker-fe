@@ -40,7 +40,7 @@ class MemberProfile extends Component {
           </div>
           <div>
 
-          <Link to='/profile-info'>See More Info</Link>
+          <Link className="see-more-info" to='/profile-info'>See More Info</Link>
 
           </div>
         </div>
