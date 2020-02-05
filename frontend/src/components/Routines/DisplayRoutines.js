@@ -9,6 +9,8 @@ import ReactDOM from "react-dom";
 import SimpleModal from "./SimpleModal";
 import ProfileNavbar from "../Profile/ProfileNavBar";
 
+import "./displayroutine.css";
+
 function DisplayRoutines(props) {
   const [data, setData] = useState([]);
   const [id, setId] = useState([]);
@@ -74,7 +76,7 @@ function DisplayRoutines(props) {
       <form className="display-form">
         {console.log("this is exercise ", exercise)}
         {exercise.map((a, i) => (
-          <ul>
+          <ol className="routine-list">
             {a.Exercise_Name}
             <button data-id={i + 1} onClick={showInstructions}>
               toggle instructions
@@ -85,7 +87,7 @@ function DisplayRoutines(props) {
               <li>{a.Instructions_Preparation}</li>
               <img style={{ width: "300px" }} src={a.GIF_Img} alt="" />\
             </div>
-          </ul>
+          </ol>
         ))}
         <button onClick={submitRoutine}>Finish</button>
       </form>
@@ -95,18 +97,19 @@ function DisplayRoutines(props) {
     <>
     <div className="add-routine-form">
     <ProfileNavbar />
-      <ul style={{ "padding-top": "60px" }}>
-        {console.log("data is ", data)}
+
+
+      <ol className="routine-list" style={{ "padding-top": "60px" }}>
         <h3>Choose Routine From List Below</h3>
         {data.map(a => (
           <>
-            <ul data-value={a.id} onClick={submitReq}>
+            <li className="list-style" data-value={a.id} onClick={submitReq}>
               {a.routine_name}
-            </ul>
+            </li>
             {/* <button onClick={submitReq}>click</button> */}
           </>
         ))}
-      </ul>
+      </ol>
       <Route>
         <Link to="/add-routine">Click Here To Create A New Routine</Link>
       </Route>

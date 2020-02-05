@@ -6,10 +6,10 @@ import axios from "axios";
 // import "./RecordRoutines.css";
 // import Search from "./Search";
 // import "../../styles/index";
-import SignupStyle from "../../styles/index";
-import Pagination from "./Pagination";
+import "./searchbar.css";
 
-import { MDBDataTable } from "mdbreact";
+import Posts from "./Posts";
+import Pagination from "./Pagination";
 
 const SearchBar = props => {
   const [id, setId] = useState([]);
@@ -17,9 +17,8 @@ const SearchBar = props => {
   const [input, setInput] = useState({
     query: ""
   });
-
   const [data, setData] = useState("");
-  const [exercise, setExercise] = useState("");
+  const [exercise, setExercise] = useState([{Exercise_Name_Complete: "Squat"}, {Exercise_Name_Complete: "Bench"}]);
   const [name, setName] = useState("");
   const { query } = input;
   const handleChange = props => event => {
@@ -58,6 +57,7 @@ const SearchBar = props => {
   };
 
   const exerciseSubmit = async e => {
+    e.preventDefault();
     await axios
       .post(
         `https://firstrep.herokuapp.com/api/routinesexercises/${props.match.params.id}`,
@@ -69,93 +69,79 @@ const SearchBar = props => {
     props.history.push(`/display-routine/`);
   };
 
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+
   // restricting search results
   // let length = exercise.length / 2;
-  // let newData = exercise;
+  let newData = exercise;
 
-  // const [inputs, setInputs] = useState({
-  //   perPage: 6,
-  //   currentPage: 1
-  // });
-
-  // let { perPage, currentPage } = inputs;
-
-  const [perPage, setPerPage] = useState(6);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const page = number => {
-    setCurrentPage(number);
-  };
-
-  const last = currentPage * perPage;
-  const first = last - perPage;
-  const newData = exercise.slice(first, last);
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   if (newData) {
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = exercise.slice(indexOfFirstPost, indexOfLastPost);
+
     return (
-      <>
-        <>
-          <button onClick={clearExerciseList}>Clear Search Results</button>
-          <form onSubmit={handleSubmit}>
-            <input
-              required
-              onChange={handleChange("query")}
-              placeholder="Search Exercise"
-            />
-            <form>
-              <ul>Added Exercises</ul>
-              {id.map((a, i) => (
-                <>
-                  <li>
-                    {a.exercise_name}
-                    <button onClick={deleteExercise} data-id={i}>
-                      Remove
-                    </button>
-                  </li>
-                </>
-              ))}
-              <button onClick={exerciseSubmit}>Finish</button>
-            </form>
-            <div>
-              <ul>Search Results</ul>
-              {exercise.map(a => (
-                <>
-                  <li>
-                    {a.Exercise_Name_Complete}
-                    <button
-                      onClick={handleButtonClick}
-                      data-id={a.Exercise_Id}
-                      data-value={a.Exercise_Name_Complete}
-                    >
-                      Add Exercise
-                    </button>
-                  </li>
-                </>
-              ))}
-            </div>
-            <Pagination
-              total={exercise.length}
-              perPage={perPage}
-              page={page}
-              selected={currentPage}
-            />
+      <div className="search-bar">
+        <button onClick={clearExerciseList}>Clear Search Results</button>
+        <form onSubmit={handleSubmit}>
+          <input
+            required
+            onChange={handleChange("query")}
+            placeholder="Search Exercise"
+          />
+          <button onClick={handleSubmit}>Search</button>
+          <form>
+            <ul>Added Exercises</ul>
+            {id.map((a, i) => (
+              <>
+                <li>
+                  {a.exercise_name}
+                  <button onClick={deleteExercise} data-id={i}>
+                    Remove
+                  </button>
+                </li>
+              </>
+            ))}
+            <button onClick={exerciseSubmit}>Finish</button>
           </form>
-        </>
-      </>
+          <div>
+            <ul>Search Results</ul>
+            <div className="container mt-5">
+              <Posts
+                posts={currentPosts}
+                loading={loading}
+                deleteExercise={deleteExercise}
+              />
+              <Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={exercise.length}
+                paginate={paginate}
+              />
+            </div>
+          </div>
+        </form>
+      </div>
     );
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className="search-bar">
+      <form className="form-bar" onSubmit={handleSubmit}>
         <input
           value={query}
           required
           onChange={handleChange("query")}
           placeholder="Search Exercise"
         />
+        <button onClick={handleSubmit}>Search</button>
       </form>
-    </>
+    </div>
   );
 };
 
