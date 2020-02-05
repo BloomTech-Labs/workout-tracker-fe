@@ -53,17 +53,17 @@
 
 import React from "react";
 
-const Posts = ({ posts, loading, deleteExercise }) => {
-  if (loading) {
+const Posts = props => {
+  if (props.loading) {
     return <h2>Loading...</h2>;
   }
 
   return (
     <ul>
-      {posts.map((post, i) => (
+      {props.posts.map((post, i) => (
         <div>
           <li>{post.Exercise_Name}</li>
-          <button onClick={deleteExercise} data-id={i}></button>
+          <button onClick={props.deleteExercise} data-id={i}></button>
         </div>
       ))}
     </ul>

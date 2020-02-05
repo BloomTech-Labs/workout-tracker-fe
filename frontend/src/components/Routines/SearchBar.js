@@ -57,7 +57,6 @@ const SearchBar = props => {
   };
 
   const exerciseSubmit = async e => {
-    e.preventDefault();
     await axios
       .post(
         `https://firstrep.herokuapp.com/api/routinesexercises/${props.match.params.id}`,
@@ -87,45 +86,49 @@ const SearchBar = props => {
     const currentPosts = exercise.slice(indexOfFirstPost, indexOfLastPost);
 
     return (
-      <div className="search-bar">
-        <button onClick={clearExerciseList}>Clear Search Results</button>
-        <form onSubmit={handleSubmit}>
-          <input
-            required
-            onChange={handleChange("query")}
-            placeholder="Search Exercise"
-          />
-          <form>
-            <ul>Added Exercises</ul>
-            {id.map((a, i) => (
-              <>
-                <li>
-                  {a.exercise_name}
-                  <button onClick={deleteExercise} data-id={i}>
-                    Remove
-                  </button>
-                </li>
-              </>
-            ))}
-            <button onClick={exerciseSubmit}>Finish</button>
-          </form>
-          <div>
-            <ul>Search Results</ul>
-            <div className="container mt-5">
-              <Posts
-                posts={currentPosts}
-                loading={loading}
-                deleteExercise={deleteExercise}
-              />
-              <Pagination
-                postsPerPage={postsPerPage}
-                totalPosts={exercise.length}
-                paginate={paginate}
-              />
+      <>
+        <div className="search-bar">
+          <button onClick={clearExerciseList}>Clear Search Results</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              required
+              onChange={handleChange("query")}
+              placeholder="Search Exercise"
+            />
+            <form>
+              <ul>Added Exercises</ul>
+              {id.map((a, i) => (
+                <>
+                  <li>
+                    {a.exercise_name}
+                    <button onClick={deleteExercise} data-id={i}>
+                      Remove
+                    </button>
+                  </li>
+                </>
+              ))}
+              <button onClick={exerciseSubmit}>Finish</button>
+            </form>
+            <div>
+              <ul>Search Results</ul>
+              {newData.map(a => (
+                <>
+                  <li>
+                    {a.Exercise_Name_Complete}
+                    <button
+                      onClick={handleButtonClick}
+                      data-id={a.Exercise_Id}
+                      data-value={a.Exercise_Name_Complete}
+                    >
+                      Add Exercise
+                    </button>
+                  </li>
+                </>
+              ))}
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
+      </>
     );
   }
 
