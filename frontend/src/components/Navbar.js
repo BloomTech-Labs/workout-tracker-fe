@@ -5,7 +5,7 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
   MDBNavItem,
-  MDBNavLink,
+  MDBNavLink
 } from "mdbreact";
 
 class Navbar extends React.Component {
@@ -42,11 +42,11 @@ class Navbar extends React.Component {
             </MDBNavbarNav>
 
             <MDBNavbarNav right>
-              <MDBNavItem>             
-              <MDBNavLink to="/login">Login</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to="/Signup">Signup</MDBNavLink>
+              <MDBNavItem>
+                <MDBNavLink to="/login">Login</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink to="/Signup">Signup</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>

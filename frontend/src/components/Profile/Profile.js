@@ -1,8 +1,8 @@
-import React, { Component } from "react"; 
-import ProfileNavbar from './ProfileNavBar'
-import MemberProfile from './MemberProfile'
-import UserInfo from './UserInfo'
-import '../../css/Profile.css'
+import React, { Component } from "react";
+import ProfileNavbar from "./ProfileNavBar";
+import MemberProfile from "./MemberProfile";
+import UserInfo from "./UserInfo";
+import "../../css/Profile.css";
 
 export default class Profile extends Component {
   render() {
@@ -14,3 +14,5 @@ export default class Profile extends Component {
     );
   }
 }
+
+//ff

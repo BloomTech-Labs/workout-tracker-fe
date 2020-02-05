@@ -22,10 +22,9 @@ const Login = props => {
     await props.login(input);
 
     if (localStorage.getItem("token")) {
-      props.history.push("/profile");
+      props.history.push("/profile-onboarding");
     }
   };
-  
   return (
     <>
       {/* <Navbar /> */}
