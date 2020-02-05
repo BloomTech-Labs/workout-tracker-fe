@@ -1,0 +1,15 @@
+.routine-list {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.list-style {
+    margin-bottom: 5px;
+}
