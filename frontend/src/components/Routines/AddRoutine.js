@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import SearchBar from "./SearchBar";
 // import "./RecordRoutines.css";
 import axios from "axios";
-import SignupStyle from "../../styles/index";
 import "../../styles/index";
 import Axios from "axios";
 
@@ -60,7 +59,7 @@ const AddRoutine = props => {
                 type="text"
               />
             </div>
-            <button>Create Routine</button>
+            <button className="addRoutines">Create Routine</button>
           </form>
         </div>
       </div>

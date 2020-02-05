@@ -19,7 +19,7 @@ const SearchBar = props => {
   });
 
   const [data, setData] = useState("");
-  const [exercise, setExercise] = useState("");
+  const [exercise, setExercise] = useState([{Exercise_Name_Complete: "Squat"}, {Exercise_Name_Complete: "Bench"}]);
   const [name, setName] = useState("");
   const { query } = input;
   const handleChange = props => event => {
@@ -89,26 +89,27 @@ const SearchBar = props => {
 
   const last = currentPage * perPage;
   const first = last - perPage;
-  const newData = exercise.slice(first, last);
+  const newData = exercise;
 
   if (newData) {
     return (
       <>
         <>
           <button onClick={clearExerciseList}>Clear Search Results</button>
-          <form onSubmit={handleSubmit}>
+          <form>
             <input
               required
               onChange={handleChange("query")}
               placeholder="Search Exercise"
             />
+            <button onClick={handleSubmit}>Search</button>
             <form>
-              <ul>Added Exercises</ul>
+              <ul className="listTitle">Added Exercises</ul>
               {id.map((a, i) => (
                 <>
                   <li>
                     {a.exercise_name}
-                    <button onClick={deleteExercise} data-id={i}>
+                    <button className="toggleRoutine" onClick={deleteExercise} data-id={i}>
                       Remove
                     </button>
                   </li>
@@ -117,12 +118,13 @@ const SearchBar = props => {
               <button onClick={exerciseSubmit}>Finish</button>
             </form>
             <div>
-              <ul>Search Results</ul>
+              <ul className="listTitle">Search Results</ul>
               {exercise.map(a => (
                 <>
                   <li>
                     {a.Exercise_Name_Complete}
                     <button
+                      className="toggleRoutine"
                       onClick={handleButtonClick}
                       data-id={a.Exercise_Id}
                       data-value={a.Exercise_Name_Complete}
@@ -147,13 +149,14 @@ const SearchBar = props => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           value={query}
           required
           onChange={handleChange("query")}
           placeholder="Search Exercise"
         />
+        <button onClick={handleSubmit}>Search</button>
       </form>
     </>
   );
