@@ -40,6 +40,12 @@ class ProfileNavbar extends React.Component {
                 <MDBNavLink to="/profile-onboarding">Onboading</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
+              <MDBNavLink to="/add-routine">Add Routine</MDBNavLink>
+            </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink to="/display-routine">Display Routine</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
                 <MDBNavLink to="/graphs">Graphs</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>

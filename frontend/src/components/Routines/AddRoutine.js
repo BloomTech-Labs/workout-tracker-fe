@@ -9,6 +9,8 @@ import axios from "axios";
 import SignupStyle from "../../styles/index";
 import "../../styles/index";
 import Axios from "axios";
+import ProfileNavbar from "../Profile/ProfileNavBar";
+import "./routineStyle.css"
 
 const AddRoutine = props => {
   const [input, setInput] = useState({
@@ -39,7 +41,8 @@ const AddRoutine = props => {
     <>
       {/* <Navbar /> */}
 
-      <div className="form-container">
+      <div className="form-container add-routine-form">
+      <ProfileNavbar />
         <div>
           <h2>Create A New Routine Name</h2>
         </div>

@@ -92,7 +92,7 @@ const Signup = props => {
               </div>
               <button>Signup</button>
             </form>
-            )}
+            
           </div>
         </div>
       </SignupStyle>
