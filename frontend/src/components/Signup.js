@@ -51,7 +51,7 @@ const Signup = props => {
       {/* <Navbar /> */}
       <Navbar />
       <SignupStyle>
-        <div className="form-container">
+        <div>
           <div>
             <h2>Register</h2>
           </div>
