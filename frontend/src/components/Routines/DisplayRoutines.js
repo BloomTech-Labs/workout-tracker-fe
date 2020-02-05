@@ -111,7 +111,7 @@ function DisplayRoutines(props) {
         ))}
       </ol>
       <Route>
-        <Link to="/add-routine">Click Here To Create A New Routine</Link>
+        <Link to="/add-routine"> <span>Click Here To Create A New Routine</span> </Link>
       </Route>
     </div>
     </>
