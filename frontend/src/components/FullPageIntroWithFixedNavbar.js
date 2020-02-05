@@ -95,7 +95,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
             </p> 
         </div>
         <img className='second-image'
-          src="https://connect.garmin.com/static/screen-phone-myday-717fec02a4d8eea2690241774363b357.png"
+          src="https://i.imgur.com/sNniQB7.jpg"
         />       
       </div>
       </div>
@@ -113,7 +113,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://miro.medium.com/max/3412/1*rqRfDYF5p4dFPmugymyb4w.jpeg"
+              src="https://wallpapertag.com/wallpaper/full/c/5/9/143959-gym-wallpaper-1920x1200-for-iphone.jpg"
               alt="First slide"
             />
           <MDBMask overlay="black-light" />
@@ -155,7 +155,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://www.larutadelsorigens.cat/wallpic/full/138-1386244_background-image-forex-equity-vs-options-trading-background.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpv85WpE1ndLDdtD4GhsEf79afDuokMubCkqiumlAKUg4oS_au"
               alt="Third slide"
             />
           <MDBMask overlay="black-slight" />
