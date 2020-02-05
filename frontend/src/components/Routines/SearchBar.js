@@ -89,7 +89,7 @@ const SearchBar = props => {
     return (
       <div className="search-bar">
         <button onClick={clearExerciseList}>Clear Search Results</button>
-        <form onSubmit={handleSubmit}>
+        <form>
           <input
             required
             onChange={handleChange("query")}
@@ -102,7 +102,7 @@ const SearchBar = props => {
               <>
                 <li>
                   {a.exercise_name}
-                  <button onClick={deleteExercise} data-id={i}>
+                  <button onClick={deleteExercise} data-id={i} className="toggleRoutine">
                     Remove
                   </button>
                 </li>
