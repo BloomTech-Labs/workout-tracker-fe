@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import SearchBar from "./SearchBar";
 // import "./RecordRoutines.css";
 import axios from "axios";
-import SignupStyle from "../../styles/index";
+import "./addroutine.css";
 import "../../styles/index";
 import Axios from "axios";
 
@@ -39,12 +39,12 @@ const AddRoutine = props => {
     <>
       {/* <Navbar /> */}
 
-      <div className="form-container">
-        <div>
+      <div>
+        <div className="routine-header">
           <h2>Create A New Routine Name</h2>
         </div>
-        <div>
-          <form onSubmit={handleSubmit}>
+        <div className="form-container">
+          <form className="add-routine-form" onSubmit={handleSubmit}>
             <div>
               <input
                 value={routine_name}
