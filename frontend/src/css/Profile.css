@@ -151,3 +151,16 @@
 .status-forum {
     height: 950px;
 }
+
+.see-more-info {
+    background-color: rgb(76, 92, 150);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  border: 1px solid
+}
