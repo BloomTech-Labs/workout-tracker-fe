@@ -30,7 +30,7 @@ const Login = props => {
       {/* <Navbar /> */}
       <Navbar />
       <SignupStyle>
-        <div className="form-container">
+        <div>
           <div>
             <h2>Login</h2>
           </div>

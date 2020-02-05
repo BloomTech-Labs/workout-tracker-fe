@@ -4,9 +4,10 @@ import axios from "axios";
 import Login from "../Login";
 import Navbar from "../Navbar";
 import { Route, Link } from "react-router-dom";
-
+import "./routineStyle.css"
 import ReactDOM from "react-dom";
 import SimpleModal from "./SimpleModal";
+import ProfileNavbar from "../Profile/ProfileNavBar";
 
 import "./displayroutine.css";
 
@@ -69,6 +70,7 @@ function DisplayRoutines(props) {
   //   props.history.push("/login");
   // };
 
+
   if (loading) {
     return (
       <form className="display-form">
@@ -93,9 +95,11 @@ function DisplayRoutines(props) {
   }
   return (
     <>
-      <Navbar />
+    <div className="add-routine-form">
+    <ProfileNavbar />
+
+
       <ol className="routine-list" style={{ "padding-top": "60px" }}>
-        {console.log("data is ", data)}
         <h3>Choose Routine From List Below</h3>
         {data.map(a => (
           <>
@@ -109,6 +113,7 @@ function DisplayRoutines(props) {
       <Route>
         <Link to="/add-routine">Click Here To Create A New Routine</Link>
       </Route>
+    </div>
     </>
   );
 }

@@ -53,20 +53,53 @@
 
 import React from "react";
 
-const Posts = props => {
-  if (props.loading) {
+const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, handleChange, deleteExercise, exerciseSubmit, handleButtonClick,  }) => {
+  if (loading) {
     return <h2>Loading...</h2>;
   }
+  
 
   return (
-    <ul>
-      {props.posts.map((post, i) => (
-        <div>
-          <li>{post.Exercise_Name}</li>
-          <button onClick={props.deleteExercise} data-id={i}></button>
-        </div>
-      ))}
-    </ul>
+    <div className="search-bar">
+    <button onClick={clearExerciseList}>Clear Search Results</button>
+    <form onSubmit={(e) => handleSubmit}>
+      <input
+        required
+        onChange={handleChange}
+        placeholder="Search Exercise"
+      />
+      </form>
+      <div>
+        <ul>Added Exercises</ul>
+        {id.map((a, i) => (
+          <>
+            <li>
+              {a.exercise_name}
+              <button onClick={deleteExercise} data-id={i}>
+                Remove
+              </button>
+            </li>
+          </>
+        ))}
+        <button onClick={(e) => exerciseSubmit(e)}>Finish</button>
+      </div>
+      <div>
+        <ul>Search Results</ul>
+        {posts.map(a => (
+          <>
+            <li>
+              {a.Exercise_Name_Complete}
+              <button
+                onClick={(e) => handleButtonClick(e)}
+                data-id={a.Exercise_Id}
+                data-value={a.Exercise_Name_Complete}>
+                Add Exercise
+              </button>
+            </li>
+          </>
+        ))}
+      </div>
+  </div>
   );
 };
 export default Posts;

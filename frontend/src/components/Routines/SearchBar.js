@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useParams, useHistory } from "react-router";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-// import "./RecordRoutines.css";
-// import Search from "./Search";
-// import "../../styles/index";
 import "./searchbar.css";
 
 import Posts from "./Posts";
@@ -34,7 +31,8 @@ const SearchBar = props => {
     let key = e.target.dataset.id;
     let newArr = id;
     newArr.splice(key, 1);
-    setId(newArr);
+    setId(id.splice(key,1));
+    console.log('key is ', key, 'newArr is ', newArr, 'id is ',)
   };
 
   const handleSubmit = async event => {
@@ -50,10 +48,12 @@ const SearchBar = props => {
     }
   };
   const handleButtonClick = async e => {
-    e.preventDefault();
+    // e.preventDefault();
     let val = e.target.dataset.value;
+  
     let exerciseId = e.target.dataset.id;
     setId(id.concat({ exercise_id: exerciseId, exercise_name: val }));
+    {console.log('this is id ', id)}
   };
 
   const exerciseSubmit = async e => {
@@ -84,56 +84,31 @@ const SearchBar = props => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = exercise.slice(indexOfFirstPost, indexOfLastPost);
-
-    return (
+  
+  return (
       <>
-        <div className="search-bar">
-          <button onClick={clearExerciseList}>Clear Search Results</button>
-          <form onSubmit={handleSubmit}>
-            <input
-              required
-              onChange={handleChange("query")}
-              placeholder="Search Exercise"
-            />
-            <form>
-              <ul>Added Exercises</ul>
-              {id.map((a, i) => (
-                <>
-                  <li>
-                    {a.exercise_name}
-                    <button onClick={deleteExercise} data-id={i}>
-                      Remove
-                    </button>
-                  </li>
-                </>
-              ))}
-              <button onClick={exerciseSubmit}>Finish</button>
-            </form>
-            <div>
-              <ul>Search Results</ul>
-              {newData.map(a => (
-                <>
-                  <li>
-                    {a.Exercise_Name_Complete}
-                    <button
-                      onClick={handleButtonClick}
-                      data-id={a.Exercise_Id}
-                      data-value={a.Exercise_Name_Complete}
-                    >
-                      Add Exercise
-                    </button>
-                  </li>
-                </>
-              ))}
-            </div>
-          </form>
-        </div>
+       <Posts clearExerciseList={clearExerciseList} 
+              handleSubmit={handleSubmit}
+              posts={posts} 
+              handleChange={handleChange('query')} 
+              exerciseSubmit={exerciseSubmit} 
+              handleButtonClick={handleButtonClick}
+              deleteExercise={(e) => deleteExercise(e)}
+              newData={exercise}
+              posts={currentPosts}
+              id={id} />
+        <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={exercise.length}
+        paginate={(e) => paginate(e)}
+      />
+
       </>
     );
   }
 
   return (
-    <div className="search-bar">
+    <div className="search-bar-2">
       <form className="form-bar" onSubmit={handleSubmit}>
         <input
           value={query}

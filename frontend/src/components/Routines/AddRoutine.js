@@ -9,6 +9,8 @@ import axios from "axios";
 import "./addroutine.css";
 import "../../styles/index";
 import Axios from "axios";
+import ProfileNavbar from "../Profile/ProfileNavBar";
+import "./routineStyle.css"
 
 const AddRoutine = props => {
   const [input, setInput] = useState({
@@ -37,9 +39,8 @@ const AddRoutine = props => {
 
   return (
     <>
-      {/* <Navbar /> */}
-
       <div>
+      <ProfileNavbar/>
         <div className="routine-header">
           <h2>Create A New Routine Name</h2>
         </div>
@@ -60,7 +61,7 @@ const AddRoutine = props => {
                 type="text"
               />
             </div>
-            <button>Create Routine</button>
+            <button className="addRoutines">Create Routine</button>
           </form>
         </div>
       </div>

@@ -13,3 +13,8 @@ h3 {
 .list-style {
     margin-bottom: 5px;
 }
+
+a {
+    color: white;
+    text-decoration: underline;
+}

@@ -48,15 +48,6 @@ class Navbar extends React.Component {
               <MDBNavItem>
                 <MDBNavLink to="/Signup">Signup</MDBNavLink>
               </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/graphs">Graphs</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/add-routine">Add Routine</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/display-routine">Display Routine</MDBNavLink>
-              </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>

@@ -59,7 +59,7 @@ const SearchBar = props => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <input
           value={query}
           required
