@@ -35,17 +35,6 @@ const Signup = props => {
     props.history.push("/login");
   };
 
-  //   const dispatch = useDispatch();
-  //   const incrementCounter = useCallback(
-  //     () => dispatch({ type: "LOGIN_SUCCESS" }),
-  //     [dispatch]
-  //   );
-
-  //   const dispatcher = (first_name, last_name, Email) => {
-  //     dispatch(() => signUp({ first_name, last_name, Email }));
-  //   };
-  //   <form onSubmit={() => dispatch(signUp(first_name, last_name, Email))}>
-
   return (
     <>
       {/* <Navbar /> */}
@@ -92,7 +81,6 @@ const Signup = props => {
               </div>
               <button>Signup</button>
             </form>
-            )}
           </div>
         </div>
       </SignupStyle>
