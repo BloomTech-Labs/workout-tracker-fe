@@ -6,7 +6,7 @@
 
 # 1️⃣ Title of project goes here
 
-1️⃣ You can find the deployed project at Production host: https://firstrep.netlify.com, Development host: https://development-firstrep.netlify.com.
+1️⃣ You can find the deployed project at Production host: https://first-rep.netlify.com/, Development host: https://development-firstrep.netlify.com.
 
 ## 4️⃣ Contributors
 
