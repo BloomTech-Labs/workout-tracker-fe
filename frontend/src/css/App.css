@@ -29,6 +29,10 @@ button {
   font-size: 12px;
 }
 
+.hidden {
+  display: none;
+}
+
 .listTitle {
   font-size: 20px;
 }

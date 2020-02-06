@@ -68,6 +68,7 @@ const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, h
         onChange={handleChange}
         placeholder="Search Exercise"
       />
+      <button onClick={handleSubmit}>Search</button>
       </form>
       <div>
         <ul>Added Exercises</ul>
@@ -75,7 +76,7 @@ const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, h
           <>
             <li>
               {a.exercise_name}
-              <button onClick={deleteExercise} data-id={i}>
+              <button onClick={deleteExercise} data-id={i} className="toggleRoutine">
                 Remove
               </button>
             </li>
@@ -92,7 +93,8 @@ const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, h
               <button
                 onClick={(e) => handleButtonClick(e)}
                 data-id={a.Exercise_Id}
-                data-value={a.Exercise_Name_Complete}>
+                data-value={a.Exercise_Name_Complete}
+                className="toggleRoutine">
                 Add Exercise
               </button>
             </li>

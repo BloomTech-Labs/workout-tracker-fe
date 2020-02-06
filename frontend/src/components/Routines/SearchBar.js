@@ -27,12 +27,10 @@ const SearchBar = props => {
     setExercise([]);
   };
 
-  const deleteExercise = async e => {
+  const deleteExercise = e => {
     let key = e.target.dataset.id;
-    let newArr = id;
-    newArr.splice(key, 1);
-    setId(id.splice(key,1));
-    console.log('key is ', key, 'newArr is ', newArr, 'id is ',)
+    id.splice(key, 1);
+    setId(id);
   };
 
   const handleSubmit = async event => {
@@ -93,7 +91,7 @@ const SearchBar = props => {
               handleChange={handleChange('query')} 
               exerciseSubmit={exerciseSubmit} 
               handleButtonClick={handleButtonClick}
-              deleteExercise={(e) => deleteExercise(e)}
+              deleteExercise={deleteExercise}
               newData={exercise}
               posts={currentPosts}
               id={id} />
@@ -109,13 +107,14 @@ const SearchBar = props => {
 
   return (
     <div className="search-bar-2">
-      <form className="form-bar" onSubmit={handleSubmit}>
+      <form className="form-bar">
         <input
           value={query}
           required
           onChange={handleChange("query")}
           placeholder="Search Exercise"
         />
+        <button onClick={handleSubmit}>Search</button>
       </form>
     </div>
   );
