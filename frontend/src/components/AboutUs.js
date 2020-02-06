@@ -66,8 +66,8 @@ class AvoutUs extends Component {
                         </a>
                     </div>
                 </div>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat</p>
+                <p>Rod Bromberg was born in the city of Peekskill, Ny and lives there with his wife and two children.
+                 In his free time he enjoys playing Total War, and reading anything history related.</p>
             </div>
 
             <div class='member-section'>
