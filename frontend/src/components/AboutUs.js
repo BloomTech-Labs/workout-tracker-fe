@@ -27,7 +27,7 @@ class AvoutUs extends Component {
                     </div>
                 </div>
                 <p>Matheus Silva was born in Massachusetts, USA, raised in Brazil, and recently living in Connecticut, United States.
-                 He began coursework at Lambda school March 18th, 2019.</p>
+                 He began coursework at Lambda school March of 2019.</p>
             </div>
 
             <div class='member-section'>
@@ -45,8 +45,8 @@ class AvoutUs extends Component {
                         </a>
                     </div>
                 </div>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat</p>
+                <p>Sir Williams was born in the small town of Pendleton, Oregon. Sir started his schooling for lambda in March 2019. 
+                He likes to mess around with minecraft commands and read One Piece.</p>
             </div>
         </div>
 
@@ -54,7 +54,7 @@ class AvoutUs extends Component {
             <div class='member-section'>
                 <div class='member-header'>
                     <div class='member-image'>
-                        <img src='https://avatars1.githubusercontent.com/u/37605462?s=400&v=4'/>
+                        <img src='https://ca.slack-edge.com/T4JUEB3ME-UD0RRA3TP-6c7bc87398da-512'/>
                     </div>
                     <div class='member-name'>
                         <h1>Rod Bromberg</h1>
@@ -66,8 +66,8 @@ class AvoutUs extends Component {
                         </a>
                     </div>
                 </div>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat</p>
+                <p>Rod Bromberg was born in the city of Peekskill, Ny and lives there with his wife and two children.
+                 In his free time he enjoys playing Total War, and reading anything history related.</p>
             </div>
 
             <div class='member-section'>
@@ -85,8 +85,8 @@ class AvoutUs extends Component {
                         </a>
                     </div>
                 </div>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                reprehenderit in voluptate velit esse cillum t</p>
+                <p>Christopher Wernli was born and raised in Utah, USA and lives there with his wife and two kids. 
+                He works at a software company as an account manager which is how he got into coding. He start at Lambda in March of 2019.</p>
             </div>
         </div>
     </div>
