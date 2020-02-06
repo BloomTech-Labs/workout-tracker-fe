@@ -52,6 +52,7 @@
 // export default Posts;
 
 import React from "react";
+import './posts.css'
 
 const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, handleChange, deleteExercise, exerciseSubmit, handleButtonClick,  }) => {
   if (loading) {
@@ -60,7 +61,7 @@ const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, h
   
 
   return (
-    <div className="search-bar">
+    <div>
     <button onClick={clearExerciseList}>Clear Search Results</button>
     <form onSubmit={(e) => handleSubmit}>
       <input
@@ -69,7 +70,7 @@ const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, h
         placeholder="Search Exercise"
       />
       </form>
-      <div>
+      <div className='div-exercises'>
         <ul>Added Exercises</ul>
         {id.map((a, i) => (
           <>
@@ -83,11 +84,11 @@ const Posts = ({ loading, id, newData, clearExerciseList, handleSubmit, posts, h
         ))}
         <button onClick={(e) => exerciseSubmit(e)}>Finish</button>
       </div>
-      <div>
+      <div className='result-exercises'>
         <ul>Search Results</ul>
         {posts.map(a => (
           <>
-            <li>
+            <li style={{ width: "250px"}}>
               {a.Exercise_Name_Complete}
               <button
                 onClick={(e) => handleButtonClick(e)}
