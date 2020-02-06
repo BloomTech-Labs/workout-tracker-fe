@@ -78,7 +78,7 @@ function DisplayRoutines(props) {
         {exercise.map((a, i) => (
           <ol className="routine-list">
             {a.Exercise_Name}
-            <button data-id={i + 1} onClick={showInstructions}>
+            <button data-id={i + 1} onClick={showInstructions} className="toggleRoutine">
               toggle instructions
             </button>
             <div className={isactive == i + 1 ? "" : "hidden"}>
@@ -111,7 +111,7 @@ function DisplayRoutines(props) {
         ))}
       </ol>
       <Route>
-        <Link to="/add-routine">Click Here To Create A New Routine</Link>
+        <Link to="/add-routine"> <span className='new-routine-link'>Click Here To Create A New Routine</span> </Link>
       </Route>
     </div>
     </>

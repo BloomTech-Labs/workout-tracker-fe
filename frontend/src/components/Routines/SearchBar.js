@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useParams, useHistory } from "react-router";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./searchbar.css";
+
 import Posts from "./Posts";
 import Pagination from "./Pagination";
+
 const SearchBar = props => {
   const [id, setId] = useState([]);
   const [click, setClick] = useState(false);
@@ -19,16 +21,18 @@ const SearchBar = props => {
   const handleChange = props => event => {
     setInput({ ...input, [props]: event.target.value });
   };
+
   const clearExerciseList = e => {
     e.preventDefault();
     setExercise([]);
   };
-  const deleteExercise = async e => {
+
+  const deleteExercise = e => {
     let key = e.target.dataset.id;
-    let newArr = id;
-    newArr.splice(key, 1);
-    setId(newArr);
+    id.splice(key, 1);
+    setId(id);
   };
+
   const handleSubmit = async event => {
     event.preventDefault();
     const url = `https://firstrep.herokuapp.com/api/exrx/`;
@@ -42,11 +46,14 @@ const SearchBar = props => {
     }
   };
   const handleButtonClick = async e => {
-    e.preventDefault();
+    // e.preventDefault();
     let val = e.target.dataset.value;
+  
     let exerciseId = e.target.dataset.id;
     setId(id.concat({ exercise_id: exerciseId, exercise_name: val }));
+    {console.log('this is id ', id)}
   };
+
   const exerciseSubmit = async e => {
     await axios
       .post(
@@ -58,76 +65,59 @@ const SearchBar = props => {
     setClick(true);
     props.history.push(`/display-routine/`);
   };
+
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
+
   // restricting search results
   // let length = exercise.length / 2;
   let newData = exercise;
+
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
+
   if (newData) {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = exercise.slice(indexOfFirstPost, indexOfLastPost);
-    return (
+  
+  return (
       <>
-        <div className="search-bar">
-          <button onClick={clearExerciseList}>Clear Search Results</button>
-          <form onSubmit={handleSubmit}>
-            <input
-              required
-              onChange={handleChange("query")}
-              placeholder="Search Exercise"
-            />
-            <form>
-              <ul>Added Exercises</ul>
-              {id.map((a, i) => (
-                <>
-                  <li>
-                    {a.exercise_name}
-                    <button onClick={deleteExercise} data-id={i}>
-                      Remove
-                    </button>
-                  </li>
-                </>
-              ))}
-              <button onClick={exerciseSubmit}>Finish</button>
-            </form>
-            <div>
-              <ul>Search Results</ul>
-              {newData.map(a => (
-                <>
-                  <li>
-                    {a.Exercise_Name_Complete}
-                    <button
-                      onClick={handleButtonClick}
-                      data-id={a.Exercise_Id}
-                      data-value={a.Exercise_Name_Complete}
-                    >
-                      Add Exercise
-                    </button>
-                  </li>
-                </>
-              ))}
-            </div>
-          </form>
-        </div>
+       <Posts clearExerciseList={clearExerciseList} 
+              handleSubmit={handleSubmit}
+              posts={posts} 
+              handleChange={handleChange('query')} 
+              exerciseSubmit={exerciseSubmit} 
+              handleButtonClick={handleButtonClick}
+              deleteExercise={deleteExercise}
+              newData={exercise}
+              posts={currentPosts}
+              id={id} />
+        <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={exercise.length}
+        paginate={(e) => paginate(e)}
+      />
+
       </>
     );
   }
+
   return (
-    <div className="search-bar">
-      <form className="form-bar" onSubmit={handleSubmit}>
+    <div className="search-bar-2">
+      <form className="form-bar">
         <input
           value={query}
           required
           onChange={handleChange("query")}
           placeholder="Search Exercise"
         />
+        <button onClick={handleSubmit}>Search</button>
       </form>
     </div>
   );
 };
+
 export default SearchBar;

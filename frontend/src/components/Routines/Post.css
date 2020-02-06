@@ -1,0 +1,10 @@
+.div-exercises {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.result-exercises {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

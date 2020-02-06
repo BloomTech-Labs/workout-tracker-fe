@@ -29,6 +29,10 @@ button {
   font-size: 12px;
 }
 
+.hidden {
+  display: none;
+}
+
 .listTitle {
   font-size: 20px;
 }
@@ -220,10 +224,6 @@ h2 {
   align-items: center;
 }
 
-.second-container-app div {
-  padding-right: 90px;
-}
-
 @media (max-width: 600px) {
   .second-container-app {
     text-align: center;
@@ -261,9 +261,8 @@ h2 {
 }
 
 .second-image{
+  padding-left: 90px;
   height: 580px;
-  border-radius: 55px;
-  border: 5px solid;
 }
 
 @media (max-width: 900px) {
