@@ -40,7 +40,7 @@ class Userinfo extends Component {
                     <h3>Mile Time: {status.mile_time}</h3>
                 </div>
     
-                <Link to={{pathname: `/update-status`, status}}  >UpdateProfile</Link>
+                <Link className="see-more-info" to={{pathname: `/update-status`, status}}  >UpdateProfile</Link>
                 
               </div>
               )

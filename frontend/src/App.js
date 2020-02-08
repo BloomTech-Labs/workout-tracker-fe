@@ -10,9 +10,9 @@ import Profile from "./components/Profile/Profile";
 import FullPageIntroWithFixedNavbar from "./components/FullPageIntroWithFixedNavbar";
 import Routines from "./components/Routines/Routines.js";
 // import RecordRoutine from "./components/Routines/RecordRoutine";
-import ProfileOnboarding from './components/Profile/ProfileOnboarding'
-import UpdateStats from './components/Profile/UpdateProfile/UpdateStats'
-import UpdateUser from './components/Profile/UpdateProfile/UpdateUser'
+import ProfileOnboarding from "./components/Profile/ProfileOnboarding";
+import UpdateStats from "./components/Profile/UpdateProfile/UpdateStats";
+import UpdateUser from "./components/Profile/UpdateProfile/UpdateUser";
 import UserInfo from "./components/Profile/UserInfo";
 import AddRoutine from "./components/Routines/AddRoutine";
 import AddId from "./components/Routines/AddId";
@@ -56,11 +56,11 @@ function App() {
             />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
-            <Route exact path='/onboarding' component={ProfileOnboarding} />
+            <Route exact path="/onboarding" component={ProfileOnboarding} />
             <Route exact path="/logout" component={LogOut} />
             <Route exact path="/aboutus" component={AboutUs} />
-            <Route exact path='/update-status' component={UpdateStats} />
-            <Route exact path='/update-user' component={UpdateUser} />
+            <Route exact path="/update-status" component={UpdateStats} />
+            <Route exact path="/update-user" component={UpdateUser} />
             <Route exact path="/add-routine" component={AddRoutine} />
             <Route exact path="/add-id" component={AddId} />
             <Route exact path="/exercise-records" component={ExerciseRecords} />
@@ -68,7 +68,6 @@ function App() {
             <Route exact path="/add-exercise/:id" component={SearchBar} />
             <Route exact path="/display-routine" component={DisplayRoutines} />s
             <Route exact path="/form" component={FriendList} />
-            {/* <Route exact path="/routine" component={RecordRoutine} /> */}
             <Route exact path="/collapse-page" component={CollapsePage} />
           </Switch>
         </Router>
