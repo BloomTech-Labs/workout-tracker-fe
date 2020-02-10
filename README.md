@@ -34,11 +34,10 @@
 ## Project Overview
 
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+1️⃣ [Trello Board](https://trello.com/invite/b/0xrxAnyS/aed27cf9ad06faa3f3561dcf6f6b210f/workout-tracker)
 
 1️⃣ [Product Canvas](🚫add link to product canvas here)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
 
 🚫 Replace lorem ipsum with a description of your project
 
@@ -49,11 +48,11 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+-    Add user stats like height, weight, and exercise maxes
+-    Search Bar that queries a list of exercises from EXRX api
+-    Add Routine with exercises from api
+-    Displays text instructions and video on how-to perform exercises
+-    Graph to display progress, frequency, and other workout related metrics
 
 ## 1️⃣ Tech Stack
 
@@ -86,9 +85,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ## 2️⃣ Authentication API here
 
-🚫Replace text below with a description of the API
-
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+PassportJs
 
 ## 2️⃣ Payment API here
 
