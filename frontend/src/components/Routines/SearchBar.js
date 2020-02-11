@@ -29,8 +29,9 @@ const SearchBar = props => {
 
   const deleteExercise = e => {
     let key = e.target.dataset.id;
-    id.splice(key, 1);
-    setId(id);
+    let newArr = id;
+    newArr.splice(key, 1);
+    setId(newArr.splice(key, 1));
   };
 
   const handleSubmit = async event => {
@@ -48,10 +49,12 @@ const SearchBar = props => {
   const handleButtonClick = async e => {
     // e.preventDefault();
     let val = e.target.dataset.value;
-  
+
     let exerciseId = e.target.dataset.id;
     setId(id.concat({ exercise_id: exerciseId, exercise_name: val }));
-    {console.log('this is id ', id)}
+    {
+      console.log("this is id ", id);
+    }
   };
 
   const exerciseSubmit = async e => {
@@ -82,25 +85,25 @@ const SearchBar = props => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = exercise.slice(indexOfFirstPost, indexOfLastPost);
-  
-  return (
-      <>
-       <Posts clearExerciseList={clearExerciseList} 
-              handleSubmit={handleSubmit}
-              posts={posts} 
-              handleChange={handleChange('query')} 
-              exerciseSubmit={exerciseSubmit} 
-              handleButtonClick={handleButtonClick}
-              deleteExercise={deleteExercise}
-              newData={exercise}
-              posts={currentPosts}
-              id={id} />
-        <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={exercise.length}
-        paginate={(e) => paginate(e)}
-      />
 
+    return (
+      <>
+        <Posts
+          clearExerciseList={clearExerciseList}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange("query")}
+          exerciseSubmit={exerciseSubmit}
+          handleButtonClick={handleButtonClick}
+          deleteExercise={deleteExercise}
+          newData={exercise}
+          posts={currentPosts}
+          id={id}
+        />
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={exercise.length}
+          paginate={e => paginate(e)}
+        />
       </>
     );
   }

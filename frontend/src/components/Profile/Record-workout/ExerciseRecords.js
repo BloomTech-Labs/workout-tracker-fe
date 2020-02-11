@@ -77,11 +77,5 @@ const ExerciseRecords = props => {
     </>
   );
 };
-// not being used atm
-const mapStateToProps = state => {
-  return {
-    routine: state.addRoutine
-  };
-};
 
 export default ExerciseRecords;

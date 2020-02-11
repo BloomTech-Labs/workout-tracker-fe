@@ -5,7 +5,7 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
   MDBNavItem,
-  MDBNavLink,
+  MDBNavLink
 } from "mdbreact";
 
 class ProfileNavbar extends React.Component {
@@ -36,12 +36,12 @@ class ProfileNavbar extends React.Component {
               <MDBNavItem>
                 <MDBNavLink to="/profile">Profile</MDBNavLink>
               </MDBNavItem>
-              <MDBNavItem >
+              <MDBNavItem>
                 <MDBNavLink to="/profile-onboarding">Onboading</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-              <MDBNavLink to="/add-routine">Add Routine</MDBNavLink>
-            </MDBNavItem>
+                <MDBNavLink to="/add-routine">Add Routine</MDBNavLink>
+              </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="/display-routine">Display Routine</MDBNavLink>
               </MDBNavItem>
@@ -51,8 +51,8 @@ class ProfileNavbar extends React.Component {
             </MDBNavbarNav>
 
             <MDBNavbarNav right>
-            <MDBNavItem>
-              <MDBNavLink to="/logout">Logout</MDBNavLink>
+              <MDBNavItem>
+                <MDBNavLink to="/logout">Logout</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
@@ -63,12 +63,3 @@ class ProfileNavbar extends React.Component {
 }
 
 export default ProfileNavbar;
-
-// <a href='/'>
-// <div className='logo' />
-// </a>
-// <h1>First Rep</h1>
-// <a href='/'>Home</a>
-// <a href='/routines'>Routines</a>
-// <a href='/profile'>Profile</a>
-// <a href='/aboutus'>About Us</a>

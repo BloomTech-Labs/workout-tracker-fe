@@ -1,12 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Login from "../Login";
-import Navbar from "../Navbar";
+
 import { Route, Link } from "react-router-dom";
-import "./routineStyle.css"
-import ReactDOM from "react-dom";
-import SimpleModal from "./SimpleModal";
+import "./routineStyle.css";
+
 import ProfileNavbar from "../Profile/ProfileNavBar";
 
 import "./displayroutine.css";
@@ -70,7 +68,6 @@ function DisplayRoutines(props) {
   //   props.history.push("/login");
   // };
 
-
   if (loading) {
     return (
       <form className="display-form">
@@ -78,7 +75,11 @@ function DisplayRoutines(props) {
         {exercise.map((a, i) => (
           <ol className="routine-list">
             {a.Exercise_Name}
-            <button data-id={i + 1} onClick={showInstructions} className="toggleRoutine">
+            <button
+              data-id={i + 1}
+              onClick={showInstructions}
+              className="toggleRoutine"
+            >
               toggle instructions
             </button>
             <div className={isactive == i + 1 ? "" : "hidden"}>
@@ -95,25 +96,28 @@ function DisplayRoutines(props) {
   }
   return (
     <>
-    <div className="add-routine-form">
-    <ProfileNavbar />
+      <div className="add-routine-form">
+        <ProfileNavbar />
 
-
-      <ol className="routine-list" style={{ "padding-top": "60px" }}>
-        <h3>Choose Routine From List Below</h3>
-        {data.map(a => (
-          <>
-            <li className="list-style" data-value={a.id} onClick={submitReq}>
-              {a.routine_name}
-            </li>
-            {/* <button onClick={submitReq}>click</button> */}
-          </>
-        ))}
-      </ol>
-      <Route>
-        <Link to="/add-routine"> <span className='new-routine-link'>Click Here To Create A New Routine</span> </Link>
-      </Route>
-    </div>
+        <ol className="routine-list" style={{ "padding-top": "60px" }}>
+          <h3>Choose Routine From List Below</h3>
+          {data.map(a => (
+            <>
+              <li className="list-style" data-value={a.id} onClick={submitReq}>
+                {a.routine_name}
+              </li>
+            </>
+          ))}
+        </ol>
+        <Route>
+          <Link to="/add-routine">
+            {" "}
+            <span className="new-routine-link">
+              Click Here To Create A New Routine
+            </span>{" "}
+          </Link>
+        </Route>
+      </div>
     </>
   );
 }
