@@ -1,25 +1,25 @@
 Arguments: 
-  /Users/rodbromberg/.nvm/versions/node/v12.13.1/bin/node /Users/rodbromberg/.yarn/bin/yarn.js
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
-  /Users/rodbromberg/.yarn/bin:/Users/rodbromberg/.config/yarn/global/node_modules/.bin:/Users/rodbromberg/.nvm/versions/node/v12.13.1/bin:/anaconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/rodbromberg/.yarn/bin:/Users/rodbromberg/.config/yarn/global/node_modules/.bin:/Users/rodbromberg/.nvm/versions/node/v12.13.1/bin:/Users/rodbromberg/anaconda3/bin:/usr/local/opt/rabbitmq/sbin:/usr/local/opt/rabbitmq/sbin
+  C:\Users\chris\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\chris\bin;C:\Python27;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Users\chris\AppData\Local\Microsoft\WindowsApps;C:\Users\chris\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\chris\AppData\Local\Yarn\bin;C:\Users\chris\AppData\Roaming\npm;C:\Users\chris\AppData\Local\GitHubDesktop\bin;C:\Users\chris\.git-secrets;C:\Users\chris\Documents\Git\.git-secrets;C:\Users\chris\Documents\.git-secrets;C:\Users\chris\Documents\git-secrets;C:\Users\chris.\Documents\git-secrets;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
-  1.16.0
+  1.19.1
 
 Node version: 
-  12.13.1
+  12.13.0
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  SyntaxError: /Users/rodbromberg/workout-tracker-fe/package.json: Unexpected token < in JSON at position 290
+  SyntaxError: C:\Users\chris\Documents\Git\workout-tracker-fe\package.json: Unexpected token < in JSON at position 290
       at JSON.parse (<anonymous>)
-      at /Users/rodbromberg/.yarn/lib/cli.js:1625:59
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
       at Generator.next (<anonymous>)
-      at step (/Users/rodbromberg/.yarn/lib/cli.js:304:30)
-      at /Users/rodbromberg/.yarn/lib/cli.js:315:13
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
 
 npm manifest: 
   {
